@@ -2,10 +2,10 @@
 # Global variable
 set proj_name "project1"
 set proj_dir "./project1"
-set part_name "xc7s50csga324-1"
-set top_module "counter"
+set part_name "xczu7ev-ffvc1156-2-e"
+set top_module "top"
 set sim_top_module "tb"
-set bitfile "counter.bit"
+set bitfile "adder.bit"
 
 #////////////////
 # 1- Simulation
@@ -16,7 +16,7 @@ file mkdir work
 cd work
 
 # compile design abd testbench
-exec xvlog ./../../counter.v 
+exec xvlog ./../../top.v 
 exec xvlog ./../../tb.v 
 
 #Elaborate
@@ -70,7 +70,6 @@ write_bitstream -file $bitfile
 #////////////////
 # 3. Programming the hw
 #////////////////
-
 
 # programming the board
 open_hw_manager

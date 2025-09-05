@@ -2,8 +2,8 @@
 # Global variable
 set proj_name "project1"
 set proj_dir "./project1"
-set part_name "xc7s50csga324-1"
-set top_module "counter"
+set part_name "xczu7ev-ffvc1156-2-e"
+set top_module "top"
 set sim_top_module "tb"
 
 
@@ -11,7 +11,9 @@ set sim_top_module "tb"
 create_project $proj_name $proj_dir -part $part_name -force
 
 # add design sources
-add_files -fileset sources_1 ./counter.v
+add_files -fileset sources_1 ./full_carry_adder.v
+add_files -fileset sources_1 ./seven_segment_display.v
+add_files -fileset sources_1 ./top.v
 
 # set top-level file
 set_property top $top_module [get_filesets sources_1]
