@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<RptDoc cmdline="report_power_opt -format xml -file report_power_opt.rpt" designname="top" designstate="Routed" partname="xczu7ev-ffvc1156-2-e" speedfile="" title="Power optimization report" version="1">
+
+  <extraheaderitems>
+    <extraheaderitem key="Grade" value="extended"/>
+    <extraheaderitem key="Process" value="typical"/>
+    <extraheaderitem key="Characterization" value="Production"/>
+  </extraheaderitems>
+
+  <section class="" title="Summary">
+    <table class="" style="2" title="" useFootnoteNumbers="0">
+      <tablerow class="" suppressoutput="0" wordwrap="0">
+        <tableheader class="" contents="Elements" halign="2" width="-1"/>
+        <tableheader class="" contents="TOTAL" halign="2" width="-1"/>
+        <tableheader class="" contents="USER GATED" halign="2" width="-1"/>
+        <tableheader class="" contents="TOOL GATED" halign="2" width="-1"/>
+        <tableheader class="" contents="% GATED(Total)" halign="2" width="-1"/>
+      </tablerow>
+      <tablerow class="" suppressoutput="0" wordwrap="0">
+        <tablecell class="" contents="Number of BRAMs" halign="0" type="string"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0.000000" decimalplaces="3" halign="0" type="double"/>
+      </tablerow>
+      <tablerow class="" suppressoutput="0" wordwrap="0">
+        <tablecell class="" contents="Number of SRLs" halign="0" type="string"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0.000000" decimalplaces="3" halign="0" type="double"/>
+      </tablerow>
+      <tablerow class="" suppressoutput="0" wordwrap="0">
+        <tablecell class="" contents="Number of Slice Registers" halign="0" type="string"/>
+        <tablecell class="" contents="10" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0.000000" decimalplaces="3" halign="0" type="double"/>
+      </tablerow>
+      <tablerow class="" suppressoutput="0" wordwrap="0">
+        <tablecell class="" contents="Number of XPM URAMs" halign="0" type="string"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0" halign="0" type="int"/>
+        <tablecell class="" contents="0.000000" decimalplaces="3" halign="0" type="double"/>
+      </tablerow>
+    </table>
+  </section>
+
+  <section class="" title="Recommendations">
+    <list bullet="0" class="" ordered="0">
+      <listitem class="" text="No specific recommendations for this design."/>
+    </list>
+  </section>
+
+  <section class="" title="Hierarchical Information">
+    <section class="" title="BRAMs">
+      <list bullet="0" class="" ordered="0">
+        <listitem class="" text="None"/>
+      </list>
+    </section>
+    <section class="" title="SRLs">
+      <list bullet="0" class="" ordered="0">
+        <listitem class="" text="None"/>
+      </list>
+    </section>
+    <section class="" title="Slice Registers">
+      <list bullet="0" class="" ordered="0">
+        <listitem class="" text="None"/>
+      </list>
+    </section>
+    <section class="" title="XPM URAMs">
+      <list bullet="0" class="" ordered="0">
+        <listitem class="" text="None"/>
+      </list>
+    </section>
+  </section>
+
+</RptDoc>

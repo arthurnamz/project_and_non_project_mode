@@ -43,32 +43,32 @@ read_verilog ./../seven_segment_display.v
 read_verilog ./../top.v
 
 # load constraints files
-read_xdc ./../floorplanning.xdc
+# read_xdc ./../floorplanning.xdc
 read_xdc ./../pin.xdc
 
 # synthesis 
-synth_design -top $top_module -part $part_name
+synth_design -top $top_module -part $part_name -lut_cascade
 
 # optimising the netlist
-opt_design -resynth_area
+opt_design -remap
 
 # placement
-place_design -directive Explore
+place_design 
 
 # post placement optimization
-phys_opt_design -directive ExploreWithHoldFix
+phys_opt_design -directive AggressiveFanoutOpt
 
 # Routing
-route_design -directive Explore
+route_design -directive Explore -timing_summary
 
 # Post routing optimization
-phys_opt_design -directive ExploreWithHoldFix
+phys_opt_design -directive AggressiveFanoutOpt
 
 # Reports
 report_utilization -file utilization.rpt 
 report_timing_summary -file timing_summary.rpt
 report_power -file report_power.rpt 
-report_power_opt -format xml -file report_power_opt.rpt
+report_power_opt -format xml -file report_power_opt.xml
 
 # Generate the Bitstream
 write_bitstream -file $bitfile

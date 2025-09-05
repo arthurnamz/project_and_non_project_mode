@@ -1,0 +1,901 @@
+/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder$ ./nonProjMode.sh 
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Fri Sep  5 17:47:28 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source script2c.tcl
+# set proj_name "project1"
+# set proj_dir "./project1"
+# set part_name "xczu7ev-ffvc1156-2-e"
+# set top_module "top"
+# set sim_top_module "tb"
+# set bitfile "adder.bit"
+# file mkdir sim
+# cd sim
+# file mkdir work
+# cd work
+# exec xvlog ./../../full_carry_adder.v 
+# exec xvlog ./../../seven_segment_display.v
+# exec xvlog ./../../top.v 
+# exec xvlog ./../../tb.v 
+# exec xelab $sim_top_module -debug all
+# exec xsim $sim_top_module -R
+# cd ../..
+# catch {close_design}
+# file mkdir synth_place_route
+# cd synth_place_route
+# read_verilog ./../full_carry_adder.v
+# read_verilog ./../seven_segment_display.v
+# read_verilog ./../top.v
+# read_xdc ./../floorplanning.xdc
+# read_xdc ./../pin.xdc
+# synth_design -top $top_module -part $part_name -lut_cascade
+Command: synth_design -top top -part xczu7ev-ffvc1156-2-e -lut_cascade
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 243342
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2775.461 ; gain = 132.691 ; free physical = 15478 ; free virtual = 25262
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'full_carry_adder' [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/full_carry_adder.v:3]
+        Parameter DATA_WIDTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'full_carry_adder' (0#1) [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/full_carry_adder.v:3]
+INFO: [Synth 8-6157] synthesizing module 'seven_segment_display' [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/seven_segment_display.v:4]
+        Parameter DATA_WIDTH bound to: 3 - type: integer 
+        Parameter RESULT_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/seven_segment_display.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'seven_segment_display' (0#1) [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/seven_segment_display.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/top.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2846.430 ; gain = 203.660 ; free physical = 15383 ; free virtual = 25176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2849.398 ; gain = 206.629 ; free physical = 15383 ; free virtual = 25175
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2849.398 ; gain = 206.629 ; free physical = 15383 ; free virtual = 25175
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2849.398 ; gain = 0.000 ; free physical = 15383 ; free virtual = 25175
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/adder_i'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:4]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/display_a'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:12]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/display_b'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:20]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/display_sum'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:28]
+Finished Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'design_1_i/rst_clk_wiz_100M/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:3]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'design_1_i/vio_0' in current context, where current instance = '' and current design = 'preSynthElab_1' [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2977.180 ; gain = 0.000 ; free physical = 15416 ; free virtual = 25208
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2977.180 ; gain = 0.000 ; free physical = 15416 ; free virtual = 25208
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2977.180 ; gain = 334.410 ; free physical = 15443 ; free virtual = 25241
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2985.184 ; gain = 342.414 ; free physical = 15443 ; free virtual = 25241
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2985.184 ; gain = 342.414 ; free physical = 15448 ; free virtual = 25246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2985.184 ; gain = 342.414 ; free physical = 15435 ; free virtual = 25245
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+           2 Input      1 Bit         XORs := 5     
++---Registers : 
+                        3 Bit    Registers := 3     
+                        1 Bit    Registers := 1     
++---Muxes : 
+           8 Input    7 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2985.184 ; gain = 342.414 ; free physical = 15455 ; free virtual = 25256
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3595.188 ; gain = 952.418 ; free physical = 14954 ; free virtual = 24745
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3595.188 ; gain = 952.418 ; free physical = 14953 ; free virtual = 24744
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3604.203 ; gain = 961.434 ; free physical = 14937 ; free virtual = 24734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14855 ; free virtual = 24642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14855 ; free virtual = 24642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14855 ; free virtual = 24642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14855 ; free virtual = 24642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14847 ; free virtual = 24638
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14850 ; free virtual = 24646
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |     1|
+|4     |LUT3 |    21|
+|5     |LUT4 |     1|
+|6     |LUT6 |     2|
+|7     |FDRE |    10|
+|8     |IBUF |     8|
+|9     |OBUF |    22|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14850 ; free virtual = 24647
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3775.016 ; gain = 1004.465 ; free physical = 14848 ; free virtual = 24646
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3775.016 ; gain = 1132.246 ; free physical = 14848 ; free virtual = 24646
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3775.016 ; gain = 0.000 ; free physical = 14951 ; free virtual = 24749
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/adder_i'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:4]
+CRITICAL WARNING: [Vivado 12-1433] Expecting a non-empty list of cells to be added to the pblock.  Please verify the correctness of the <cells> argument. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:4]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/display_a'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:12]
+CRITICAL WARNING: [Vivado 12-1433] Expecting a non-empty list of cells to be added to the pblock.  Please verify the correctness of the <cells> argument. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:12]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/display_b'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:20]
+CRITICAL WARNING: [Vivado 12-1433] Expecting a non-empty list of cells to be added to the pblock.  Please verify the correctness of the <cells> argument. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:20]
+WARNING: [Vivado 12-180] No cells matched 'design_1_i/top_0/inst/display_sum'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:28]
+CRITICAL WARNING: [Vivado 12-1433] Expecting a non-empty list of cells to be added to the pblock.  Please verify the correctness of the <cells> argument. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc:28]
+Finished Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/floorplanning.xdc]
+Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'design_1_i/rst_clk_wiz_100M/U0' in current context, where current instance = '' and current design = 'design_1' [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:3]
+WARNING: [Vivado 12-180] No cells matched '*'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:4]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-11' -to list should not be empty. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:4]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'design_1_i/vio_0' in current context, where current instance = '' and current design = 'design_1' [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:6]
+WARNING: [Vivado 12-180] No cells matched '*'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:7]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter REF_PIN_NAME=~C -of_objects [get_cells -hierarchical -filter {NAME =~ "*probe_in_reg_reg*"}]'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:7]
+WARNING: [Vivado 12-180] No cells matched '*'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:7]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter REF_PIN_NAME=~D -of_objects [get_cells -hierarchical -filter {NAME =~ "*data_int_sync1_reg*"}]'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:7]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:7]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter { NAME =~  "*Hold_probe_in*" &&  IS_SEQUENTIAL }'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:8]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter REF_PIN_NAME=~C -of_objects [get_cells -hierarchical -filter { NAME =~  "*Hold_probe_in*" &&  IS_SEQUENTIAL }]'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:8]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter { NAME =~  "*PROBE_IN_INST/probe_in_reg*" && IS_SEQUENTIAL}'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:8]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter REF_PIN_NAME=~CE -of_objects [get_cells -hierarchical -filter { NAME =~  "*PROBE_IN_INST/probe_in_reg*" && IS_SEQUENTIAL}]'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:8]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:8]
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_n'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_300mhz_clk_p'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset'. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/pin.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3775.016 ; gain = 0.000 ; free physical = 15025 ; free virtual = 24813
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 8 instances
+
+Synth Design complete | Checksum: 268bdbf1
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 43 Warnings, 30 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 3775.016 ; gain = 2288.582 ; free physical = 15025 ; free virtual = 24813
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3142.808; main = 3142.808; forked = 323.694
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4149.766; main = 3757.215; forked = 919.035
+# opt_design -remap
+Command: opt_design -remap
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.97 ; elapsed = 00:00:00.3 . Memory (MB): peak = 3775.016 ; gain = 0.000 ; free physical = 15025 ; free virtual = 24812
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 18969c2a5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3775.016 ; gain = 0.000 ; free physical = 15034 ; free virtual = 24811
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 18969c2a5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3775.016 ; gain = 0.000 ; free physical = 15034 ; free virtual = 24811
+Phase 1 Initialization | Checksum: 18969c2a5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3775.016 ; gain = 0.000 ; free physical = 15034 ; free virtual = 24811
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 2.1 Timer Update | Checksum: 18969c2a5
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 18969c2a5
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+Phase 2 Timer Update And Timing Data Collection | Checksum: 18969c2a5
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+
+Phase 3 Remap
+Phase 3 Remap | Checksum: 18969c2a5
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+Remap | Checksum: 18969c2a5
+INFO: [Opt 31-389] Phase Remap created 0 cells and removed 0 cells
+
+Phase 4 Post Processing Netlist
+Phase 4 Post Processing Netlist | Checksum: 1b4993be7
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+Post Processing Netlist | Checksum: 1b4993be7
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 1 cells
+
+Phase 5 Finalization
+
+Phase 5.1 Finalizing Design Cores and Updating Shapes
+Phase 5.1 Finalizing Design Cores and Updating Shapes | Checksum: 1cfb1b341
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+
+Phase 5.2 Verifying Netlist Connectivity
+Phase 5.2 Verifying Netlist Connectivity | Checksum: 1cfb1b341
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+Phase 5 Finalization | Checksum: 1cfb1b341
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+Opt_design Change Summary
+=========================
+
+
+---------------------------------------------------------------------------------------------------------------------
+|  Phase                    |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+---------------------------------------------------------------------------------------------------------------------
+|  Remap                    |               0  |               0  |                                              0  |
+|  Post Processing Netlist  |               0  |               1  |                                              0  |
+---------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1cfb1b341
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14821 ; free virtual = 24594
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4058.621 ; gain = 0.000 ; free physical = 14810 ; free virtual = 24593
+Ending Netlist Obfuscation Task | Checksum: 1cfb1b341
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4058.621 ; gain = 0.000 ; free physical = 14810 ; free virtual = 24593
+INFO: [Common 17-83] Releasing license: Implementation
+8 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 4058.621 ; gain = 283.605 ; free physical = 14810 ; free virtual = 24593
+# place_design 
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4058.621 ; gain = 0.000 ; free physical = 14795 ; free virtual = 24578
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18977efa9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4058.621 ; gain = 0.000 ; free physical = 14795 ; free virtual = 24578
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4058.621 ; gain = 0.000 ; free physical = 14795 ; free virtual = 24578
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 241e89ba7
+
+Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.14 . Memory (MB): peak = 4090.637 ; gain = 32.016 ; free physical = 14794 ; free virtual = 24578
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 2d03124be
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4122.652 ; gain = 64.031 ; free physical = 14803 ; free virtual = 24576
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 2d03124be
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4122.652 ; gain = 64.031 ; free physical = 14803 ; free virtual = 24576
+Phase 1 Placer Initialization | Checksum: 2d03124be
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4122.652 ; gain = 64.031 ; free physical = 14803 ; free virtual = 24576
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4122.652 ; gain = 64.031 ; free physical = 14791 ; free virtual = 24574
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+INFO: [Place 30-3162] Check ILP status : ILP-based clock placer completed successfully.
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4122.652 ; gain = 64.031 ; free physical = 14791 ; free virtual = 24574
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4504.633 ; gain = 446.012 ; free physical = 14338 ; free virtual = 24111
+
+Phase 2.1.1.4 PBP: Add part constraints
+Phase 2.1.1.4 PBP: Add part constraints | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4504.633 ; gain = 446.012 ; free physical = 14338 ; free virtual = 24111
+Phase 2.1.1 Partition Driven Placement | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4504.633 ; gain = 446.012 ; free physical = 14338 ; free virtual = 24111
+Phase 2.1 Floorplanning | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4504.633 ; gain = 446.012 ; free physical = 14338 ; free virtual = 24111
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4504.633 ; gain = 446.012 ; free physical = 14338 ; free virtual = 24111
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 282b326aa
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 4504.633 ; gain = 446.012 ; free physical = 14338 ; free virtual = 24111
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 326a2e570
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 4637.664 ; gain = 579.043 ; free physical = 14265 ; free virtual = 24038
+
+Phase 2.5 Global Place Phase2
+WARNING: [Place 46-29] Timing had been disabled during Placer and, therefore, physical synthesis in Placer will be skipped.
+Phase 2.5 Global Place Phase2 | Checksum: 2df380e6e
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:11 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14260 ; free virtual = 24032
+Phase 2 Global Placement | Checksum: 2df380e6e
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:11 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14260 ; free virtual = 24032
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 2df380e6e
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:13 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14263 ; free virtual = 24036
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2df380e6e
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:13 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14265 ; free virtual = 24039
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 315bb3a45
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:15 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14254 ; free virtual = 24047
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 3228e9e32
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:15 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14254 ; free virtual = 24047
+Phase 3.3.2 Slice Area Swap | Checksum: 3228e9e32
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:15 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14253 ; free virtual = 24047
+Phase 3.3 Small Shape DP | Checksum: 2e6e5cbff
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:15 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14253 ; free virtual = 24047
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 2e6e5cbff
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:17 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14265 ; free virtual = 24049
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 2e6e5cbff
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:17 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14265 ; free virtual = 24049
+Phase 3 Detail Placement | Checksum: 2e6e5cbff
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:17 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14265 ; free virtual = 24049
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: 2e6e5cbff
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:19 . Memory (MB): peak = 4645.664 ; gain = 587.043 ; free physical = 14246 ; free virtual = 24039
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4655.664 ; gain = 0.000 ; free physical = 14243 ; free virtual = 24026
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 2078da603
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:27 . Memory (MB): peak = 4655.664 ; gain = 597.043 ; free physical = 14243 ; free virtual = 24026
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 2078da603
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:27 . Memory (MB): peak = 4655.664 ; gain = 597.043 ; free physical = 14243 ; free virtual = 24026
+Phase 4.3 Placer Reporting | Checksum: 2078da603
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:27 . Memory (MB): peak = 4655.664 ; gain = 597.043 ; free physical = 14243 ; free virtual = 24026
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4655.664 ; gain = 0.000 ; free physical = 14243 ; free virtual = 24026
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:27 . Memory (MB): peak = 4655.664 ; gain = 597.043 ; free physical = 14243 ; free virtual = 24026
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 14b31f149
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:27 . Memory (MB): peak = 4655.664 ; gain = 597.043 ; free physical = 14243 ; free virtual = 24026
+Ending Placer Task | Checksum: 106d3d1e6
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:27 . Memory (MB): peak = 4655.664 ; gain = 597.043 ; free physical = 14243 ; free virtual = 24026
+14 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:08 ; elapsed = 00:00:28 . Memory (MB): peak = 4655.664 ; gain = 597.043 ; free physical = 14243 ; free virtual = 24026
+# phys_opt_design -directive AggressiveFanoutOpt
+Command: phys_opt_design -directive AggressiveFanoutOpt
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveFanoutOpt
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 5047.156 ; gain = 391.492 ; free physical = 13856 ; free virtual = 23639
+INFO: [Vivado_Tcl 4-235] No timing constraint found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+4 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 5047.156 ; gain = 391.492 ; free physical = 13856 ; free virtual = 23639
+# route_design -directive Explore -timing_summary
+Command: route_design -directive Explore -timing_summary
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'Explore'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: de423713 ConstDB: 0 ShapeSum: b6a534d RouteDB: 1d274786
+Nodegraph reading from file.  Time (s): cpu = 00:00:00.55 ; elapsed = 00:00:00.55 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13844 ; free virtual = 23637
+Post Restoration Checksum: NetGraph: 81b53b0e | NumContArr: b19bbbfc | Constraints: 99d9066 | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 1ff97820d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13858 ; free virtual = 23642
+
+Phase 2 Router Initialization
+INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 1ff97820d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13847 ; free virtual = 23640
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 1ff97820d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13847 ; free virtual = 23640
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 22efce34b
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13846 ; free virtual = 23639
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 40
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 37
+  Number of Partially Routed Nets     = 3
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 22efce34b
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23642
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 22efce34b
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23642
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 1430807ac
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13849 ; free virtual = 23642
+Phase 4 Initial Routing | Checksum: 1430807ac
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13849 ; free virtual = 23642
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+Phase 5.1 Global Iteration 0 | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23641
+Phase 5 Rip-up And Reroute | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23641
+
+Phase 6 Delay and Skew Optimization
+Phase 6 Delay and Skew Optimization | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23641
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+Phase 7.1 Hold Fix Iter | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23641
+Phase 7 Post Hold Fix | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23641
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.005546 %
+  Global Horizontal Routing Utilization  = 0.000467291 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 25.3521%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 1.89573%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 1.92308%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 1.92308%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13848 ; free virtual = 23641
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+
+Phase 11 Resolve XTalk
+
+Skipping xtalk assignment for non timing driven mode.
+Phase 11 Resolve XTalk | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+
+Phase 12 Post Process Routing
+Phase 12 Post Process Routing | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+Time taken to check if laguna hold fix is required (in secs): 0
+Skip PhysOpt in Router because non-negative WNS value: 1e+30 .
+
+Phase 13 Route finalize
+Phase 13 Route finalize | Checksum: 14bc9096f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+Total Elapsed time in route_design: 3.99 secs
+
+Phase 14 Post-Route Event Processing
+Phase 14 Post-Route Event Processing | Checksum: aefbcb68
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: aefbcb68
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+6 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+# phys_opt_design -directive AggressiveFanoutOpt
+Command: phys_opt_design -directive AggressiveFanoutOpt
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode 
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveFanoutOpt
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5047.156 ; gain = 0.000 ; free physical = 13852 ; free virtual = 23645
+INFO: [Vivado_Tcl 4-235] No timing constraint found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+# report_utilization -file utilization.rpt 
+# report_timing_summary -file timing_summary.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+# report_power -file report_power.rpt 
+Command: report_power -file report_power.rpt
+WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+# report_power_opt -format xml -file report_power_opt.xml
+INFO: [Pwropt 34-45] Reporting existing clock enables to report_power_opt.xml.
+# write_bitstream -file $bitfile
+Command: write_bitstream -file adder.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+ERROR: [DRC NSTD-1] Unspecified I/O Standard: 30 out of 30 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: a[2:0], b[2:0], seg_a[6:0], seg_b[6:0], seg_sum[6:0], clk, led_carry, and rstn.
+ERROR: [DRC UCIO-1] Unconstrained Logical Port: 30 out of 30 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: a[2:0], b[2:0], seg_a[6:0], seg_b[6:0], seg_sum[6:0], clk, led_carry, and rstn.
+INFO: [Vivado 12-3199] DRC finished with 2 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado 12-1345] Error(s) found during DRC. Bitgen not run.
+INFO: [Common 17-83] Releasing license: Implementation
+8 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+write_bitstream failed
+write_bitstream: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 5099.250 ; gain = 0.000 ; free physical = 13846 ; free virtual = 23630
+ERROR: [Common 17-39] 'write_bitstream' failed due to earlier errors.
+INFO: [Common 17-206] Exiting Vivado at Fri Sep  5 17:49:06 2025...
+arthur@desktop-arthur:~/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder$ 
