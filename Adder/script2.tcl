@@ -38,9 +38,9 @@ file mkdir synth_place_route
 cd synth_place_route
 
 # load design source
-read_verilog ./../top.v
 read_verilog ./../full_carry_adder.v
 read_verilog ./../seven_segment_display.v
+read_verilog ./../top.v
 
 # load constraints files
 read_xdc ./../floorplanning.xdc
@@ -80,8 +80,8 @@ open_hw_manager
 connect_hw_server -allow_non_jtag
 
 open_hw_target
-set_property PROGRAM.FILE {/home/arthur/personal_projects/FPGA_masterclass/adder_here/adder_here.runs/impl_1/adder.bit} [get_hw_devices xczu7_0]
-set_property PROBES.FILE {/home/arthur/personal_projects/FPGA_masterclass/adder_here/adder_here.runs/impl_1/design_1_wrapper.ltx} [get_hw_devices xczu7_0]
+set_property PROGRAM.FILE {/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/synth_place_route/adder.bit} [get_hw_devices xczu7_0]
+set_property PROBES.FILE {/home/arthur/personal_projects/FPGA_masterclass/project_and_non_project_mode/Adder/synth_place_route/design_1_wrapper.ltx} [get_hw_devices xczu7_0]
 set_property FULL_PROBES.FILE {/home/arthur/personal_projects/FPGA_masterclass/adder_here/adder_here.runs/impl_1/design_1_wrapper.ltx} [get_hw_devices xczu7_0]
 current_hw_device [get_hw_devices xczu7_0]
 refresh_hw_device [lindex [get_hw_devices xczu7_0] 0]
