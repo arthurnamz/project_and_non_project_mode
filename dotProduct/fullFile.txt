@@ -1,0 +1,454 @@
+// File: rtl/parametric_pipelined_dot_product_system.sv
+// Description:
+//   Parametric, fully-pipelined dot-product system with 6 modules:
+//     - InputMemory A (host write pins only + internal read)
+//     - InputMemory B (host write pins only + internal read)
+//     - MemoryReader (streams vector elements)
+//     - DotProductCalculator (VEC_LEN-stage pipeline)
+//     - MemoryWriter (writes one result per vector)
+//     - OutputMemory (internal write + host read pins only)
+//   Top-level: DotProductSystem (wires everything together and exposes only the
+//   pins indicated in the block diagram).
+//
+// Parameters:
+//   DATA_W     : bit width of each vector element (default 8)
+//   VEC_LEN    : number of elements per vector
+//   NUM_VECS   : number of vectors in each input memory (and number of results)
+//
+// External host pins (top-level):
+//   clk, rstn, startProcessing
+//   InputMemory A host write: addr_in_a, data_in_a, wr_en_a
+//   InputMemory B host write: addr_in_b, data_in_b, wr_en_b
+//   OutputMemory host read:   addr_out, rd_en, data_out
+//
+// Notes:
+//   - The dot-product result width is SUM_W = 2*DATA_W + $clog2(VEC_LEN).
+//   - Input memories expose only host write pins externally; the reader drives
+//     their internal read ports.
+//   - Output memory exposes only host read pins externally; the writer uses its
+//     internal write port.
+//   - Asynchronous read is used for simplicity; swap to sync-read BRAMs if needed.
+
+// -----------------------------------------------------------------------------
+// Utility function for safe clog2 on small ranges
+function automatic int _clog2;
+  input int value;
+  int v;
+  begin
+    v = (value <= 1) ? 1 : value;
+    _clog2 = $clog2(v);
+  end
+endfunction
+
+// -----------------------------------------------------------------------------
+// 1) INPUT MEMORY (dual-port: host-write + internal read)
+module InputMemory #(
+  parameter int DATA_W = 8,
+  parameter int DEPTH  = 256,
+  parameter int ADDR_W = _clog2(DEPTH)
+)(
+  input  logic                 clk,
+  input  logic                 rstn,
+  // Host-write pins (per spec)
+  input  logic [ADDR_W-1:0]    addr_in,
+  input  logic [DATA_W-1:0]    data_in,
+  input  logic                 wr_en,
+  // Internal read port (used by MemoryReader)
+  input  logic [ADDR_W-1:0]    rd_addr,
+  output logic [DATA_W-1:0]    rd_data
+);
+  // Why: simple reg array eases simulation/portability; swap for vendor RAM IP as needed.
+  logic [DATA_W-1:0] mem [0:DEPTH-1];
+
+  always_ff @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      // no reset init required
+    end else if (wr_en) begin
+      mem[addr_in] <= data_in;
+    end
+  end
+
+  // Asynchronous read for simplicity
+  always_comb begin
+    rd_data = mem[rd_addr];
+  end
+endmodule
+
+// -----------------------------------------------------------------------------
+// 2) MEMORY READER: stream vector elements from both input memories
+module MemoryReader #(
+  parameter int DATA_W   = 8,
+  parameter int VEC_LEN  = 16,
+  parameter int NUM_VECS = 8,
+  parameter int DEPTH    = VEC_LEN*NUM_VECS,
+  parameter int ADDR_W   = _clog2(DEPTH),
+  parameter int VID_W    = _clog2(NUM_VECS)
+)(
+  input  logic                 clk,
+  input  logic                 rstn,
+  input  logic                 startProcessing,
+  // Read addresses driven to the two input memories
+  output logic [ADDR_W-1:0]    rd_addr_a,
+  input  logic [DATA_W-1:0]    rd_data_a,
+  output logic [ADDR_W-1:0]    rd_addr_b,
+  input  logic [DATA_W-1:0]    rd_data_b,
+  // Stream out
+  output logic                 valid,
+  output logic                 start_vec,
+  output logic                 end_vec,
+  output logic [VID_W-1:0]     vec_id,
+  output logic [DATA_W-1:0]    a_out,
+  output logic [DATA_W-1:0]    b_out,
+  output logic                 done
+);
+  typedef enum logic [1:0] {IDLE, RUN, FINISH} state_t;
+  state_t state, state_n;
+
+  logic [VID_W-1:0]  vec_q, vec_n;
+  logic [_clog2(VEC_LEN)-1:0] elem_q, elem_n; // element index
+
+  // Address = vec*VEC_LEN + elem
+  logic [ADDR_W-1:0] base_addr;
+  assign base_addr = vec_q * VEC_LEN;
+
+  always_comb begin
+    state_n = state;
+    vec_n   = vec_q;
+    elem_n  = elem_q;
+
+    case (state)
+      IDLE: begin
+        if (startProcessing) begin
+          state_n = RUN;
+          vec_n   = '0;
+          elem_n  = '0;
+        end
+      end
+      RUN: begin
+        if (elem_q == VEC_LEN-1) begin
+          if (vec_q == NUM_VECS-1) begin
+            state_n = FINISH;
+          end else begin
+            vec_n  = vec_q + 1;
+            elem_n = '0;
+          end
+        end else begin
+          elem_n = elem_q + 1;
+        end
+      end
+      FINISH: begin
+        state_n = IDLE;
+      end
+      default: state_n = IDLE;
+    endcase
+  end
+
+  always_ff @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      state <= IDLE;
+      vec_q <= '0;
+      elem_q<= '0;
+    end else begin
+      state <= state_n;
+      vec_q <= vec_n;
+      elem_q<= elem_n;
+    end
+  end
+
+  // Drive addresses continuously during RUN
+  assign rd_addr_a = base_addr + elem_q;
+  assign rd_addr_b = base_addr + elem_q;
+
+  // Stream interface
+  assign valid     = (state == RUN);
+  assign start_vec = (state == RUN) && (elem_q == 0);
+  assign end_vec   = (state == RUN) && (elem_q == VEC_LEN-1);
+  assign vec_id    = vec_q;
+
+  // Directly forward data (asynchronous read in InputMemory)
+  assign a_out     = rd_data_a;
+  assign b_out     = rd_data_b;
+
+  assign done      = (state == FINISH);
+endmodule
+
+// -----------------------------------------------------------------------------
+// 3) DOT PRODUCT: fully pipelined (VEC_LEN stages)
+module DotProductCalculator #(
+  parameter int DATA_W   = 8,
+  parameter int VEC_LEN  = 16,
+  parameter int NUM_VECS = 8,
+  parameter int SUM_W    = 2*DATA_W + _clog2(VEC_LEN),
+  parameter int VID_W    = _clog2(NUM_VECS)
+)(
+  input  logic                 clk,
+  input  logic                 rstn,
+  input  logic                 valid_in,
+  input  logic                 start_vec_in, // unused for math; carried for alignment if needed
+  input  logic                 end_vec_in,
+  input  logic [VID_W-1:0]     vec_id_in,
+  input  logic [DATA_W-1:0]    a_in,
+  input  logic [DATA_W-1:0]    b_in,
+  output logic                 result_valid,
+  output logic [VID_W-1:0]     vec_id_out,
+  output logic [SUM_W-1:0]     result
+);
+  // Pipeline registers
+  logic [DATA_W-1:0] a_pipe   [0:VEC_LEN-1];
+  logic [DATA_W-1:0] b_pipe   [0:VEC_LEN-1];
+  logic              v_pipe   [0:VEC_LEN-1];
+  logic              e_pipe   [0:VEC_LEN-1];
+  logic [SUM_W-1:0]  s_pipe   [0:VEC_LEN-1];
+  logic [VID_W-1:0]  id_pipe  [0:VEC_LEN-1];
+
+  // Stage 0
+  always_ff @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      a_pipe[0] <= '0; b_pipe[0] <= '0; v_pipe[0] <= 1'b0; e_pipe[0] <= 1'b0; s_pipe[0] <= '0; id_pipe[0] <= '0;
+    end else begin
+      v_pipe[0] <= valid_in;
+      e_pipe[0] <= end_vec_in;
+      a_pipe[0] <= a_in;
+      b_pipe[0] <= b_in;
+      id_pipe[0]<= vec_id_in;
+      if (valid_in) begin
+        // Why: start a fresh partial-sum on every element stream; vector boundary is tracked via e_pipe chain.
+        s_pipe[0] <= {{(SUM_W-2*DATA_W){1'b0}}, (a_in*b_in)}; // widen product
+      end
+    end
+  end
+
+  // Stages 1..VEC_LEN-1
+  genvar i;
+  generate
+    for (i = 1; i < VEC_LEN; i++) begin : GEN_PIPE
+      always_ff @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+          a_pipe[i] <= '0; b_pipe[i] <= '0; v_pipe[i] <= 1'b0; e_pipe[i] <= 1'b0; s_pipe[i] <= '0; id_pipe[i] <= '0;
+        end else begin
+          v_pipe[i] <= v_pipe[i-1];
+          e_pipe[i] <= e_pipe[i-1];
+          a_pipe[i] <= a_pipe[i-1];
+          b_pipe[i] <= b_pipe[i-1];
+          id_pipe[i]<= id_pipe[i-1];
+          if (v_pipe[i-1]) begin
+            s_pipe[i] <= s_pipe[i-1] + {{(SUM_W-2*DATA_W){1'b0}}, (a_pipe[i-1]*b_pipe[i-1])};
+          end
+        end
+      end
+    end
+  endgenerate
+
+  assign result       = s_pipe[VEC_LEN-1];
+  assign vec_id_out   = id_pipe[VEC_LEN-1];
+  assign result_valid = v_pipe[VEC_LEN-1] & e_pipe[VEC_LEN-1]; // Why: assert only on last element of a vector
+endmodule
+
+// -----------------------------------------------------------------------------
+// 4) MEMORY WRITER: write one result per vector to OutputMemory
+module MemoryWriter #(
+  parameter int SUM_W    = 24,
+  parameter int NUM_VECS = 8,
+  parameter int AW_OUT   = _clog2(NUM_VECS),
+  parameter int VID_W    = _clog2(NUM_VECS)
+)(
+  input  logic                 clk,
+  input  logic                 rstn,
+  input  logic                 startProcessing, // kept for spec alignment
+  input  logic                 result_valid,
+  input  logic [SUM_W-1:0]     result_data,
+  input  logic [VID_W-1:0]     vec_id_in,
+  // Internal write port to OutputMemory
+  output logic                 wr_en,
+  output logic [AW_OUT-1:0]    wr_addr,
+  output logic [SUM_W-1:0]     wr_data
+);
+  always_ff @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      wr_en   <= 1'b0;
+      wr_addr <= '0;
+      wr_data <= '0;
+    end else begin
+      wr_en   <= result_valid; // Why: one result per vector
+      wr_addr <= vec_id_in;
+      wr_data <= result_data;
+    end
+  end
+endmodule
+
+// -----------------------------------------------------------------------------
+// 5) OUTPUT MEMORY (dual-port: internal writer + host read)
+module OutputMemory #(
+  parameter int DATA_W  = 24,
+  parameter int DEPTH   = 8,
+  parameter int ADDR_W  = _clog2(DEPTH)
+)(
+  input  logic                 clk,
+  input  logic                 rstn,
+  // Host-read pins (per spec)
+  input  logic [ADDR_W-1:0]    addr_out,
+  input  logic                 rd_en,
+  output logic [DATA_W-1:0]    data_out,
+  // Internal write port
+  input  logic                 wr_en,
+  input  logic [ADDR_W-1:0]    wr_addr,
+  input  logic [DATA_W-1:0]    wr_data
+);
+  logic [DATA_W-1:0] mem [0:DEPTH-1];
+
+  always_ff @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      // no reset init required
+    end else if (wr_en) begin
+      mem[wr_addr] <= wr_data;
+    end
+  end
+
+  // Host read (gated by rd_en to mimic spec)
+  always_comb begin
+    data_out = rd_en ? mem[addr_out] : '0;
+  end
+endmodule
+
+// -----------------------------------------------------------------------------
+// 6) TOP-LEVEL: wires the 6 modules
+module DotProductSystem #(
+  parameter int DATA_W     = 8,
+  parameter int VEC_LEN    = 16,
+  parameter int NUM_VECS   = 8,
+  // Derived params
+  parameter int IN_DEPTH   = VEC_LEN*NUM_VECS,
+  parameter int AW_IN      = _clog2(IN_DEPTH),
+  parameter int SUM_W      = 2*DATA_W + _clog2(VEC_LEN),
+  parameter int OUT_DEPTH  = NUM_VECS,
+  parameter int AW_OUT     = _clog2(OUT_DEPTH)
+)(
+  input  logic                 clk,
+  input  logic                 rstn,
+  input  logic                 startProcessing,
+  // Input Memory A (host write pins)
+  input  logic [AW_IN-1:0]     addr_in_a,
+  input  logic [DATA_W-1:0]    data_in_a,
+  input  logic                 wr_en_a,
+  // Input Memory B (host write pins)
+  input  logic [AW_IN-1:0]     addr_in_b,
+  input  logic [DATA_W-1:0]    data_in_b,
+  input  logic                 wr_en_b,
+  // Output Memory (host read pins)
+  input  logic [AW_OUT-1:0]    addr_out,
+  input  logic                 rd_en,
+  output logic [SUM_W-1:0]     data_out
+);
+  // -------------------- Input memories
+  logic [AW_IN-1:0]  rd_addr_a, rd_addr_b;
+  logic [DATA_W-1:0] rd_data_a, rd_data_b;
+
+  InputMemory #(.DATA_W(DATA_W), .DEPTH(IN_DEPTH), .ADDR_W(AW_IN)) u_mem_a (
+    .clk     (clk),
+    .rstn    (rstn),
+    .addr_in (addr_in_a),
+    .data_in (data_in_a),
+    .wr_en   (wr_en_a),
+    .rd_addr (rd_addr_a),
+    .rd_data (rd_data_a)
+  );
+
+  InputMemory #(.DATA_W(DATA_W), .DEPTH(IN_DEPTH), .ADDR_W(AW_IN)) u_mem_b (
+    .clk     (clk),
+    .rstn    (rstn),
+    .addr_in (addr_in_b),
+    .data_in (data_in_b),
+    .wr_en   (wr_en_b),
+    .rd_addr (rd_addr_b),
+    .rd_data (rd_data_b)
+  );
+
+  // -------------------- Reader
+  logic                 str_valid, str_s, str_e;
+  logic [_clog2(NUM_VECS)-1:0] str_vid;
+  logic [DATA_W-1:0]    str_a, str_b;
+
+  MemoryReader #(
+    .DATA_W  (DATA_W),
+    .VEC_LEN (VEC_LEN),
+    .NUM_VECS(NUM_VECS),
+    .DEPTH   (IN_DEPTH),
+    .ADDR_W  (AW_IN)
+  ) u_reader (
+    .clk            (clk),
+    .rstn           (rstn),
+    .startProcessing(startProcessing),
+    .rd_addr_a      (rd_addr_a),
+    .rd_data_a      (rd_data_a),
+    .rd_addr_b      (rd_addr_b),
+    .rd_data_b      (rd_data_b),
+    .valid          (str_valid),
+    .start_vec      (str_s),
+    .end_vec        (str_e),
+    .vec_id         (str_vid),
+    .a_out          (str_a),
+    .b_out          (str_b),
+    .done           ()
+  );
+
+  // -------------------- Pipelined dot-product
+  logic                 res_valid;
+  logic [_clog2(NUM_VECS)-1:0] res_vid;
+  logic [SUM_W-1:0]     res_data;
+
+  DotProductCalculator #(
+    .DATA_W  (DATA_W),
+    .VEC_LEN (VEC_LEN),
+    .NUM_VECS(NUM_VECS),
+    .SUM_W   (SUM_W)
+  ) u_dot (
+    .clk           (clk),
+    .rstn          (rstn),
+    .valid_in      (str_valid),
+    .start_vec_in  (str_s),
+    .end_vec_in    (str_e),
+    .vec_id_in     (str_vid),
+    .a_in          (str_a),
+    .b_in          (str_b),
+    .result_valid  (res_valid),
+    .vec_id_out    (res_vid),
+    .result        (res_data)
+  );
+
+  // -------------------- Writer → Output memory
+  logic                wr_en;
+  logic [AW_OUT-1:0]   wr_addr;
+  logic [SUM_W-1:0]    wr_data;
+
+  MemoryWriter #(
+    .SUM_W   (SUM_W),
+    .NUM_VECS(NUM_VECS),
+    .AW_OUT  (AW_OUT)
+  ) u_writer (
+    .clk            (clk),
+    .rstn           (rstn),
+    .startProcessing(startProcessing),
+    .result_valid   (res_valid),
+    .result_data    (res_data),
+    .vec_id_in      (res_vid),
+    .wr_en          (wr_en),
+    .wr_addr        (wr_addr),
+    .wr_data        (wr_data)
+  );
+
+  OutputMemory #(
+    .DATA_W (SUM_W),
+    .DEPTH  (OUT_DEPTH),
+    .ADDR_W (AW_OUT)
+  ) u_outmem (
+    .clk     (clk),
+    .rstn    (rstn),
+    .addr_out(addr_out),
+    .rd_en   (rd_en),
+    .data_out(data_out),
+    .wr_en   (wr_en),
+    .wr_addr (wr_addr),
+    .wr_data (wr_data)
+  );
+
+endmodule
