@@ -1,0 +1,80 @@
+`timescale 1ns / 1ps
+
+module input_memory_wrapper #(
+    parameter DATA_WIDTH = 8,
+    parameter VECTOR_WIDTH = 4,
+    parameter DEPTH = VECTOR_WIDTH * DATA_WIDTH,
+    parameter ADDR_WIDTH = 5
+)(
+    input clk,
+    input rst_n,
+    
+    input write_en,
+    input [ADDR_WIDTH-1:0] write_addr,
+    input [DATA_WIDTH-1:0] data_a,
+    input [DATA_WIDTH-1:0] data_b,
+    
+    input start_reading,
+    output wire reading_done,
+    output wire [DATA_WIDTH-1:0] mem1_output,
+    output wire [DATA_WIDTH-1:0] mem2_output,
+    output wire data_valid,
+    output wire [2:0] element_count
+);
+
+    wire rd_en_mem1;
+    wire rd_en_mem2;
+    wire [ADDR_WIDTH-1:0] rd_addr_mem1;
+    wire [ADDR_WIDTH-1:0] rd_addr_mem2;
+
+    mem1 #(
+        .DATA_WIDTH(DATA_WIDTH),
+        .ADDR_WIDTH(ADDR_WIDTH),
+        .MEM_SIZE(DEPTH)
+    ) mem1_write_inst (
+        .clk(clk),
+        .rst_n(rst_n),
+        .write_en(write_en),
+        .write_address(write_addr),
+        .data_in(data_a),
+        .read_en(rd_en_mem1),
+        .read_address(rd_addr_mem1),
+        .data_out(mem1_output)
+    );
+
+    mem2 #(
+        .DATA_WIDTH(DATA_WIDTH),
+        .ADDR_WIDTH(ADDR_WIDTH),
+        .MEM_SIZE(DEPTH)
+    ) mem2_write_inst (
+        .clk(clk),
+        .rst_n(rst_n),
+        .write_en(write_en),
+        .write_address(write_addr),
+        .data_in(data_b),
+        .read_en(rd_en_mem2),
+        .read_address(rd_addr_mem2),
+        .data_out(mem2_output)
+    );
+
+    mem_reader #(
+        .DATA_WIDTH(DATA_WIDTH),
+        .VECTOR_WIDTH(VECTOR_WIDTH),
+        .DEPTH(DEPTH),
+        .ADDR_WIDTH(ADDR_WIDTH)
+    ) mem_reader_inst (
+        .clk(clk),
+        .rst_n(rst_n),
+        .start_reading(start_reading),
+        .reading_done(reading_done),
+        .rd_en_mem1(rd_en_mem1),
+        .rd_en_mem2(rd_en_mem2),
+        .rd_addr_mem1(rd_addr_mem1),
+        .rd_addr_mem2(rd_addr_mem2),
+        .mem1_output(mem1_output),
+        .mem2_output(mem2_output),
+        .data_valid(data_valid),
+        .element_count(element_count)
+    );
+
+endmodule

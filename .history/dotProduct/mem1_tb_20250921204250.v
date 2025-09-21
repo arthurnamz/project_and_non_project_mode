@@ -56,10 +56,10 @@ module mem1_tb;
   always @(posedge clk) begin
     if (rst_n && read_en) begin
       if (!same(data_out, model_out)) begin
-        $error("[%0t] failed ra=%0d dut=0x%0h exp=0x%0h",
+        $error("[%0t] MISMATCH ra=%0d dut=0x%0h exp=0x%0h",
                $time, read_address, data_out, model_out);
       end else begin
-        $display("[%0t] passed    ra=%0d dut=0x%0h exp=0x%0h",
+        $display("[%0t] MATCH    ra=%0d dut=0x%0h exp=0x%0h",
                  $time, read_address, data_out, model_out);
       end
     end

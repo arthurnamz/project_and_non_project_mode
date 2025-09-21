@@ -1,0 +1,42 @@
+
+# Global variable
+set proj_name "project1"
+set proj_dir "./project1"
+set part_name "xc7s50csga324-1"
+set top_module "timing_example"
+set sim_top_module "mem1_tb"
+set sim_top_module "mem2_tb"
+set sim_top_module "mem3_tb"
+
+# Create project
+create_project $proj_name $proj_dir -part $part_name -force
+
+# Add design sources
+add_files -fileset sources_1 ./timing_example.v
+
+# Set top-level file
+set_property top $top_module [get_filesets sources_1]
+
+# Add simulation files
+add_files -fileset sim_1 ./tb.v
+
+# Set testbench top-level
+set_property top $sim_top_module [get_filesets sim_1]
+
+# Add constraint files
+add_files -fileset constrs_1 ./timingconstraints.xdc
+
+# Run simulation from one module to another
+launch_simulation -simset sim_1 -mode behavioral
+
+# Run synthesis
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+
+# Run Implementation
+launch_runs impl_1 to_step route_design
+wait_on_run impl_1
+
+# Programming the board
+# open_hw_manager
+# connect_hw_server -allow_non_jtag

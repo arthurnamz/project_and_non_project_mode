@@ -1,7 +1,8 @@
 
+
 `timescale 1ns/1ps
 
-module mem1 #(
+module mem2 #(
     parameter DATA_WIDTH = 8,
     parameter ADDR_WIDTH = 4,
     parameter MEM_SIZE = 64

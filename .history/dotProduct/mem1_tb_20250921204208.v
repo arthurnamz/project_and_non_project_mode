@@ -18,11 +18,11 @@ module mem1_tb;
   wire [DATA_WIDTH-1:0]   data_out;
 
   // DUT
-  mem1 #(
+  mem2 #(
     .DATA_WIDTH  (DATA_WIDTH),
     .MEM_SIZE    (MEM_SIZE),
     .ADDR_WIDTH  (ADDR_WIDTH)
-  ) u_mem1 (
+  ) u_mem2 (
     .clk      (clk),
     .rst_n    (rst_n),
     .write_en    (write_en),
@@ -56,10 +56,10 @@ module mem1_tb;
   always @(posedge clk) begin
     if (rst_n && read_en) begin
       if (!same(data_out, model_out)) begin
-        $error("[%0t] failed ra=%0d dut=0x%0h exp=0x%0h",
+        $error("[%0t] MISMATCH ra=%0d dut=0x%0h exp=0x%0h",
                $time, read_address, data_out, model_out);
       end else begin
-        $display("[%0t] passed    ra=%0d dut=0x%0h exp=0x%0h",
+        $display("[%0t] MATCH    ra=%0d dut=0x%0h exp=0x%0h",
                  $time, read_address, data_out, model_out);
       end
     end
