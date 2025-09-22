@@ -1,3 +1,4 @@
+
 `timescale 1ns/1ps
 
 module mem2 #(
@@ -22,14 +23,20 @@ reg [DATA_WIDTH-1:0] mem[0:MEM_SIZE-1];
 
 always@(posedge clk)
 begin
- if(rst_n)
-  mem[write_address]<= 8'bz;
- else
-   begin
-    if(write_en)
+ if(!rst_n)
+  mem[write_address]<= 8'b0;
+ else if(write_en) begin
      mem[write_address]<= data_in;
-    if(read_en)
-     data_out<=mem[read_address];
    end
 end
+
+always@(posedge clk)
+begin
+ if(!rst_n)
+  data_out <= 8'b0;
+ else if(read_en) begin
+     data_out <= mem[read_address];
+   end  
+end
+
 endmodule

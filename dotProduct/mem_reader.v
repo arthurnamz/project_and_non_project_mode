@@ -53,7 +53,7 @@ module mem_reader #(
         .data_out(mem2_output)
     );
 
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk ) begin
         if (!rst_n) begin
             rd_en_mem1 <= 1'b0;
             rd_en_mem2 <= 1'b0;
