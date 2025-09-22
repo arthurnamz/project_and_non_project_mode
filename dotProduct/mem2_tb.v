@@ -1,4 +1,3 @@
-
 `timescale 1ns/1ps
 
 module mem2_tb;
@@ -40,8 +39,8 @@ module mem2_tb;
 
   always @(posedge clk) begin
     if (!rst_n) begin
-      model_mem[0] <= 8'bz; 
-      model_out    <= 8'bz;
+      model_mem[write_address] <= {DATA_WIDTH{1'b0}};
+      model_out <= {DATA_WIDTH{1'b0}};
     end else begin
       if (write_en) model_mem[write_address] <= data_in;
       if (read_en) model_out <= model_mem[read_address];
@@ -56,11 +55,11 @@ module mem2_tb;
   always @(posedge clk) begin
     if (rst_n && read_en) begin
       if (!same(data_out, model_out)) begin
-        $error("[%0t] mem2 Failed ra=%0d dut=0x%0h exp=0x%0h",
+          $error("[%0t] mem2 failed ra=%0d dut=0x%0h exp=0x%0h",
                $time, read_address, data_out, model_out);
       end else begin
         $display("[%0t] mem2 passed    ra=%0d dut=0x%0h exp=0x%0h",
-                 $time, read_address, data_out, model_out);
+                 $time, read_address, data_out, model_out); 
       end
     end
   end

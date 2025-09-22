@@ -1,4 +1,3 @@
-
 `timescale 1ns/1ps
 
 module mem1_tb;
@@ -40,8 +39,8 @@ module mem1_tb;
 
   always @(posedge clk) begin
     if (!rst_n) begin
-      model_mem[0] <= 8'bz; 
-      model_out    <= 8'bz;
+      model_mem[write_address] <= {DATA_WIDTH{1'b0}};
+      model_out <= {DATA_WIDTH{1'b0}};
     end else begin
       if (write_en) model_mem[write_address] <= data_in;
       if (read_en) model_out <= model_mem[read_address];
@@ -56,10 +55,10 @@ module mem1_tb;
   always @(posedge clk) begin
     if (rst_n && read_en) begin
       if (!same(data_out, model_out)) begin
-        $error("[%0t] mem1failed ra=%0d dut=0x%0h exp=0x%0h",
+        $error("[%0t] mem1 failed ra=%0d dut=0x%0h exp=0x%0h",
                $time, read_address, data_out, model_out);
       end else begin
-        $display("[%0t] mem1 passed    ra=%0d dut=0x%0h exp=0x%0h",
+        $display("[%0t] mem1 passed ra=%0d dut=0x%0h exp=0x%0h",
                  $time, read_address, data_out, model_out);
       end
     end
@@ -93,7 +92,7 @@ module mem1_tb;
 
   initial begin
     $monitor($time,
-      " rst_n=%b write_en=%b read_en=%b write_address=%0d read_address=%0d data_in=%0d data_out=%0d exp=%0d",
+      " rst_n=%b write_en=%b read_en=%b write_address=%0d read_address=%0d data_in=0x%0h data_out=0x%0h exp=0x%0h",
       rst_n, write_en, read_en, write_address, read_address, data_in, data_out, model_out);
   end
 endmodule

@@ -73,7 +73,6 @@ module mem_writer_tb;
     #10 result_valid = 0;
     #10 processing_done = 1;
     #10 processing_done = 0;
-    wait(writer_done);
     #10;
 
     dot_product_result = 18'd60;
@@ -81,7 +80,6 @@ module mem_writer_tb;
     #10 result_valid = 0;
     #10 processing_done = 1;
     #10 processing_done = 0;
-    wait(writer_done);
     #10;
 
     dot_product_result = 18'd3;
@@ -89,7 +87,6 @@ module mem_writer_tb;
     #10 result_valid = 0;
     #10 processing_done = 1;
     #10 processing_done = 0;
-    wait(writer_done);
     #10;
 
     dot_product_result = 18'd255;
@@ -97,7 +94,6 @@ module mem_writer_tb;
     #10 result_valid = 0;
     #10 processing_done = 1;
     #10 processing_done = 0;
-    wait(writer_done);
     #10;
 
     dot_product_result = 18'd1020;
@@ -105,7 +101,6 @@ module mem_writer_tb;
     #10 result_valid = 0;
     #10 processing_done = 1;
     #10 processing_done = 0;
-    wait(writer_done);
     #10;
 
     dot_product_result = 18'd65535;
@@ -113,7 +108,6 @@ module mem_writer_tb;
     #10 result_valid = 0;
     #10 processing_done = 1;
     #10 processing_done = 0;
-    wait(writer_done);
     #10;
 
     #100 $finish;

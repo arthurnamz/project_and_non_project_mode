@@ -17,11 +17,20 @@ module mem_reader #(
     output wire [DATA_WIDTH-1:0] mem1_output,
     output wire [DATA_WIDTH-1:0] mem2_output,
     output reg data_valid,
-    output reg [2:0] element_count
+    output reg [2:0] element_count,
+    output reg [ADDR_WIDTH-1:0] check_addr_mem1,
+    output reg [ADDR_WIDTH-1:0] check_addr_mem2,
+    output reg check_en_mem1,
+    output reg check_en_mem2
 );
 
     reg [ADDR_WIDTH-1:0] read_counter;
     reg reading_state;
+    reg [ADDR_WIDTH-1:0] rd_addr_mem1_q;
+    reg [ADDR_WIDTH-1:0] rd_addr_mem2_q;
+    reg data_valid_q;
+    reg rd_en_mem1_q;
+    reg rd_en_mem2_q;
     
     mem1 #(
         .DATA_WIDTH(DATA_WIDTH),
@@ -53,7 +62,7 @@ module mem_reader #(
         .data_out(mem2_output)
     );
 
-    always @(posedge clk ) begin
+    always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             rd_en_mem1 <= 1'b0;
             rd_en_mem2 <= 1'b0;
@@ -64,6 +73,15 @@ module mem_reader #(
             data_valid <= 1'b0;
             element_count <= 3'b0;
             reading_state <= 1'b0;
+            rd_addr_mem1_q <= {ADDR_WIDTH{1'b0}};
+            rd_addr_mem2_q <= {ADDR_WIDTH{1'b0}};
+            data_valid_q <= 1'b0;
+            rd_en_mem1_q <= 1'b0;
+            rd_en_mem2_q <= 1'b0;
+            check_addr_mem1 <= {ADDR_WIDTH{1'b0}};
+            check_addr_mem2 <= {ADDR_WIDTH{1'b0}};
+            check_en_mem1 <= 1'b0;
+            check_en_mem2 <= 1'b0;
         end else begin
             reading_done <= 1'b0;
             
@@ -75,9 +93,19 @@ module mem_reader #(
                 rd_en_mem2 <= 1'b1;
                 rd_addr_mem1 <= {ADDR_WIDTH{1'b0}};
                 rd_addr_mem2 <= {ADDR_WIDTH{1'b0}};
-                data_valid <= 1'b1;
+                data_valid <= 1'b0;
+                check_en_mem1 <= 1'b0;
+                check_en_mem2 <= 1'b0;
             end else if (reading_state) begin
                 if (read_counter < DEPTH - 1) begin
+                    // Update check signals one cycle after read
+                    check_addr_mem1 <= rd_addr_mem1;
+                    check_addr_mem2 <= rd_addr_mem2;
+                    check_en_mem1 <= rd_en_mem1;
+                    check_en_mem2 <= rd_en_mem2;
+                    data_valid <= rd_en_mem1;
+                    
+                    // Update read addresses for next cycle
                     read_counter <= read_counter + 1'b1;
                     rd_addr_mem1 <= read_counter + 1'b1;
                     rd_addr_mem2 <= read_counter + 1'b1;
@@ -87,18 +115,24 @@ module mem_reader #(
                     end else begin
                         element_count <= 3'b0;
                     end
-                    
-                    data_valid <= 1'b1;
                 end else begin
                     reading_state <= 1'b0;
                     rd_en_mem1 <= 1'b0;
                     rd_en_mem2 <= 1'b0;
-                    data_valid <= 1'b0;
+                    data_valid <= rd_en_mem1;
+                    check_addr_mem1 <= rd_addr_mem1;
+                    check_addr_mem2 <= rd_addr_mem2;
+                    check_en_mem1 <= rd_en_mem1;
+                    check_en_mem2 <= rd_en_mem2;
                     reading_done <= 1'b1;
                     element_count <= 3'b0;
                 end
             end else begin
                 data_valid <= 1'b0;
+                rd_en_mem1 <= 1'b0;
+                rd_en_mem2 <= 1'b0;
+                check_en_mem1 <= 1'b0;
+                check_en_mem2 <= 1'b0;
             end
         end
     end
