@@ -1,0 +1,117 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Sep 29 07:47:48 2025
+# Process ID         : 377808
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/sim/top_module
+# Command line       : xsim -mode tcl -source {xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/sim/top_module/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/sim/top_module/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1325.169 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 6320 MB
+#-----------------------------------------------------------
+source xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl
+# xsim {work.top_level_wrapper_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+                   0 rst_n=0 start_processing=0 write_en1=0 write_address1=0 data_in1=0 write_en2=0 write_address2=0 data_in2=0 read_en3=0 read_address3=0 data_out3=x
+                  20 rst_n=1 start_processing=0 write_en1=0 write_address1=0 data_in1=0 write_en2=0 write_address2=0 data_in2=0 read_en3=0 read_address3=0 data_out3=x
+                  25 rst_n=1 start_processing=0 write_en1=1 write_address1=0 data_in1=4 write_en2=0 write_address2=0 data_in2=0 read_en3=0 read_address3=0 data_out3=x
+                  35 rst_n=1 start_processing=0 write_en1=0 write_address1=0 data_in1=4 write_en2=0 write_address2=0 data_in2=0 read_en3=0 read_address3=0 data_out3=x
+                  45 rst_n=1 start_processing=0 write_en1=0 write_address1=0 data_in1=4 write_en2=1 write_address2=0 data_in2=4 read_en3=0 read_address3=0 data_out3=x
+                  55 rst_n=1 start_processing=0 write_en1=0 write_address1=0 data_in1=4 write_en2=0 write_address2=0 data_in2=4 read_en3=0 read_address3=0 data_out3=x
+                  65 rst_n=1 start_processing=0 write_en1=1 write_address1=1 data_in1=5 write_en2=0 write_address2=0 data_in2=4 read_en3=0 read_address3=0 data_out3=x
+                  75 rst_n=1 start_processing=0 write_en1=0 write_address1=1 data_in1=5 write_en2=0 write_address2=0 data_in2=4 read_en3=0 read_address3=0 data_out3=x
+                  85 rst_n=1 start_processing=0 write_en1=0 write_address1=1 data_in1=5 write_en2=1 write_address2=1 data_in2=5 read_en3=0 read_address3=0 data_out3=x
+                  95 rst_n=1 start_processing=0 write_en1=0 write_address1=1 data_in1=5 write_en2=0 write_address2=1 data_in2=5 read_en3=0 read_address3=0 data_out3=x
+                 105 rst_n=1 start_processing=0 write_en1=1 write_address1=2 data_in1=6 write_en2=0 write_address2=1 data_in2=5 read_en3=0 read_address3=0 data_out3=x
+                 115 rst_n=1 start_processing=0 write_en1=0 write_address1=2 data_in1=6 write_en2=0 write_address2=1 data_in2=5 read_en3=0 read_address3=0 data_out3=x
+                 125 rst_n=1 start_processing=0 write_en1=0 write_address1=2 data_in1=6 write_en2=1 write_address2=2 data_in2=6 read_en3=0 read_address3=0 data_out3=x
+                 135 rst_n=1 start_processing=0 write_en1=0 write_address1=2 data_in1=6 write_en2=0 write_address2=2 data_in2=6 read_en3=0 read_address3=0 data_out3=x
+                 145 rst_n=1 start_processing=0 write_en1=1 write_address1=3 data_in1=7 write_en2=0 write_address2=2 data_in2=6 read_en3=0 read_address3=0 data_out3=x
+                 155 rst_n=1 start_processing=0 write_en1=0 write_address1=3 data_in1=7 write_en2=0 write_address2=2 data_in2=6 read_en3=0 read_address3=0 data_out3=x
+                 165 rst_n=1 start_processing=0 write_en1=0 write_address1=3 data_in1=7 write_en2=1 write_address2=3 data_in2=7 read_en3=0 read_address3=0 data_out3=x
+                 175 rst_n=1 start_processing=0 write_en1=0 write_address1=3 data_in1=7 write_en2=0 write_address2=3 data_in2=7 read_en3=0 read_address3=0 data_out3=x
+                 185 rst_n=1 start_processing=0 write_en1=1 write_address1=4 data_in1=8 write_en2=0 write_address2=3 data_in2=7 read_en3=0 read_address3=0 data_out3=x
+                 195 rst_n=1 start_processing=0 write_en1=0 write_address1=4 data_in1=8 write_en2=0 write_address2=3 data_in2=7 read_en3=0 read_address3=0 data_out3=x
+                 205 rst_n=1 start_processing=0 write_en1=0 write_address1=4 data_in1=8 write_en2=1 write_address2=4 data_in2=8 read_en3=0 read_address3=0 data_out3=x
+                 215 rst_n=1 start_processing=0 write_en1=0 write_address1=4 data_in1=8 write_en2=0 write_address2=4 data_in2=8 read_en3=0 read_address3=0 data_out3=x
+                 225 rst_n=1 start_processing=0 write_en1=1 write_address1=5 data_in1=9 write_en2=0 write_address2=4 data_in2=8 read_en3=0 read_address3=0 data_out3=x
+                 235 rst_n=1 start_processing=0 write_en1=0 write_address1=5 data_in1=9 write_en2=0 write_address2=4 data_in2=8 read_en3=0 read_address3=0 data_out3=x
+                 245 rst_n=1 start_processing=0 write_en1=0 write_address1=5 data_in1=9 write_en2=1 write_address2=5 data_in2=9 read_en3=0 read_address3=0 data_out3=x
+                 255 rst_n=1 start_processing=0 write_en1=0 write_address1=5 data_in1=9 write_en2=0 write_address2=5 data_in2=9 read_en3=0 read_address3=0 data_out3=x
+                 265 rst_n=1 start_processing=0 write_en1=1 write_address1=6 data_in1=10 write_en2=0 write_address2=5 data_in2=9 read_en3=0 read_address3=0 data_out3=x
+                 275 rst_n=1 start_processing=0 write_en1=0 write_address1=6 data_in1=10 write_en2=0 write_address2=5 data_in2=9 read_en3=0 read_address3=0 data_out3=x
+                 285 rst_n=1 start_processing=0 write_en1=0 write_address1=6 data_in1=10 write_en2=1 write_address2=6 data_in2=10 read_en3=0 read_address3=0 data_out3=x
+                 295 rst_n=1 start_processing=0 write_en1=0 write_address1=6 data_in1=10 write_en2=0 write_address2=6 data_in2=10 read_en3=0 read_address3=0 data_out3=x
+                 305 rst_n=1 start_processing=0 write_en1=1 write_address1=7 data_in1=11 write_en2=0 write_address2=6 data_in2=10 read_en3=0 read_address3=0 data_out3=x
+                 315 rst_n=1 start_processing=0 write_en1=0 write_address1=7 data_in1=11 write_en2=0 write_address2=6 data_in2=10 read_en3=0 read_address3=0 data_out3=x
+                 325 rst_n=1 start_processing=0 write_en1=0 write_address1=7 data_in1=11 write_en2=1 write_address2=7 data_in2=11 read_en3=0 read_address3=0 data_out3=x
+                 335 rst_n=1 start_processing=0 write_en1=0 write_address1=7 data_in1=11 write_en2=0 write_address2=7 data_in2=11 read_en3=0 read_address3=0 data_out3=x
+                 345 rst_n=1 start_processing=0 write_en1=1 write_address1=8 data_in1=12 write_en2=0 write_address2=7 data_in2=11 read_en3=0 read_address3=0 data_out3=x
+                 355 rst_n=1 start_processing=0 write_en1=0 write_address1=8 data_in1=12 write_en2=0 write_address2=7 data_in2=11 read_en3=0 read_address3=0 data_out3=x
+                 365 rst_n=1 start_processing=0 write_en1=0 write_address1=8 data_in1=12 write_en2=1 write_address2=8 data_in2=12 read_en3=0 read_address3=0 data_out3=x
+                 375 rst_n=1 start_processing=0 write_en1=0 write_address1=8 data_in1=12 write_en2=0 write_address2=8 data_in2=12 read_en3=0 read_address3=0 data_out3=x
+                 385 rst_n=1 start_processing=0 write_en1=1 write_address1=9 data_in1=13 write_en2=0 write_address2=8 data_in2=12 read_en3=0 read_address3=0 data_out3=x
+                 395 rst_n=1 start_processing=0 write_en1=0 write_address1=9 data_in1=13 write_en2=0 write_address2=8 data_in2=12 read_en3=0 read_address3=0 data_out3=x
+                 405 rst_n=1 start_processing=0 write_en1=0 write_address1=9 data_in1=13 write_en2=1 write_address2=9 data_in2=13 read_en3=0 read_address3=0 data_out3=x
+                 415 rst_n=1 start_processing=0 write_en1=0 write_address1=9 data_in1=13 write_en2=0 write_address2=9 data_in2=13 read_en3=0 read_address3=0 data_out3=x
+                 425 rst_n=1 start_processing=0 write_en1=1 write_address1=10 data_in1=14 write_en2=0 write_address2=9 data_in2=13 read_en3=0 read_address3=0 data_out3=x
+                 435 rst_n=1 start_processing=0 write_en1=0 write_address1=10 data_in1=14 write_en2=0 write_address2=9 data_in2=13 read_en3=0 read_address3=0 data_out3=x
+                 445 rst_n=1 start_processing=0 write_en1=0 write_address1=10 data_in1=14 write_en2=1 write_address2=10 data_in2=14 read_en3=0 read_address3=0 data_out3=x
+                 455 rst_n=1 start_processing=0 write_en1=0 write_address1=10 data_in1=14 write_en2=0 write_address2=10 data_in2=14 read_en3=0 read_address3=0 data_out3=x
+                 465 rst_n=1 start_processing=0 write_en1=1 write_address1=11 data_in1=15 write_en2=0 write_address2=10 data_in2=14 read_en3=0 read_address3=0 data_out3=x
+                 475 rst_n=1 start_processing=0 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=10 data_in2=14 read_en3=0 read_address3=0 data_out3=x
+                 485 rst_n=1 start_processing=0 write_en1=0 write_address1=11 data_in1=15 write_en2=1 write_address2=11 data_in2=15 read_en3=0 read_address3=0 data_out3=x
+                 495 rst_n=1 start_processing=0 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=0 data_out3=x
+                 515 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=0 data_out3=x
+                 545 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=0 data_out3=x
+Time=555000 PASS
+                 555 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=0 data_out3=x
+                 575 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=1 data_out3=x
+Time=585000 PASS
+                 585 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=1 data_out3=x
+                 605 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=2 data_out3=x
+Time=615000 PASS
+                 615 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=2 data_out3=x
+                 635 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=3 data_out3=x
+Time=645000 PASS
+                 645 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=3 data_out3=x
+                 665 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=4 data_out3=x
+Time=675000 PASS
+                 675 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=4 data_out3=x
+                 695 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=5 data_out3=x
+Time=705000 PASS
+                 705 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=5 data_out3=x
+                 725 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=6 data_out3=x
+Time=735000 PASS
+                 735 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=6 data_out3=x
+                 755 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=7 data_out3=x
+Time=765000 PASS
+                 765 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=7 data_out3=x
+                 785 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=8 data_out3=x
+Time=795000 PASS
+                 795 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=8 data_out3=x
+                 815 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=9 data_out3=x
+Time=825000 PASS
+                 825 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=9 data_out3=x
+                 845 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=10 data_out3=x
+Time=855000 PASS
+                 855 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=10 data_out3=x
+                 875 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=1 read_address3=11 data_out3=x
+Time=885000 PASS
+                 885 rst_n=1 start_processing=1 write_en1=0 write_address1=11 data_in1=15 write_en2=0 write_address2=11 data_in2=15 read_en3=0 read_address3=11 data_out3=x
+$finish called at time : 1005 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/top_level_wrapper_tb.v" Line 154
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Sep 29 07:47:50 2025...

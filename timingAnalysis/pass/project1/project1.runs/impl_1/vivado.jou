@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Tue Sep  9 05:50:49 2025
+# Process ID         : 13072
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/timingAnalysis/pass/project1/project1.runs/impl_1
+# Command line       : vivado -log timing_example.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source timing_example.tcl -notrace
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/timingAnalysis/pass/project1/project1.runs/impl_1/timing_example.vdi
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/timingAnalysis/pass/project1/project1.runs/impl_1/vivado.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1789.473 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 10601 MB
+#-----------------------------------------------------------
+source timing_example.tcl -notrace

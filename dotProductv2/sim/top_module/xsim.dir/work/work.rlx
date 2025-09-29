@@ -1,0 +1,12 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/dotProduct.v,1759123110,verilog,,,,dotProduct,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem1.v,1759117024,verilog,,,,mem1,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem2.v,1759117072,verilog,,,,mem2,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem3.v,1759117219,verilog,,,,mem3,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_reader.v,1759117106,verilog,,,,mem_reader,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_writer.v,1759117193,verilog,,,,mem_writer,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/top_level_wrapper.v,1759116507,verilog,,,,top_level_wrapper,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/top_level_wrapper_tb.v,1759123513,verilog,,,,top_level_wrapper_tb,,,,,,,,

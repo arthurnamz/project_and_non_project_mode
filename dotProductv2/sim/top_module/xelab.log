@@ -1,0 +1,20 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab top_level_wrapper_tb -debug all 
+Multi-threading is on. Using 6 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.mem1
+Compiling module work.mem2
+Compiling module work.mem_reader
+Compiling module work.dotProduct(RESULT_WIDTH=16)
+Compiling module work.mem_writer(DATA_WIDTH=32,ADDR_WI...
+Compiling module work.mem3(DATA_WIDTH=32)
+Compiling module work.top_level_wrapper(RESULT_WIDTH=1...
+Compiling module work.top_level_wrapper_tb
+Built simulation snapshot work.top_level_wrapper_tb
