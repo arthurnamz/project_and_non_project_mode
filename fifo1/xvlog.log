@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/axis_fifo.v" into library work
+INFO: [VRFC 10-311] analyzing module axis_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/axis_fifo_tb.v" into library work
+INFO: [VRFC 10-311] analyzing module axis_fifo_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo_tb.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo_tb1.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo_tb1
