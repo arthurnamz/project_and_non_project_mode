@@ -1,9 +1,0 @@
-0.7
-2020.2
-Nov  8 2024
-22:36:55
-/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/axis_fifo.v,1759718463,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/axis_fifo_tb.v,,axis_fifo,,,,,,,,
-/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/axis_fifo_tb.v,1759551839,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo.v,,axis_fifo_tb,,,,,,,,
-/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo.v,1759718344,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo_tb.v,,fifo,,,,,,,,
-/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo_tb.v,1759718379,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo_tb1.v,,fifo_tb,,,,,,,,
-/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/fifo1/fifo_tb1.v,1759547442,verilog,,,,fifo_tb1,,,,,,,,
