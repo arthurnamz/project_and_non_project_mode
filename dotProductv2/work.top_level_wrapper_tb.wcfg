@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="194.368 ns"></ZoomStartTime>
-      <ZoomEndTime time="639.127 ns"></ZoomEndTime>
+      <ZoomStartTime time="124.342 ns"></ZoomStartTime>
+      <ZoomEndTime time="441.943 ns"></ZoomEndTime>
       <Cursor1Time time="565.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="211"></NameColumnWidth>
-      <ValueColumnWidth column_width="89"></ValueColumnWidth>
+      <ValueColumnWidth column_width="77"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="27" />
    <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem1/clk">
@@ -66,10 +66,12 @@
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_reader/mem1_output">
       <obj_property name="ElementShortName">mem1_output[31:0]</obj_property>
       <obj_property name="ObjectShortName">mem1_output[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_reader/mem2_output">
       <obj_property name="ElementShortName">mem2_output[31:0]</obj_property>
       <obj_property name="ObjectShortName">mem2_output[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="divider14" type="divider">
       <obj_property name="label">dotProduct</obj_property>
@@ -78,14 +80,17 @@
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/mem1_input">
       <obj_property name="ElementShortName">mem1_input[31:0]</obj_property>
       <obj_property name="ObjectShortName">mem1_input[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/mem2_input">
       <obj_property name="ElementShortName">mem2_input[31:0]</obj_property>
       <obj_property name="ObjectShortName">mem2_input[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/dot_product_result">
       <obj_property name="ElementShortName">dot_product_result[15:0]</obj_property>
       <obj_property name="ObjectShortName">dot_product_result[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="divider18" type="divider">
       <obj_property name="label">mem_writer</obj_property>
@@ -94,10 +99,12 @@
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/dot_product_result">
       <obj_property name="ElementShortName">dot_product_result[15:0]</obj_property>
       <obj_property name="ObjectShortName">dot_product_result[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/data_in">
       <obj_property name="ElementShortName">data_in[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="divider21" type="divider">
       <obj_property name="label">mem3</obj_property>
@@ -110,10 +117,12 @@
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/write_address">
       <obj_property name="ElementShortName">write_address[4:0]</obj_property>
       <obj_property name="ObjectShortName">write_address[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/data_in">
       <obj_property name="ElementShortName">data_in[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/read_en">
       <obj_property name="ElementShortName">read_en</obj_property>
@@ -122,9 +131,11 @@
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/read_address">
       <obj_property name="ElementShortName">read_address[4:0]</obj_property>
       <obj_property name="ObjectShortName">read_address[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/data_out">
       <obj_property name="ElementShortName">data_out[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

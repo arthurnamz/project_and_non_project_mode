@@ -24,6 +24,12 @@ set proj_dir "./project1"
 set part_name "xc7s50csga324-1"
 set top_module "top_level_wrapper"
 set sim_top_module "top_level_wrapper_tb"
+set sim_mem1_module "mem1_tb"
+set sim_mem_reader_module "mem_reader_tb"
+set sim_fifo_module "fifo_tb"
+set sim_dotProduct_module "dotProduct_tb"
+set sim_mem_writer_module "mem_writer_tb"
+set sim_mem3_module "mem3_tb"
 
 
 #////////////////
@@ -31,6 +37,129 @@ set sim_top_module "top_level_wrapper_tb"
 #////////////////
 file mkdir sim
 cd sim
+
+# simulating mem1
+
+file mkdir mem1
+cd mem1
+puts "\n1- Simulating mem1.v ---------------------------------\n" 
+exec xvlog ./../../mem1.v
+exec xvlog ./../../mem1_tb.v
+
+#Elaborate
+exec xelab $sim_mem1_module -debug all
+
+# simulation
+exec xsim $sim_mem1_module -R
+puts "simulation completed"
+
+# check if the simulation passed
+# findWordInFile  "PASS" "xsim.log"
+cd ../
+
+
+# simulating memery reader
+
+file mkdir mem_reader
+cd mem_reader
+puts "\n1- Simulating mem_reader.v ---------------------------------\n" 
+exec xvlog ./../../mem_reader.v
+exec xvlog ./../../mem_reader_tb.v
+
+#Elaborate
+exec xelab $sim_mem_reader_module -debug all
+
+# simulation
+exec xsim $sim_mem_reader_module -R
+puts "simulation completed"
+
+# check if the simulation passed
+#findWordInFile  "PASS" "xsim.log"
+cd ../
+
+
+# simulating fifo
+
+file mkdir fifo
+cd fifo
+puts "\n1- Simulating fifo.v ---------------------------------\n" 
+exec xvlog ./../../fifo.v
+exec xvlog ./../../fifo_tb.v
+
+#Elaborate
+exec xelab $sim_fifo_module -debug all
+
+# simulation
+exec xsim $sim_fifo_module -R
+puts "simulation completed"
+
+# check if the simulation passed
+#findWordInFile  "PASS" "xsim.log"
+cd ../
+
+
+# simulating dotProduct
+
+file mkdir dotProduct
+cd dotProduct
+puts "\n1- Simulating dotProduct.v ---------------------------------\n" 
+exec xvlog ./../../dotProduct.v
+exec xvlog ./../../dotProduct_tb.v
+
+#Elaborate
+exec xelab $sim_dotProduct_module -debug all
+
+# simulation
+exec xsim $sim_dotProduct_module -R
+puts "simulation completed"
+
+# check if the simulation passed
+#findWordInFile  "PASS" "xsim.log"
+cd ../
+
+
+# simulating mem_writer
+
+file mkdir mem_writer
+cd mem_writer
+puts "\n1- Simulating mem_writer.v ---------------------------------\n" 
+exec xvlog ./../../mem_writer.v
+exec xvlog ./../../mem_writer_tb.v
+
+#Elaborate
+exec xelab $sim_mem_writer_module -debug all
+
+# simulation
+exec xsim $sim_mem_writer_module -R
+puts "simulation completed"
+
+# check if the simulation passed
+#findWordInFile  "PASS" "xsim.log"
+cd ../
+
+
+# simulating mem3
+
+file mkdir mem3
+cd mem3
+puts "\n1- Simulating mem3.v ---------------------------------\n" 
+exec xvlog ./../../mem3.v
+exec xvlog ./../../mem3_tb.v
+
+#Elaborate
+exec xelab $sim_mem3_module -debug all
+
+# simulation
+exec xsim $sim_mem3_module -R
+puts "simulation completed"
+
+# check if the simulation passed
+#findWordInFile  "PASS" "xsim.log"
+cd ../
+
+
+# simulating top_level_wrapper
+
 file mkdir top_module
 cd top_module
 puts "\n1- Simulating $sim_top_module ---------------------------------\n" 
@@ -38,6 +167,7 @@ puts "\n1- Simulating $sim_top_module ---------------------------------\n"
 exec xvlog ./../../mem1.v 
 exec xvlog ./../../mem2.v 
 exec xvlog ./../../mem_reader.v 
+exec xvlog ./../../fifo.v
 exec xvlog ./../../dotProduct.v 
 exec xvlog ./../../mem_writer.v 
 exec xvlog ./../../mem3.v 
@@ -68,6 +198,7 @@ cd synth_place_route
 read_verilog ./../mem1.v
 read_verilog ./../mem2.v
 read_verilog ./../mem_reader.v
+read_verilog ./../fifo.v
 read_verilog ./../dotProduct.v
 read_verilog ./../mem_writer.v
 read_verilog ./../mem3.v

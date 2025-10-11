@@ -29,6 +29,7 @@ module top_level_wrapper_tb;
     reg [ADDR_WIDTH-1:0]mem3_read_address;
     wire [DATA_WIDTH-1:0] mem3_data_out;
     
+    reg [VECTOR_ELEMENT_WIDTH-1:0] element_a, element_b, element_c, element_d;
     
 
     integer i;
@@ -68,14 +69,15 @@ module top_level_wrapper_tb;
         reg [VECTOR_ELEMENT_WIDTH-1:0] b0, b1, b2, b3;
         reg [RESULT_WIDTH-1:0] result;
         begin
-            a0 = vector_a[0*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
-            a1 = vector_a[1*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
-            a2 = vector_a[2*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
-            a3 = vector_a[3*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
-            b0 = vector_b[0*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
-            b1 = vector_b[1*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
-            b2 = vector_b[2*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
-            b3 = vector_b[3*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH];
+            // Extract elements in descending order to match dotProduct module
+            a0 = vector_a[3*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 31:24
+            a1 = vector_a[2*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 23:16
+            a2 = vector_a[1*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 15:8
+            a3 = vector_a[0*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 7:0
+            b0 = vector_b[3*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 31:24
+            b1 = vector_b[2*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 23:16
+            b2 = vector_b[1*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 15:8
+            b3 = vector_b[0*VECTOR_ELEMENT_WIDTH +: VECTOR_ELEMENT_WIDTH]; // bits 7:0
             result = (a0 * b0) + (a1 * b1) + (a2 * b2) + (a3 * b3);
             calculate_expected_dot_product = result;
         end
@@ -92,6 +94,13 @@ module top_level_wrapper_tb;
         end
     end
 
+    always @(posedge clk) begin
+        element_a <= 8'd1+i;
+        element_b <= 8'd2+i;
+        element_c <= 8'd3+i;
+        element_d <= 8'd4+i;
+    end
+
     initial begin
         rst_n = 0;
         start_processing = 0;
@@ -105,52 +114,57 @@ module top_level_wrapper_tb;
         mem3_read_address = 0;
         
         #20 rst_n = 1;
+
         
         
         for (i = 0; i < TEST_COUNT; i = i + 1) begin
             @(posedge clk);
             mem1_write_en = 1;
             mem1_write_address = i;
-            mem1_data_in = {8'd1+i, 8'd2+i, 8'd3+i, 8'd4+i};
-            @(posedge clk);
-            mem1_write_en = 0;
-            
-            
-            @(posedge clk);
+            mem1_data_in = {element_a, element_b, element_c, element_d};
             mem2_write_en = 1;
             mem2_write_address = i;
-            mem2_data_in = {8'd1+i, 8'd2+i, 8'd3+i, 8'd4+i}; 
+            mem2_data_in = {element_a, element_b, element_c, element_d}; 
             @(posedge clk);
+            mem1_write_en = 0;
             mem2_write_en = 0;
+            
         end
         
-        #20;
+        // #20;
         
         @(posedge clk);
         start_processing = 1;
         
+        // Wait for all processing to complete  
+        #500;  // Increased wait time for all 12 dot products to process through FIFOs
+        
+        start_processing = 0;  // Stop processing before reading
         #20;
          
+        // Read from mem3 starting at address 1 (because mem_writer starts at 1)
         for (i = 0; i < TEST_COUNT; i = i + 1) begin
-           repeat(2) @(posedge clk);      
-            mem3_read_en = 1;
-            mem3_read_address = i;
             @(posedge clk);
-            mem3_read_en = 0;
-                       
-           
+            mem3_read_en = 1;
+            mem3_read_address = i + 1;  // Read from addresses 1 to 12
+            
+            @(posedge clk);  // Wait one cycle for read data
+            
             expected_result = calculate_expected_dot_product(
                 {8'd1+i, 8'd2+i, 8'd3+i, 8'd4+i}, 
                 {8'd1+i, 8'd2+i, 8'd3+i, 8'd4+i}
             );         
             
             golden_mem3[i] = mem3_data_out;
+            $display("Read mem3[%0d] = %0d, expected = %0d", i+1, mem3_data_out, expected_result);
         end
+        
+        mem3_read_en = 0;
         
         #20;
        
         
-        #100 $finish;
+        #50 $finish;
     end
     
 

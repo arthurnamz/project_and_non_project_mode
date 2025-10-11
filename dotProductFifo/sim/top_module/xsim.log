@@ -1,0 +1,130 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 11 05:13:13 2025
+# Process ID         : 60494
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/sim/top_module
+# Command line       : xsim -mode tcl -source {xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/sim/top_module/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/sim/top_module/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1526.870 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 6936 MB
+#-----------------------------------------------------------
+source xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl
+# xsim {work.top_level_wrapper_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+                   0 rst_n=0 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=0 mem2_write_en=0 mem2_write_address=0 mem2_data_in=0 mem3_read_en=0 mem3_read_address=0 mem3_data_out=x
+                   5 rst_n=0 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=0 mem2_write_en=0 mem2_write_address=0 mem2_data_in=0 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  20 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=0 mem2_write_en=0 mem2_write_address=0 mem2_data_in=0 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  25 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=0 mem1_data_in=x mem2_write_en=1 mem2_write_address=0 mem2_data_in=x mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  35 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=x mem2_write_en=0 mem2_write_address=0 mem2_data_in=x mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  45 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=1 mem1_data_in=16909060 mem2_write_en=1 mem2_write_address=1 mem2_data_in=16909060 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  55 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=1 mem1_data_in=16909060 mem2_write_en=0 mem2_write_address=1 mem2_data_in=16909060 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  65 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=2 mem1_data_in=33752069 mem2_write_en=1 mem2_write_address=2 mem2_data_in=33752069 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  75 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=2 mem1_data_in=33752069 mem2_write_en=0 mem2_write_address=2 mem2_data_in=33752069 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  85 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=3 mem1_data_in=50595078 mem2_write_en=1 mem2_write_address=3 mem2_data_in=50595078 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                  95 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=3 mem1_data_in=50595078 mem2_write_en=0 mem2_write_address=3 mem2_data_in=50595078 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 105 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=4 mem1_data_in=67438087 mem2_write_en=1 mem2_write_address=4 mem2_data_in=67438087 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 115 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=4 mem1_data_in=67438087 mem2_write_en=0 mem2_write_address=4 mem2_data_in=67438087 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 125 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=5 mem1_data_in=84281096 mem2_write_en=1 mem2_write_address=5 mem2_data_in=84281096 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 135 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=5 mem1_data_in=84281096 mem2_write_en=0 mem2_write_address=5 mem2_data_in=84281096 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 145 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=6 mem1_data_in=101124105 mem2_write_en=1 mem2_write_address=6 mem2_data_in=101124105 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 155 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=6 mem1_data_in=101124105 mem2_write_en=0 mem2_write_address=6 mem2_data_in=101124105 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 165 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=7 mem1_data_in=117967114 mem2_write_en=1 mem2_write_address=7 mem2_data_in=117967114 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 175 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=7 mem1_data_in=117967114 mem2_write_en=0 mem2_write_address=7 mem2_data_in=117967114 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 185 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=8 mem1_data_in=134810123 mem2_write_en=1 mem2_write_address=8 mem2_data_in=134810123 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 195 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=8 mem1_data_in=134810123 mem2_write_en=0 mem2_write_address=8 mem2_data_in=134810123 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 205 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=9 mem1_data_in=151653132 mem2_write_en=1 mem2_write_address=9 mem2_data_in=151653132 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 215 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=9 mem1_data_in=151653132 mem2_write_en=0 mem2_write_address=9 mem2_data_in=151653132 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 225 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=10 mem1_data_in=168496141 mem2_write_en=1 mem2_write_address=10 mem2_data_in=168496141 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 235 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=10 mem1_data_in=168496141 mem2_write_en=0 mem2_write_address=10 mem2_data_in=168496141 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 245 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=1 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 255 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 265 rst_n=1 start_processing=1 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 765 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=0 mem3_data_out=0
+                 785 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=1 mem3_data_out=X
+Error: Time=795000 FAIL
+Time: 795 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[1] = X, expected = 16
+Error: Time=805000 FAIL
+Time: 805 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 805 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=2 mem3_data_out=X
+Error: Time=815000 FAIL
+Time: 815 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[2] = X, expected = 25
+Error: Time=825000 FAIL
+Time: 825 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 825 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=3 mem3_data_out=X
+Error: Time=835000 FAIL
+Time: 835 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[3] = X, expected = 36
+Error: Time=845000 FAIL
+Time: 845 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 845 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=4 mem3_data_out=X
+Error: Time=855000 FAIL
+Time: 855 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[4] = X, expected = 49
+Error: Time=865000 FAIL
+Time: 865 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 865 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=5 mem3_data_out=X
+Error: Time=875000 FAIL
+Time: 875 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[5] = X, expected = 64
+Error: Time=885000 FAIL
+Time: 885 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 885 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=6 mem3_data_out=X
+Error: Time=895000 FAIL
+Time: 895 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[6] = X, expected = 81
+Error: Time=905000 FAIL
+Time: 905 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 905 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=7 mem3_data_out=30
+Error: Time=915000 FAIL
+Time: 915 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[7] = 30, expected = 100
+Error: Time=925000 FAIL
+Time: 925 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 925 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=8 mem3_data_out=54
+Error: Time=935000 FAIL
+Time: 935 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[8] = 54, expected = 121
+Error: Time=945000 FAIL
+Time: 945 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 945 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=9 mem3_data_out=86
+Error: Time=955000 FAIL
+Time: 955 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[9] = 86, expected = 144
+Error: Time=965000 FAIL
+Time: 965 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 965 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=10 mem3_data_out=126
+Error: Time=975000 FAIL
+Time: 975 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[10] = 126, expected = 169
+Error: Time=985000 FAIL
+Time: 985 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                 985 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=11 mem3_data_out=174
+Error: Time=995000 FAIL
+Time: 995 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[11] = 174, expected = 196
+Error: Time=1005000 FAIL
+Time: 1005 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+                1005 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=1 mem3_read_address=12 mem3_data_out=230
+Error: Time=1015000 FAIL
+Time: 1015 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always87_26  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v Line: 90
+Read mem3[12] = 230, expected = 225
+                1015 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=11 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=12 mem3_data_out=230
+$finish called at time : 1085 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/top_level_wrapper_tb.v" Line 167
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 11 05:13:19 2025...

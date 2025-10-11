@@ -1,0 +1,1 @@
+"mem_writer_tb" -debug "all" 

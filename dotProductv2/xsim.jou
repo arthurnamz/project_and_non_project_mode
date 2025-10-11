@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 11 00:47:26 2025
+# Process ID         : 13457
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2
+# Command line       : xsim -source {xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 2000.020 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 8946 MB
+#-----------------------------------------------------------
+start_gui
+source xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl
+open_wave_config /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/work.top_level_wrapper_tb.wcfg
+run all
+save_wave_config {/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/work.top_level_wrapper_tb.wcfg}
+save_wave_config {/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/work.top_level_wrapper_tb.wcfg}
+save_wave_config {/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/work.top_level_wrapper_tb.wcfg}
+save_wave_config {/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/work.top_level_wrapper_tb.wcfg}
+close_sim

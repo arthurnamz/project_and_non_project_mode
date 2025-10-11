@@ -1,0 +1,1 @@
+"dotProduct_tb" -debug "all" 

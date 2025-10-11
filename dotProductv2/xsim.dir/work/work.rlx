@@ -1,0 +1,18 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/dotProduct.v,1759123110,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/dotProduct_tb.v,,dotProduct,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/dotProduct_tb.v,1758922712,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem1.v,,dotProduct_tb,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem1.v,1759117024,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem1_tb.v,,mem1,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem1_tb.v,1758592817,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem2.v,,mem1_tb,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem2.v,1759117072,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem2_tb.v,,mem2,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem2_tb.v,1758592817,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem3.v,,mem2_tb,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem3.v,1759117219,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem3_tb.v,,mem3,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem3_tb.v,1758927342,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_reader.v,,mem3_tb,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_reader.v,1759117106,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_reader_tb.v,,mem_reader,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_reader_tb.v,1759098265,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_writer.v,,mem_reader_tb,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_writer.v,1759117193,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_writer_tb.v,,mem_writer,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/mem_writer_tb.v,1758933740,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/top_level_wrapper.v,,mem_writer_tb,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/top_level_wrapper.v,1759116507,verilog,,/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/top_level_wrapper_tb.v,,top_level_wrapper,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductv2/top_level_wrapper_tb.v,1760136432,verilog,,,,top_level_wrapper_tb,,,,,,,,

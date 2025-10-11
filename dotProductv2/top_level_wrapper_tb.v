@@ -113,15 +113,11 @@ module top_level_wrapper_tb;
             write_en1 = 1;
             write_address1 = i;
             data_in1 = {8'd1+i, 8'd2+i, 8'd3+i, 8'd4+i};
-            @(posedge clk);
-            write_en1 = 0;
-            
-            
-            @(posedge clk);
-            write_en2 = 1;
+             write_en2 = 1;
             write_address2 = i;
             data_in2 = {8'd1+i, 8'd2+i, 8'd3+i, 8'd4+i}; 
             @(posedge clk);
+            write_en1 = 0;
             write_en2 = 0;
         end
         
@@ -133,7 +129,7 @@ module top_level_wrapper_tb;
         #20;
          
         for (i = 0; i < TEST_COUNT; i = i + 1) begin
-           repeat(2) @(posedge clk);      
+           repeat(3) @(posedge clk);      
             read_en3 = 1;
             read_address3 = i;
             @(posedge clk);

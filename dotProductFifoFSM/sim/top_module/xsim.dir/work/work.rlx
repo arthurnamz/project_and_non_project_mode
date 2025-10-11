@@ -1,0 +1,14 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/dotProduct.v,1760152600,verilog,,,,dotProduct,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/fifo.v,1760152600,verilog,,,,fifo,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/fsm.v,1760161338,verilog,,,,fsm,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/mem1.v,1760152600,verilog,,,,mem1,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/mem2.v,1760152600,verilog,,,,mem2,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/mem3.v,1760152600,verilog,,,,mem3,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/mem_reader.v,1760152600,verilog,,,,mem_reader,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/mem_writer.v,1760152600,verilog,,,,mem_writer,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/top_level_wrapper.v,1760158164,verilog,,,,top_level_wrapper,,,,,,,,
+/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/top_level_wrapper_tb.v,1760165395,verilog,,,,top_level_wrapper_tb,,,,,,,,

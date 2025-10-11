@@ -1,0 +1,8 @@
++====================+===================+===============================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                           |
++====================+===================+===============================================+
+| clk                | clk               | u_dotProduct/dot_product_result_reg[15]/D     |
+| clk                | clk               | u_dotProduct/dot_product_result_reg[13]/D     |
+| clk                | clk               | u_dotProduct/genblk2[3].products_reg[3][15]/D |
+| clk                | clk               | u_dotProduct/dot_product_result_reg[11]/D     |
++--------------------+-------------------+-----------------------------------------------+

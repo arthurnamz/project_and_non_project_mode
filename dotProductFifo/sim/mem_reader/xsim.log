@@ -1,0 +1,64 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 11 05:11:32 2025
+# Process ID         : 58355
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/sim/mem_reader
+# Command line       : xsim -mode tcl -source {xsim.dir/work.mem_reader_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/sim/mem_reader/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/sim/mem_reader/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1700.281 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 6960 MB
+#-----------------------------------------------------------
+source xsim.dir/work.mem_reader_tb/xsim_script.tcl
+# xsim {work.mem_reader_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+                   0 rst_n=0 start_reading=0 data_in=0 read_en=x read_address=x data_out=0
+                   5 rst_n=0 start_reading=0 data_in=0 read_en=0 read_address=0 data_out=0
+                  10 rst_n=1 start_reading=0 data_in=4 read_en=0 read_address=0 data_out=4
+                  20 rst_n=1 start_reading=1 data_in=4 read_en=0 read_address=0 data_out=4
+                  25 rst_n=1 start_reading=1 data_in=4 read_en=1 read_address=1 data_out=4
+Time=35000 PASS: data_out correct. Got 4, Expected 4
+                  35 rst_n=1 start_reading=1 data_in=4 read_en=1 read_address=2 data_out=4
+                  40 rst_n=1 start_reading=0 data_in=4 read_en=1 read_address=2 data_out=4
+Time=45000 PASS: data_out correct. Got 4, Expected 4
+                  45 rst_n=1 start_reading=0 data_in=4 read_en=0 read_address=2 data_out=4
+                  50 rst_n=1 start_reading=0 data_in=5 read_en=0 read_address=2 data_out=5
+                  60 rst_n=1 start_reading=1 data_in=5 read_en=0 read_address=2 data_out=5
+                  65 rst_n=1 start_reading=1 data_in=5 read_en=1 read_address=3 data_out=5
+Time=75000 PASS: data_out correct. Got 5, Expected 5
+                  75 rst_n=1 start_reading=1 data_in=5 read_en=1 read_address=4 data_out=5
+                  80 rst_n=1 start_reading=0 data_in=5 read_en=1 read_address=4 data_out=5
+Time=85000 PASS: data_out correct. Got 5, Expected 5
+                  85 rst_n=1 start_reading=0 data_in=5 read_en=0 read_address=4 data_out=5
+                  90 rst_n=1 start_reading=0 data_in=6 read_en=0 read_address=4 data_out=6
+                 100 rst_n=1 start_reading=1 data_in=6 read_en=0 read_address=4 data_out=6
+                 105 rst_n=1 start_reading=1 data_in=6 read_en=1 read_address=5 data_out=6
+Time=115000 PASS: data_out correct. Got 6, Expected 6
+                 115 rst_n=1 start_reading=1 data_in=6 read_en=1 read_address=6 data_out=6
+                 120 rst_n=1 start_reading=0 data_in=6 read_en=1 read_address=6 data_out=6
+Time=125000 PASS: data_out correct. Got 6, Expected 6
+                 125 rst_n=1 start_reading=0 data_in=6 read_en=0 read_address=6 data_out=6
+                 130 rst_n=1 start_reading=0 data_in=7 read_en=0 read_address=6 data_out=7
+                 140 rst_n=1 start_reading=1 data_in=7 read_en=0 read_address=6 data_out=7
+                 145 rst_n=1 start_reading=1 data_in=7 read_en=1 read_address=7 data_out=7
+Time=155000 PASS: data_out correct. Got 7, Expected 7
+                 155 rst_n=1 start_reading=1 data_in=7 read_en=1 read_address=8 data_out=7
+                 160 rst_n=1 start_reading=0 data_in=7 read_en=1 read_address=8 data_out=7
+Time=165000 PASS: data_out correct. Got 7, Expected 7
+                 165 rst_n=1 start_reading=0 data_in=7 read_en=0 read_address=8 data_out=7
+$finish called at time : 270 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifo/mem_reader_tb.v" Line 71
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 11 05:11:38 2025...

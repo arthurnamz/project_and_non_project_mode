@@ -23,7 +23,7 @@ module top_level_wrapper #(
 
     input mem3_read_en,
     input [ADDR_WIDTH-1:0]mem3_read_address,
-    output reg [DATA_WIDTH-1:0] mem3_data_out 
+    output [DATA_WIDTH-1:0] mem3_data_out 
 );
 
   // mem1 wires 
@@ -36,11 +36,19 @@ module top_level_wrapper #(
   wire [ADDR_WIDTH-1:0]mem2_read_address;
   wire [DATA_WIDTH-1:0] mem2_data_out;
 
-
   // mem_reader wires output side of the reader
 
   wire [DATA_WIDTH-1:0] mem1_reader_output;
   wire [DATA_WIDTH-1:0] mem2_reader_output;
+
+// FIFO wires between mem_readers and dotProduct
+wire fifo1_wr_en, fifo1_rd_en, fifo1_full, fifo1_empty;
+wire fifo2_wr_en, fifo2_rd_en, fifo2_full, fifo2_empty;
+wire [DATA_WIDTH-1:0] fifo1_data_out, fifo2_data_out;
+
+// FIFO wires between dotProduct and mem_writer
+wire fifo3_wr_en, fifo3_rd_en, fifo3_full, fifo3_empty;
+wire [RESULT_WIDTH-1:0] fifo3_data_out;
 
 // dotProduct wires
 wire [RESULT_WIDTH-1:0] dot_product_result;
@@ -49,14 +57,10 @@ wire processing_done;
 // mem_writer wires
 wire mem_writer_write_en;
 wire [ADDR_WIDTH-1:0] mem_writer_write_addr;
-wire [DATA_WIDTH-1:0] mem_writer_data_in;
+wire [DATA_WIDTH-1:0] mem_writer_data_out;
 
-// mem3 wires
-wire [DATA_WIDTH-1:0] mem3_data_out_internal;
 
-// assign mem3_data_out = mem3_data_out_internal;
-
-// mem 1 dut
+// mem 1 instance
 mem1#(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
@@ -72,7 +76,7 @@ mem1#(
     .data_out(mem1_data_out)
 );
 
-// mem 2 dut
+// mem 2 instance
 mem2#(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
@@ -88,7 +92,7 @@ mem2#(
     .data_out(mem2_data_out)
 );
 
-//mem_reader dut
+//mem1_reader instance
 mem_reader#(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
@@ -103,6 +107,7 @@ mem_reader#(
     .data_out(mem1_reader_output)
 );
 
+// mem2_reader 
 mem_reader#(
 
     .DATA_WIDTH(DATA_WIDTH),
@@ -118,7 +123,39 @@ mem_reader#(
     .data_out(mem2_reader_output)
 );
 
-//dotProduct dut
+// FIFO1 between mem1_reader and dotProduct
+fifo #(
+    .DEPTH(8),
+    .DATA_WIDTH(DATA_WIDTH),
+    .ADDR_WIDTH(3)
+) fifo1 (
+    .clk(clk),
+    .rstn(rst_n),
+    .wr_en(fifo1_wr_en),
+    .rd_en(fifo1_rd_en),
+    .data_in(mem1_reader_output),
+    .data_out(fifo1_data_out),
+    .full(fifo1_full),
+    .empty(fifo1_empty)
+);
+
+// FIFO2 between mem2_reader and dotProduct
+fifo #(
+    .DEPTH(8),
+    .DATA_WIDTH(DATA_WIDTH),
+    .ADDR_WIDTH(3)
+) fifo2 (
+    .clk(clk),
+    .rstn(rst_n),
+    .wr_en(fifo2_wr_en),
+    .rd_en(fifo2_rd_en),
+    .data_in(mem2_reader_output),
+    .data_out(fifo2_data_out),
+    .full(fifo2_full),
+    .empty(fifo2_empty)
+);
+
+//dotProduct instance
 dotProduct#(
     .DATA_WIDTH(DATA_WIDTH),
     .VECTOR_WIDTH(VECTOR_WIDTH),
@@ -128,14 +165,30 @@ dotProduct#(
 ) u_dotProduct (
     .clk(clk),
     .rst_n(rst_n),
-    .mem1_input(mem1_reader_output),
-    .mem2_input(mem2_reader_output),
+    .mem1_input(fifo1_data_out),
+    .mem2_input(fifo2_data_out),
     .start_processing(start_processing),
     .dot_product_result(dot_product_result),
     .processing_done(processing_done)
 );
 
-//mem_writer dut
+// FIFO3 between dotProduct and mem_writer
+fifo #(
+    .DEPTH(8),
+    .DATA_WIDTH(RESULT_WIDTH),
+    .ADDR_WIDTH(3)
+) fifo3 (
+    .clk(clk),
+    .rstn(rst_n),
+    .wr_en(fifo3_wr_en),
+    .rd_en(fifo3_rd_en),
+    .data_in(dot_product_result),
+    .data_out(fifo3_data_out),
+    .full(fifo3_full),
+    .empty(fifo3_empty)
+);
+
+//mem_writer instance
 mem_writer#(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
@@ -144,14 +197,14 @@ mem_writer#(
 ) u_mem_writer (
     .clk(clk),
     .rst_n(rst_n),
-    .start_writing(processing_done),
-    .dot_product_result(dot_product_result),
+    .start_writing(fifo3_rd_en),
+    .data_in(fifo3_data_out),
     .write_en(mem_writer_write_en),
     .write_address(mem_writer_write_addr),
-    .data_in(mem_writer_data_in)
+    .data_out(mem_writer_data_out)
 );
 
-//mem3 dut
+//mem3 instance
 mem3#(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
@@ -161,11 +214,18 @@ mem3#(
     .rst_n(rst_n),
     .write_en(mem_writer_write_en),
     .write_address(mem_writer_write_addr),
-    .data_in(mem_writer_data_in),
+    .data_in(mem_writer_data_out),
     .read_en(mem3_read_en),
     .read_address(mem3_read_address),
-    .data_out(mem3_data_out_internal)
+    .data_out(mem3_data_out)
 );
+
+assign fifo1_wr_en = mem1_read_en && !fifo1_full;
+assign fifo2_wr_en = mem2_read_en && !fifo2_full;
+assign fifo3_wr_en = processing_done && !fifo3_full;
+assign fifo1_rd_en = start_processing && !fifo1_empty;
+assign fifo2_rd_en = start_processing && !fifo2_empty;
+assign fifo3_rd_en = processing_done && !fifo3_empty;
 
 endmodule
 
