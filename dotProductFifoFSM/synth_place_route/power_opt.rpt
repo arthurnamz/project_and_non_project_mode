@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Sat Oct 11 08:54:48 2025
+| Date             : Mon Oct 13 06:12:04 2025
 | Host             : arthur-nathaniel running 64-bit Ubuntu 24.04.3 LTS
 | Command          : report_power_opt -file power_opt.rpt
 | Design           : top_level_wrapper
@@ -37,7 +37,7 @@ Table of Contents
 +---------------------------+-------+------------+------------+----------------+
 | Number of BRAMs           | 3     | 3          | 0          | 100.000        |
 | Number of SRLs            | 0     | 0          | 0          | 0.000          |
-| Number of Slice Registers | 277   | 118        | 0          | 42.599         |
+| Number of Slice Registers | 285   | 118        | 0          | 41.404         |
 | Number of XPM URAMs       | 0     | 0          | 0          | 0.000          |
 | BRAM write mode changes   | 6     | 0          | 0          | 0.000          |
 +---------------------------+-------+------------+------------+----------------+

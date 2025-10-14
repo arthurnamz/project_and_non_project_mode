@@ -1,0 +1,67 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date             : Tue Oct 14 06:28:13 2025
+| Host             : arthur-nathaniel running 64-bit Ubuntu 24.04.3 LTS
+| Command          : report_power_opt -file power_opt.rpt
+| Design           : skew2
+| Device           : xc7s50csga324-1
+| Design State     : Routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power optimization report
+
+Table of Contents
+-----------------
+1. Summary
+2. Recommendations
+3. Hierarchical Information
+3.1 BRAMs
+3.2 SRLs
+3.3 Slice Registers
+3.4 XPM URAMs
+
+1. Summary
+----------
+
++---------------------------+-------+------------+------------+----------------+
+| Elements                  | TOTAL | USER GATED | TOOL GATED | % GATED(Total) |
++---------------------------+-------+------------+------------+----------------+
+| Number of BRAMs           | 0     | 0          | 0          | 0.000          |
+| Number of SRLs            | 0     | 0          | 0          | 0.000          |
+| Number of Slice Registers | 3     | 0          | 0          | 0.000          |
+| Number of XPM URAMs       | 0     | 0          | 0          | 0.000          |
++---------------------------+-------+------------+------------+----------------+
+
+
+2. Recommendations
+------------------
+
+No specific recommendations for this design.
+
+3. Hierarchical Information
+---------------------------
+
+3.1 BRAMs
+---------
+
+None
+
+3.2 SRLs
+--------
+
+None
+
+3.3 Slice Registers
+-------------------
+
+None
+
+3.4 XPM URAMs
+-------------
+
+None
+

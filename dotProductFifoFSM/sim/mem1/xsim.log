@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sat Oct 11 08:50:22 2025
-# Process ID         : 177856
+# Start of session at: Mon Oct 13 06:08:40 2025
+# Process ID         : 344163
 # Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/sim/mem1
 # Command line       : xsim -mode tcl -source {xsim.dir/work.mem1_tb/xsim_script.tcl}
 # Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/sim/mem1/xsim.log
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
 # Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
-# CPU Frequency      : 978.073 MHz
+# CPU Frequency      : 1964.057 MHz
 # CPU Physical cores : 6
 # CPU Logical cores  : 8
 # Host memory        : 8038 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 12333 MB
-# Available Virtual  : 5277 MB
+# Available Virtual  : 4929 MB
 #-----------------------------------------------------------
 source xsim.dir/work.mem1_tb/xsim_script.tcl
 # xsim {work.mem1_tb} -autoloadwcfg -runall
@@ -51,4 +51,4 @@ run -all
                  130 rst_n=1 write_en=0 read_en=0 write_address=1 read_address=1 data_in=0xa5 data_out=0xa5 exp=0xa5
 $finish called at time : 230 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSM/mem1_tb.v" Line 90
 exit
-INFO: [Common 17-206] Exiting xsim at Sat Oct 11 08:50:27 2025...
+INFO: [Common 17-206] Exiting xsim at Mon Oct 13 06:08:45 2025...

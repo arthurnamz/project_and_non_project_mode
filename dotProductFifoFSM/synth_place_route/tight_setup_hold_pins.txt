@@ -1,0 +1,37 @@
++====================+===================+===============================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                           |
++====================+===================+===============================================+
+| clk                | clk               | u_dotProduct/genblk2[2].products_reg[2][12]/D |
+| clk                | clk               | u_dotProduct/genblk2[3].products_reg[3][14]/D |
+| clk                | clk               | u_dotProduct/genblk2[1].products_reg[1][12]/D |
+| clk                | clk               | u_dotProduct/genblk2[1].products_reg[1][14]/D |
+| clk                | clk               | u_dotProduct/genblk2[1].products_reg[1][15]/D |
+| clk                | clk               | u_dotProduct/genblk2[2].products_reg[2][14]/D |
+| clk                | clk               | u_dotProduct/genblk2[3].products_reg[3][13]/D |
+| clk                | clk               | u_dotProduct/genblk2[2].products_reg[2][13]/D |
+| clk                | clk               | u_dotProduct/genblk2[3].products_reg[3][7]/D  |
+| clk                | clk               | u_mem_writer/write_address_reg[0]/D           |
+| clk                | clk               | fifo3/rd_ptr_reg[1]/D                         |
+| clk                | clk               | fifo3/rd_count_reg/D                          |
+| clk                | clk               | fifo3/rd_ptr_reg[2]/D                         |
+| clk                | clk               | fifo3/rd_ptr_reg[0]/D                         |
+| clk                | clk               | fifo2/rd_count_reg/D                          |
+| clk                | clk               | fifo3/wr_ptr_reg[1]/D                         |
+| clk                | clk               | fifo3/wr_ptr_reg[0]/D                         |
+| clk                | clk               | fifo3/wr_ptr_reg[2]/D                         |
+| clk                | clk               | fifo1/wr_ptr_reg[1]/D                         |
+| clk                | clk               | fifo1/wr_ptr_reg[0]/D                         |
+| clk                | clk               | fifo2/rd_ptr_reg[1]/D                         |
+| clk                | clk               | fifo2/rd_ptr_reg[0]/D                         |
+| clk                | clk               | fifo1/wr_ptr_reg[2]/D                         |
+| clk                | clk               | fifo2/rd_ptr_reg[2]/D                         |
+| clk                | clk               | fifo3/wr_count_reg/D                          |
+| clk                | clk               | fifo1/rd_ptr_reg[1]/D                         |
+| clk                | clk               | fifo2/wr_ptr_reg[1]/D                         |
+| clk                | clk               | fifo2/wr_ptr_reg[2]/D                         |
+| clk                | clk               | fifo1/rd_count_reg/D                          |
+| clk                | clk               | fifo2/wr_ptr_reg[0]/D                         |
+| clk                | clk               | fifo1/wr_count_reg/D                          |
+| clk                | clk               | fifo1/rd_ptr_reg[0]/D                         |
+| clk                | clk               | fifo2/wr_count_reg/D                          |
++--------------------+-------------------+-----------------------------------------------+

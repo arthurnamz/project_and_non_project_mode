@@ -8,8 +8,8 @@ module top_level_wrapper_tb;
     parameter ADDR_WIDTH = 5;
     parameter MEM_SIZE = 32;
     parameter RESULT_WIDTH = 2*VECTOR_ELEMENT_WIDTH;
-    parameter PERIOD = 10;
-    parameter TEST_COUNT = 40;
+    parameter PERIOD = 3;
+    parameter TEST_COUNT = 60;
 
     // Clock and Reset
     reg clk = 0;
@@ -167,7 +167,7 @@ module top_level_wrapper_tb;
         #20;
        
         
-        #50 $finish;
+        #2000 $finish;
     end
     
 
