@@ -1,0 +1,54 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 25 07:32:38 2025
+# Process ID         : 47219
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/mem1
+# Command line       : xsim -mode tcl -source {xsim.dir/work.mem1_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/mem1/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/mem1/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1100.015 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 6458 MB
+#-----------------------------------------------------------
+source xsim.dir/work.mem1_tb/xsim_script.tcl
+# xsim {work.mem1_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+                   0 rst_n=0 write_en=0 read_en=0 write_address=0 read_address=0 data_in=0x0 data_out=0xxx exp=0xxx
+                   2 rst_n=0 write_en=0 read_en=0 write_address=0 read_address=0 data_in=0x0 data_out=0x0 exp=0x0
+                  10 rst_n=1 write_en=0 read_en=0 write_address=0 read_address=0 data_in=0x0 data_out=0x0 exp=0x0
+                  20 rst_n=1 write_en=1 read_en=0 write_address=0 read_address=0 data_in=0x11 data_out=0x0 exp=0x0
+                  30 rst_n=1 write_en=0 read_en=0 write_address=0 read_address=0 data_in=0x11 data_out=0x0 exp=0x0
+                  40 rst_n=1 write_en=1 read_en=0 write_address=1 read_address=0 data_in=0x22 data_out=0x0 exp=0x0
+                  50 rst_n=1 write_en=0 read_en=0 write_address=1 read_address=0 data_in=0x22 data_out=0x0 exp=0x0
+                  60 rst_n=1 write_en=0 read_en=1 write_address=1 read_address=0 data_in=0x22 data_out=0x0 exp=0x0
+[62000] PASS: mem1 passed ra=0 dut=0x0 exp=0x0
+                  62 rst_n=1 write_en=0 read_en=1 write_address=1 read_address=0 data_in=0x22 data_out=0x11 exp=0x11
+[66000] PASS: mem1 passed ra=0 dut=0x11 exp=0x11
+                  70 rst_n=1 write_en=0 read_en=0 write_address=1 read_address=0 data_in=0x22 data_out=0x11 exp=0x11
+                  80 rst_n=1 write_en=0 read_en=1 write_address=1 read_address=1 data_in=0x22 data_out=0x11 exp=0x11
+[82000] PASS: mem1 passed ra=1 dut=0x11 exp=0x11
+                  82 rst_n=1 write_en=0 read_en=1 write_address=1 read_address=1 data_in=0x22 data_out=0x22 exp=0x22
+[86000] PASS: mem1 passed ra=1 dut=0x22 exp=0x22
+                  90 rst_n=1 write_en=0 read_en=0 write_address=1 read_address=1 data_in=0x22 data_out=0x22 exp=0x22
+                 100 rst_n=1 write_en=1 read_en=0 write_address=1 read_address=1 data_in=0xa5 data_out=0x22 exp=0x22
+                 110 rst_n=1 write_en=0 read_en=0 write_address=1 read_address=1 data_in=0xa5 data_out=0x22 exp=0x22
+                 120 rst_n=1 write_en=0 read_en=1 write_address=1 read_address=1 data_in=0xa5 data_out=0x22 exp=0x22
+[122000] PASS: mem1 passed ra=1 dut=0x22 exp=0x22
+                 122 rst_n=1 write_en=0 read_en=1 write_address=1 read_address=1 data_in=0xa5 data_out=0xa5 exp=0xa5
+[126000] PASS: mem1 passed ra=1 dut=0xa5 exp=0xa5
+                 130 rst_n=1 write_en=0 read_en=0 write_address=1 read_address=1 data_in=0xa5 data_out=0xa5 exp=0xa5
+$finish called at time : 230 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/mem1_tb.v" Line 90
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 25 07:32:46 2025...

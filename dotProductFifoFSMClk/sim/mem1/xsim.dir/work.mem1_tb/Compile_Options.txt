@@ -1,0 +1,1 @@
+"mem1_tb" -debug "all" 

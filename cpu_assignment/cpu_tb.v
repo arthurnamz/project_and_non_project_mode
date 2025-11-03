@@ -38,75 +38,40 @@ module cpu_tb;
         #5;
         
         // Initialize Data Memory
-        uut.uut_data_mem.mem[0] = 8'd5;
-        uut.uut_data_mem.mem[1] = 8'd3;
-        uut.uut_data_mem.mem[2] = 8'd0;
-        uut.uut_data_mem.mem[3] = 8'd0;
-        uut.uut_data_mem.mem[4] = 8'd0;
-        uut.uut_data_mem.mem[5] = 8'd0;
-        uut.uut_data_mem.mem[6] = 8'd0;
-        uut.uut_data_mem.mem[7] = 8'd0;
+       dut_data_mem.memory[0] = 8'd5;
+       dut_data_mem.memory[1] = 8'd3;
+       dut_data_mem.memory[2] = 8'd0;
+       dut_data_mem.memory[3] = 8'd0;
+       dut_data_mem.memory[4] = 8'd0;
+       dut_data_mem.memory[5] = 8'd0;
+       dut_data_mem.memory[6] = 8'd0;
+       dut_data_mem.memory[7] = 8'd0;
+
+       dut_instr_mem.memory[0] = 10'b0100010000;
         
-        // Initialize Instruction Memory
-        // Format: [9:7 = res | 6:4 = op2 | 3:1 = op1 | 0 = opcode]
-        // opcode: 0=ADD, 1=NOT
+       dut_instr_mem.memory[1] = 10'b0110010100;
         
-        // Instruction 0: ADD data[0] + data[1] -> data[2]
-        // res=2, op2=1, op1=0, opcode=0 => [010|001|000|0] = 10'b0100010000
-        uut.uut_instr_mem.mem[0] = 10'b0100010000;
+       dut_instr_mem.memory[2] = 10'b1000000101;
         
-        // Instruction 1: ADD data[2] + data[1] -> data[3]
-        // res=3, op2=1, op1=2, opcode=0 => [011|001|010|0] = 10'b0110010100
-        uut.uut_instr_mem.mem[1] = 10'b0110010100;
+       dut_instr_mem.memory[3] = 10'b1011000110;
         
-        // Instruction 2: NOT ~data[2] -> data[4]
-        // res=4, op2=X, op1=2, opcode=1 => [100|000|010|1] = 10'b1000000101
-        uut.uut_instr_mem.mem[2] = 10'b1000000101;
+       dut_instr_mem.memory[4] = 10'b1100001011;
         
-        // Instruction 3: ADD data[3] + data[4] -> data[5]
-        // res=5, op2=4, op1=3, opcode=0 => [101|100|011|0] = 10'b1011000110
-        uut.uut_instr_mem.mem[3] = 10'b1011000110;
+       dut_instr_mem.memory[5] = 10'b1110000000;
         
-        // Instruction 4: NOT ~data[5] -> data[6]
-        // res=6, op2=X, op1=5, opcode=1 => [110|000|101|1] = 10'b1100001011
-        uut.uut_instr_mem.mem[4] = 10'b1100001011;
+        dut_instr_mem.memory[6] = 10'b1111111110;
         
-        // Instruction 5: ADD data[0] + data[0] -> data[7]
-        // res=7, op2=0, op1=0, opcode=0 => [111|000|000|0] = 10'b1110000000
-        uut.uut_instr_mem.mem[5] = 10'b1110000000;
-        
-        // Instruction 6: ADD data[7] + data[7] -> data[7] (dummy)
-        // res=7, op2=7, op1=7, opcode=0 => [111|111|111|0] = 10'b1111111110
-        uut.uut_instr_mem.mem[6] = 10'b1111111110;
-        
-        // Instruction 7: ADD data[0] + data[0] -> data[0] (dummy)
-        // res=0, op2=0, op1=0, opcode=0 => [000|000|000|0] = 10'b0000000000
-        uut.uut_instr_mem.mem[7] = 10'b0000000000;
+        dut_instr_mem.memory[7] = 10'b0000000000;
     end
     
-    // Test sequence
     initial begin
-        // Initialize waveform dump
-        $dumpfile("simple_cpu_tb.vcd");
-        $dumpvars(0, cpu_tb);
-        
-        // Display header
-        $display("\n=== Simple CPU Testbench ===");
-        $display("Time\tState\t\tPC\tOp\tOp1\tOp2\tRes\tResult");
-        $display("=================================================================");
-        
-        // Initialize signals
         rstn = 0;
         start = 0;
-        
-        // Hold reset for a few clock cycles
         #25;
         
-        // Release reset
         rstn = 1;
         #20;
         
-        // Display initial data memory
         $display("\nInitial Data Memory:");
         $display("Address\tValue");
         $display("---------------");
@@ -119,7 +84,6 @@ module cpu_tb;
         $display("   6\t%d", uut.uut_data_mem.mem[6]);
         $display("   7\t%d", uut.uut_data_mem.mem[7]);
         
-        // Display instruction memory
         $display("\nInstruction Memory:");
         $display("PC\tInstruction\tOpcode\tOp1\tOp2\tRes\tDescription");
         $display("=============================================================================");
@@ -148,16 +112,13 @@ module cpu_tb;
                  uut.uut_instr_mem.mem[7], (uut.uut_instr_mem.mem[7][0] ? "NOT" : "ADD"),
                  uut.uut_instr_mem.mem[7][3:1], uut.uut_instr_mem.mem[7][6:4], uut.uut_instr_mem.mem[7][9:7]);
         
-        // Start CPU execution
         $display("\n=== Starting CPU Execution ===\n");
         start = 1;
         #20;
         start = 0;
         
-        // Wait for execution to complete
         wait(done);
         
-        // Display final data memory
         $display("\n\n=== Execution Complete ===");
         $display("\nFinal Data Memory:");
         $display("Address\tValue\tExpected\tStatus");

@@ -1,0 +1,577 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 25 07:34:54 2025
+# Process ID         : 49669
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/top_module
+# Command line       : xsim -mode tcl -source {xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/top_module/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/top_module/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1521.854 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 6512 MB
+#-----------------------------------------------------------
+source xsim.dir/work.top_level_wrapper_tb/xsim_script.tcl
+# xsim {work.top_level_wrapper_tb} -autoloadwcfg -tclbatch {./../../sim.tcl}
+Time resolution is 1 ps
+source ./../../sim.tcl
+## open_saif myTop.saif
+## log_saif /top_level_wrapper_tb/u_top_level_wrapper/*
+## run -all
+                   0 rst_n=0 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=0 mem2_write_en=0 mem2_write_address=0 mem2_data_in=0 mem3_read_en=0 mem3_read_address=0 mem3_data_out=xx
+                   2 rst_n=0 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=0 mem2_write_en=0 mem2_write_address=0 mem2_data_in=0 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                  20 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=0 mem2_write_en=0 mem2_write_address=0 mem2_data_in=0 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                  22 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=0 mem1_data_in=x mem2_write_en=1 mem2_write_address=0 mem2_data_in=x mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  26 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=x mem2_write_en=0 mem2_write_address=0 mem2_data_in=x mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  38 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=x mem2_write_en=0 mem2_write_address=0 mem2_data_in=x mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                  42 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=1 mem1_data_in=33752069 mem2_write_en=1 mem2_write_address=1 mem2_data_in=33752069 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  46 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=1 mem1_data_in=33752069 mem2_write_en=0 mem2_write_address=1 mem2_data_in=33752069 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  58 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=1 mem1_data_in=33752069 mem2_write_en=0 mem2_write_address=1 mem2_data_in=33752069 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                  62 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=2 mem1_data_in=50595078 mem2_write_en=1 mem2_write_address=2 mem2_data_in=50595078 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  66 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=2 mem1_data_in=50595078 mem2_write_en=0 mem2_write_address=2 mem2_data_in=50595078 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  78 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=2 mem1_data_in=50595078 mem2_write_en=0 mem2_write_address=2 mem2_data_in=50595078 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                  82 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=3 mem1_data_in=67438087 mem2_write_en=1 mem2_write_address=3 mem2_data_in=67438087 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  86 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=3 mem1_data_in=67438087 mem2_write_en=0 mem2_write_address=3 mem2_data_in=67438087 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                  98 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=3 mem1_data_in=67438087 mem2_write_en=0 mem2_write_address=3 mem2_data_in=67438087 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 102 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=4 mem1_data_in=84281096 mem2_write_en=1 mem2_write_address=4 mem2_data_in=84281096 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 106 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=4 mem1_data_in=84281096 mem2_write_en=0 mem2_write_address=4 mem2_data_in=84281096 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 118 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=4 mem1_data_in=84281096 mem2_write_en=0 mem2_write_address=4 mem2_data_in=84281096 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 122 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=5 mem1_data_in=101124105 mem2_write_en=1 mem2_write_address=5 mem2_data_in=101124105 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 126 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=5 mem1_data_in=101124105 mem2_write_en=0 mem2_write_address=5 mem2_data_in=101124105 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 138 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=5 mem1_data_in=101124105 mem2_write_en=0 mem2_write_address=5 mem2_data_in=101124105 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 142 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=6 mem1_data_in=117967114 mem2_write_en=1 mem2_write_address=6 mem2_data_in=117967114 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 146 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=6 mem1_data_in=117967114 mem2_write_en=0 mem2_write_address=6 mem2_data_in=117967114 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 158 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=6 mem1_data_in=117967114 mem2_write_en=0 mem2_write_address=6 mem2_data_in=117967114 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 162 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=7 mem1_data_in=134810123 mem2_write_en=1 mem2_write_address=7 mem2_data_in=134810123 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 166 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=7 mem1_data_in=134810123 mem2_write_en=0 mem2_write_address=7 mem2_data_in=134810123 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 178 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=7 mem1_data_in=134810123 mem2_write_en=0 mem2_write_address=7 mem2_data_in=134810123 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 182 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=8 mem1_data_in=151653132 mem2_write_en=1 mem2_write_address=8 mem2_data_in=151653132 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 186 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=8 mem1_data_in=151653132 mem2_write_en=0 mem2_write_address=8 mem2_data_in=151653132 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 198 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=8 mem1_data_in=151653132 mem2_write_en=0 mem2_write_address=8 mem2_data_in=151653132 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 202 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=9 mem1_data_in=168496141 mem2_write_en=1 mem2_write_address=9 mem2_data_in=168496141 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 206 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=9 mem1_data_in=168496141 mem2_write_en=0 mem2_write_address=9 mem2_data_in=168496141 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 218 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=9 mem1_data_in=168496141 mem2_write_en=0 mem2_write_address=9 mem2_data_in=168496141 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 222 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=10 mem1_data_in=185339150 mem2_write_en=1 mem2_write_address=10 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 226 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=10 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=10 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 238 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=10 mem1_data_in=185339150 mem2_write_en=0 mem2_write_address=10 mem2_data_in=185339150 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 242 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=11 mem1_data_in=202182159 mem2_write_en=1 mem2_write_address=11 mem2_data_in=202182159 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 246 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=202182159 mem2_write_en=0 mem2_write_address=11 mem2_data_in=202182159 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 258 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=202182159 mem2_write_en=0 mem2_write_address=11 mem2_data_in=202182159 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 262 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=12 mem1_data_in=219025168 mem2_write_en=1 mem2_write_address=12 mem2_data_in=219025168 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 266 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=12 mem1_data_in=219025168 mem2_write_en=0 mem2_write_address=12 mem2_data_in=219025168 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 278 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=12 mem1_data_in=219025168 mem2_write_en=0 mem2_write_address=12 mem2_data_in=219025168 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 282 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=13 mem1_data_in=235868177 mem2_write_en=1 mem2_write_address=13 mem2_data_in=235868177 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 286 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=13 mem1_data_in=235868177 mem2_write_en=0 mem2_write_address=13 mem2_data_in=235868177 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 298 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=13 mem1_data_in=235868177 mem2_write_en=0 mem2_write_address=13 mem2_data_in=235868177 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 302 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=14 mem1_data_in=252711186 mem2_write_en=1 mem2_write_address=14 mem2_data_in=252711186 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 306 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=14 mem1_data_in=252711186 mem2_write_en=0 mem2_write_address=14 mem2_data_in=252711186 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 318 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=14 mem1_data_in=252711186 mem2_write_en=0 mem2_write_address=14 mem2_data_in=252711186 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 322 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=15 mem1_data_in=269554195 mem2_write_en=1 mem2_write_address=15 mem2_data_in=269554195 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 326 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=15 mem1_data_in=269554195 mem2_write_en=0 mem2_write_address=15 mem2_data_in=269554195 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 338 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=15 mem1_data_in=269554195 mem2_write_en=0 mem2_write_address=15 mem2_data_in=269554195 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 342 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=16 mem1_data_in=286397204 mem2_write_en=1 mem2_write_address=16 mem2_data_in=286397204 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 346 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=16 mem1_data_in=286397204 mem2_write_en=0 mem2_write_address=16 mem2_data_in=286397204 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 358 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=16 mem1_data_in=286397204 mem2_write_en=0 mem2_write_address=16 mem2_data_in=286397204 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 362 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=17 mem1_data_in=303240213 mem2_write_en=1 mem2_write_address=17 mem2_data_in=303240213 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 366 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=17 mem1_data_in=303240213 mem2_write_en=0 mem2_write_address=17 mem2_data_in=303240213 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 378 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=17 mem1_data_in=303240213 mem2_write_en=0 mem2_write_address=17 mem2_data_in=303240213 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 382 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=18 mem1_data_in=320083222 mem2_write_en=1 mem2_write_address=18 mem2_data_in=320083222 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 386 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=18 mem1_data_in=320083222 mem2_write_en=0 mem2_write_address=18 mem2_data_in=320083222 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 398 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=18 mem1_data_in=320083222 mem2_write_en=0 mem2_write_address=18 mem2_data_in=320083222 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 402 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=19 mem1_data_in=336926231 mem2_write_en=1 mem2_write_address=19 mem2_data_in=336926231 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 406 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=19 mem1_data_in=336926231 mem2_write_en=0 mem2_write_address=19 mem2_data_in=336926231 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 418 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=19 mem1_data_in=336926231 mem2_write_en=0 mem2_write_address=19 mem2_data_in=336926231 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 422 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=20 mem1_data_in=353769240 mem2_write_en=1 mem2_write_address=20 mem2_data_in=353769240 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 426 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=20 mem1_data_in=353769240 mem2_write_en=0 mem2_write_address=20 mem2_data_in=353769240 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 438 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=20 mem1_data_in=353769240 mem2_write_en=0 mem2_write_address=20 mem2_data_in=353769240 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 442 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=21 mem1_data_in=370612249 mem2_write_en=1 mem2_write_address=21 mem2_data_in=370612249 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 446 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=21 mem1_data_in=370612249 mem2_write_en=0 mem2_write_address=21 mem2_data_in=370612249 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 458 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=21 mem1_data_in=370612249 mem2_write_en=0 mem2_write_address=21 mem2_data_in=370612249 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 462 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=22 mem1_data_in=387455258 mem2_write_en=1 mem2_write_address=22 mem2_data_in=387455258 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 466 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=22 mem1_data_in=387455258 mem2_write_en=0 mem2_write_address=22 mem2_data_in=387455258 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 478 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=22 mem1_data_in=387455258 mem2_write_en=0 mem2_write_address=22 mem2_data_in=387455258 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 482 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=23 mem1_data_in=404298267 mem2_write_en=1 mem2_write_address=23 mem2_data_in=404298267 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 486 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=23 mem1_data_in=404298267 mem2_write_en=0 mem2_write_address=23 mem2_data_in=404298267 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 498 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=23 mem1_data_in=404298267 mem2_write_en=0 mem2_write_address=23 mem2_data_in=404298267 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 502 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=24 mem1_data_in=421141276 mem2_write_en=1 mem2_write_address=24 mem2_data_in=421141276 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 506 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=24 mem1_data_in=421141276 mem2_write_en=0 mem2_write_address=24 mem2_data_in=421141276 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 518 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=24 mem1_data_in=421141276 mem2_write_en=0 mem2_write_address=24 mem2_data_in=421141276 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 522 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=25 mem1_data_in=437984285 mem2_write_en=1 mem2_write_address=25 mem2_data_in=437984285 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 526 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=25 mem1_data_in=437984285 mem2_write_en=0 mem2_write_address=25 mem2_data_in=437984285 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 538 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=25 mem1_data_in=437984285 mem2_write_en=0 mem2_write_address=25 mem2_data_in=437984285 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 542 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=26 mem1_data_in=454827294 mem2_write_en=1 mem2_write_address=26 mem2_data_in=454827294 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 546 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=26 mem1_data_in=454827294 mem2_write_en=0 mem2_write_address=26 mem2_data_in=454827294 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 558 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=26 mem1_data_in=454827294 mem2_write_en=0 mem2_write_address=26 mem2_data_in=454827294 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 562 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=27 mem1_data_in=471670303 mem2_write_en=1 mem2_write_address=27 mem2_data_in=471670303 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 566 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=471670303 mem2_write_en=0 mem2_write_address=27 mem2_data_in=471670303 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 578 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=471670303 mem2_write_en=0 mem2_write_address=27 mem2_data_in=471670303 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 582 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=28 mem1_data_in=488513312 mem2_write_en=1 mem2_write_address=28 mem2_data_in=488513312 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 586 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=28 mem1_data_in=488513312 mem2_write_en=0 mem2_write_address=28 mem2_data_in=488513312 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 598 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=28 mem1_data_in=488513312 mem2_write_en=0 mem2_write_address=28 mem2_data_in=488513312 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 602 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=29 mem1_data_in=505356321 mem2_write_en=1 mem2_write_address=29 mem2_data_in=505356321 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 606 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=29 mem1_data_in=505356321 mem2_write_en=0 mem2_write_address=29 mem2_data_in=505356321 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 618 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=29 mem1_data_in=505356321 mem2_write_en=0 mem2_write_address=29 mem2_data_in=505356321 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 622 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=30 mem1_data_in=522199330 mem2_write_en=1 mem2_write_address=30 mem2_data_in=522199330 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 626 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=30 mem1_data_in=522199330 mem2_write_en=0 mem2_write_address=30 mem2_data_in=522199330 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 638 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=30 mem1_data_in=522199330 mem2_write_en=0 mem2_write_address=30 mem2_data_in=522199330 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 642 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=31 mem1_data_in=539042339 mem2_write_en=1 mem2_write_address=31 mem2_data_in=539042339 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 646 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=31 mem1_data_in=539042339 mem2_write_en=0 mem2_write_address=31 mem2_data_in=539042339 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 658 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=31 mem1_data_in=539042339 mem2_write_en=0 mem2_write_address=31 mem2_data_in=539042339 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 662 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=0 mem1_data_in=555885348 mem2_write_en=1 mem2_write_address=0 mem2_data_in=555885348 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 666 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=555885348 mem2_write_en=0 mem2_write_address=0 mem2_data_in=555885348 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 678 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=0 mem1_data_in=555885348 mem2_write_en=0 mem2_write_address=0 mem2_data_in=555885348 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 682 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=1 mem1_data_in=572728357 mem2_write_en=1 mem2_write_address=1 mem2_data_in=572728357 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 686 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=1 mem1_data_in=572728357 mem2_write_en=0 mem2_write_address=1 mem2_data_in=572728357 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 698 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=1 mem1_data_in=572728357 mem2_write_en=0 mem2_write_address=1 mem2_data_in=572728357 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 702 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=2 mem1_data_in=589571366 mem2_write_en=1 mem2_write_address=2 mem2_data_in=589571366 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 706 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=2 mem1_data_in=589571366 mem2_write_en=0 mem2_write_address=2 mem2_data_in=589571366 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 718 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=2 mem1_data_in=589571366 mem2_write_en=0 mem2_write_address=2 mem2_data_in=589571366 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 722 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=3 mem1_data_in=606414375 mem2_write_en=1 mem2_write_address=3 mem2_data_in=606414375 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 726 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=3 mem1_data_in=606414375 mem2_write_en=0 mem2_write_address=3 mem2_data_in=606414375 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 738 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=3 mem1_data_in=606414375 mem2_write_en=0 mem2_write_address=3 mem2_data_in=606414375 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 742 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=4 mem1_data_in=623257384 mem2_write_en=1 mem2_write_address=4 mem2_data_in=623257384 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 746 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=4 mem1_data_in=623257384 mem2_write_en=0 mem2_write_address=4 mem2_data_in=623257384 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 758 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=4 mem1_data_in=623257384 mem2_write_en=0 mem2_write_address=4 mem2_data_in=623257384 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 762 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=5 mem1_data_in=640100393 mem2_write_en=1 mem2_write_address=5 mem2_data_in=640100393 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 766 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=5 mem1_data_in=640100393 mem2_write_en=0 mem2_write_address=5 mem2_data_in=640100393 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 778 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=5 mem1_data_in=640100393 mem2_write_en=0 mem2_write_address=5 mem2_data_in=640100393 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 782 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=6 mem1_data_in=656943402 mem2_write_en=1 mem2_write_address=6 mem2_data_in=656943402 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 786 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=6 mem1_data_in=656943402 mem2_write_en=0 mem2_write_address=6 mem2_data_in=656943402 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 798 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=6 mem1_data_in=656943402 mem2_write_en=0 mem2_write_address=6 mem2_data_in=656943402 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 802 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=7 mem1_data_in=673786411 mem2_write_en=1 mem2_write_address=7 mem2_data_in=673786411 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 806 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=7 mem1_data_in=673786411 mem2_write_en=0 mem2_write_address=7 mem2_data_in=673786411 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 818 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=7 mem1_data_in=673786411 mem2_write_en=0 mem2_write_address=7 mem2_data_in=673786411 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 822 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=8 mem1_data_in=690629420 mem2_write_en=1 mem2_write_address=8 mem2_data_in=690629420 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 826 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=8 mem1_data_in=690629420 mem2_write_en=0 mem2_write_address=8 mem2_data_in=690629420 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 838 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=8 mem1_data_in=690629420 mem2_write_en=0 mem2_write_address=8 mem2_data_in=690629420 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 842 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=9 mem1_data_in=707472429 mem2_write_en=1 mem2_write_address=9 mem2_data_in=707472429 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 846 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=9 mem1_data_in=707472429 mem2_write_en=0 mem2_write_address=9 mem2_data_in=707472429 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 858 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=9 mem1_data_in=707472429 mem2_write_en=0 mem2_write_address=9 mem2_data_in=707472429 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 862 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=10 mem1_data_in=724315438 mem2_write_en=1 mem2_write_address=10 mem2_data_in=724315438 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 866 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=10 mem1_data_in=724315438 mem2_write_en=0 mem2_write_address=10 mem2_data_in=724315438 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 878 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=10 mem1_data_in=724315438 mem2_write_en=0 mem2_write_address=10 mem2_data_in=724315438 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 882 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=11 mem1_data_in=741158447 mem2_write_en=1 mem2_write_address=11 mem2_data_in=741158447 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 886 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=741158447 mem2_write_en=0 mem2_write_address=11 mem2_data_in=741158447 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 898 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=11 mem1_data_in=741158447 mem2_write_en=0 mem2_write_address=11 mem2_data_in=741158447 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 902 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=12 mem1_data_in=758001456 mem2_write_en=1 mem2_write_address=12 mem2_data_in=758001456 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 906 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=12 mem1_data_in=758001456 mem2_write_en=0 mem2_write_address=12 mem2_data_in=758001456 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 918 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=12 mem1_data_in=758001456 mem2_write_en=0 mem2_write_address=12 mem2_data_in=758001456 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 922 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=13 mem1_data_in=774844465 mem2_write_en=1 mem2_write_address=13 mem2_data_in=774844465 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 926 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=13 mem1_data_in=774844465 mem2_write_en=0 mem2_write_address=13 mem2_data_in=774844465 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 938 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=13 mem1_data_in=774844465 mem2_write_en=0 mem2_write_address=13 mem2_data_in=774844465 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 942 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=14 mem1_data_in=791687474 mem2_write_en=1 mem2_write_address=14 mem2_data_in=791687474 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 946 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=14 mem1_data_in=791687474 mem2_write_en=0 mem2_write_address=14 mem2_data_in=791687474 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 958 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=14 mem1_data_in=791687474 mem2_write_en=0 mem2_write_address=14 mem2_data_in=791687474 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 962 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=15 mem1_data_in=808530483 mem2_write_en=1 mem2_write_address=15 mem2_data_in=808530483 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 966 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=15 mem1_data_in=808530483 mem2_write_en=0 mem2_write_address=15 mem2_data_in=808530483 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 978 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=15 mem1_data_in=808530483 mem2_write_en=0 mem2_write_address=15 mem2_data_in=808530483 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                 982 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=16 mem1_data_in=825373492 mem2_write_en=1 mem2_write_address=16 mem2_data_in=825373492 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 986 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=16 mem1_data_in=825373492 mem2_write_en=0 mem2_write_address=16 mem2_data_in=825373492 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                 998 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=16 mem1_data_in=825373492 mem2_write_en=0 mem2_write_address=16 mem2_data_in=825373492 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1002 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=17 mem1_data_in=842216501 mem2_write_en=1 mem2_write_address=17 mem2_data_in=842216501 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1006 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=17 mem1_data_in=842216501 mem2_write_en=0 mem2_write_address=17 mem2_data_in=842216501 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1018 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=17 mem1_data_in=842216501 mem2_write_en=0 mem2_write_address=17 mem2_data_in=842216501 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1022 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=18 mem1_data_in=859059510 mem2_write_en=1 mem2_write_address=18 mem2_data_in=859059510 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1026 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=18 mem1_data_in=859059510 mem2_write_en=0 mem2_write_address=18 mem2_data_in=859059510 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1038 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=18 mem1_data_in=859059510 mem2_write_en=0 mem2_write_address=18 mem2_data_in=859059510 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1042 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=19 mem1_data_in=875902519 mem2_write_en=1 mem2_write_address=19 mem2_data_in=875902519 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1046 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=19 mem1_data_in=875902519 mem2_write_en=0 mem2_write_address=19 mem2_data_in=875902519 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1058 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=19 mem1_data_in=875902519 mem2_write_en=0 mem2_write_address=19 mem2_data_in=875902519 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1062 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=20 mem1_data_in=892745528 mem2_write_en=1 mem2_write_address=20 mem2_data_in=892745528 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1066 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=20 mem1_data_in=892745528 mem2_write_en=0 mem2_write_address=20 mem2_data_in=892745528 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1078 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=20 mem1_data_in=892745528 mem2_write_en=0 mem2_write_address=20 mem2_data_in=892745528 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1082 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=21 mem1_data_in=909588537 mem2_write_en=1 mem2_write_address=21 mem2_data_in=909588537 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1086 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=21 mem1_data_in=909588537 mem2_write_en=0 mem2_write_address=21 mem2_data_in=909588537 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1098 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=21 mem1_data_in=909588537 mem2_write_en=0 mem2_write_address=21 mem2_data_in=909588537 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1102 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=22 mem1_data_in=926431546 mem2_write_en=1 mem2_write_address=22 mem2_data_in=926431546 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1106 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=22 mem1_data_in=926431546 mem2_write_en=0 mem2_write_address=22 mem2_data_in=926431546 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1118 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=22 mem1_data_in=926431546 mem2_write_en=0 mem2_write_address=22 mem2_data_in=926431546 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1122 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=23 mem1_data_in=943274555 mem2_write_en=1 mem2_write_address=23 mem2_data_in=943274555 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1126 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=23 mem1_data_in=943274555 mem2_write_en=0 mem2_write_address=23 mem2_data_in=943274555 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1138 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=23 mem1_data_in=943274555 mem2_write_en=0 mem2_write_address=23 mem2_data_in=943274555 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1142 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=24 mem1_data_in=960117564 mem2_write_en=1 mem2_write_address=24 mem2_data_in=960117564 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1146 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=24 mem1_data_in=960117564 mem2_write_en=0 mem2_write_address=24 mem2_data_in=960117564 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1158 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=24 mem1_data_in=960117564 mem2_write_en=0 mem2_write_address=24 mem2_data_in=960117564 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1162 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=25 mem1_data_in=976960573 mem2_write_en=1 mem2_write_address=25 mem2_data_in=976960573 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1166 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=25 mem1_data_in=976960573 mem2_write_en=0 mem2_write_address=25 mem2_data_in=976960573 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1178 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=25 mem1_data_in=976960573 mem2_write_en=0 mem2_write_address=25 mem2_data_in=976960573 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1182 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=26 mem1_data_in=993803582 mem2_write_en=1 mem2_write_address=26 mem2_data_in=993803582 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1186 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=26 mem1_data_in=993803582 mem2_write_en=0 mem2_write_address=26 mem2_data_in=993803582 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1198 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=26 mem1_data_in=993803582 mem2_write_en=0 mem2_write_address=26 mem2_data_in=993803582 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1202 rst_n=1 start_processing=0 mem1_write_en=1 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=1 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1206 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1210 rst_n=1 start_processing=1 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=0 mem3_read_address=0 mem3_data_out=00
+                1218 rst_n=1 start_processing=1 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1710 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=0 mem3_read_address=0 mem3_data_out=01
+                1730 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=1 mem3_data_out=151341
+Error: Time=1734000 FAIL
+Time: 1734 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[1] = 15134, expected = 16
+Error: Time=1738000 FAIL
+Time: 1738 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1738 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=2 mem3_data_out=37261
+Error: Time=1742000 FAIL
+Time: 1742 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[2] = 3726, expected = 25
+Error: Time=1746000 FAIL
+Time: 1746 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1746 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=3 mem3_data_out=39741
+Error: Time=1750000 FAIL
+Time: 1750 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[3] = 3974, expected = 36
+Error: Time=1754000 FAIL
+Time: 1754 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1754 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=4 mem3_data_out=42301
+Error: Time=1758000 FAIL
+Time: 1758 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[4] = 4230, expected = 49
+Error: Time=1762000 FAIL
+Time: 1762 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1762 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=5 mem3_data_out=44941
+Error: Time=1766000 FAIL
+Time: 1766 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[5] = 4494, expected = 64
+Error: Time=1770000 FAIL
+Time: 1770 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1770 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=6 mem3_data_out=47661
+Error: Time=1774000 FAIL
+Time: 1774 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[6] = 4766, expected = 81
+Error: Time=1778000 FAIL
+Time: 1778 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1778 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=7 mem3_data_out=50461
+Error: Time=1782000 FAIL
+Time: 1782 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[7] = 5046, expected = 100
+Error: Time=1786000 FAIL
+Time: 1786 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1786 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=8 mem3_data_out=53341
+Error: Time=1790000 FAIL
+Time: 1790 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[8] = 5334, expected = 121
+Error: Time=1794000 FAIL
+Time: 1794 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1794 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=9 mem3_data_out=56301
+Error: Time=1798000 FAIL
+Time: 1798 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[9] = 5630, expected = 144
+Error: Time=1802000 FAIL
+Time: 1802 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1802 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=10 mem3_data_out=59341
+Error: Time=1806000 FAIL
+Time: 1806 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[10] = 5934, expected = 169
+Error: Time=1810000 FAIL
+Time: 1810 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1810 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=11 mem3_data_out=62461
+Error: Time=1814000 FAIL
+Time: 1814 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[11] = 6246, expected = 196
+Error: Time=1818000 FAIL
+Time: 1818 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1818 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=12 mem3_data_out=65661
+Error: Time=1822000 FAIL
+Time: 1822 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[12] = 6566, expected = 225
+Error: Time=1826000 FAIL
+Time: 1826 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1826 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=13 mem3_data_out=68941
+Error: Time=1830000 FAIL
+Time: 1830 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[13] = 6894, expected = 256
+Error: Time=1834000 FAIL
+Time: 1834 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1834 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=14 mem3_data_out=72301
+Error: Time=1838000 FAIL
+Time: 1838 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[14] = 7230, expected = 289
+Error: Time=1842000 FAIL
+Time: 1842 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1842 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=15 mem3_data_out=75741
+Error: Time=1846000 FAIL
+Time: 1846 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[15] = 7574, expected = 324
+Error: Time=1850000 FAIL
+Time: 1850 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1850 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=16 mem3_data_out=79261
+Error: Time=1854000 FAIL
+Time: 1854 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[16] = 7926, expected = 361
+Error: Time=1858000 FAIL
+Time: 1858 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1858 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=17 mem3_data_out=82861
+Error: Time=1862000 FAIL
+Time: 1862 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[17] = 8286, expected = 400
+Error: Time=1866000 FAIL
+Time: 1866 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1866 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=18 mem3_data_out=86541
+Error: Time=1870000 FAIL
+Time: 1870 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[18] = 8654, expected = 441
+Error: Time=1874000 FAIL
+Time: 1874 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1874 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=19 mem3_data_out=90301
+Error: Time=1878000 FAIL
+Time: 1878 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[19] = 9030, expected = 484
+Error: Time=1882000 FAIL
+Time: 1882 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1882 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=20 mem3_data_out=94141
+Error: Time=1886000 FAIL
+Time: 1886 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[20] = 9414, expected = 529
+Error: Time=1890000 FAIL
+Time: 1890 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1890 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=21 mem3_data_out=98061
+Error: Time=1894000 FAIL
+Time: 1894 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[21] = 9806, expected = 576
+Error: Time=1898000 FAIL
+Time: 1898 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1898 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=22 mem3_data_out=102061
+Error: Time=1902000 FAIL
+Time: 1902 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[22] = 10206, expected = 625
+Error: Time=1906000 FAIL
+Time: 1906 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1906 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=23 mem3_data_out=106141
+Error: Time=1910000 FAIL
+Time: 1910 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[23] = 10614, expected = 676
+Error: Time=1914000 FAIL
+Time: 1914 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1914 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=24 mem3_data_out=110301
+Error: Time=1918000 FAIL
+Time: 1918 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[24] = 11030, expected = 729
+Error: Time=1922000 FAIL
+Time: 1922 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1922 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=25 mem3_data_out=114541
+Error: Time=1926000 FAIL
+Time: 1926 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[25] = 11454, expected = 784
+Error: Time=1930000 FAIL
+Time: 1930 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1930 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=26 mem3_data_out=118861
+Error: Time=1934000 FAIL
+Time: 1934 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[26] = 11886, expected = 841
+Error: Time=1938000 FAIL
+Time: 1938 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1938 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=27 mem3_data_out=123261
+Error: Time=1942000 FAIL
+Time: 1942 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[27] = 12326, expected = 900
+Error: Time=1946000 FAIL
+Time: 1946 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1946 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=28 mem3_data_out=127741
+Error: Time=1950000 FAIL
+Time: 1950 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[28] = 12774, expected = 961
+Error: Time=1954000 FAIL
+Time: 1954 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1954 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=29 mem3_data_out=132301
+Error: Time=1958000 FAIL
+Time: 1958 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[29] = 13230, expected = 1024
+Error: Time=1962000 FAIL
+Time: 1962 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1962 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=30 mem3_data_out=136941
+Error: Time=1966000 FAIL
+Time: 1966 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[30] = 13694, expected = 1089
+Error: Time=1970000 FAIL
+Time: 1970 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1970 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=31 mem3_data_out=141661
+Error: Time=1974000 FAIL
+Time: 1974 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[31] = 14166, expected = 1156
+Error: Time=1978000 FAIL
+Time: 1978 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1978 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=0 mem3_data_out=146461
+Error: Time=1982000 FAIL
+Time: 1982 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[32] = 14646, expected = 1225
+Error: Time=1986000 FAIL
+Time: 1986 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1986 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=1 mem3_data_out=151341
+Error: Time=1990000 FAIL
+Time: 1990 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[33] = 15134, expected = 1296
+Error: Time=1994000 FAIL
+Time: 1994 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                1994 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=2 mem3_data_out=37261
+Error: Time=1998000 FAIL
+Time: 1998 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[34] = 3726, expected = 1369
+Error: Time=2002000 FAIL
+Time: 2002 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2002 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=3 mem3_data_out=39741
+Error: Time=2006000 FAIL
+Time: 2006 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[35] = 3974, expected = 1444
+Error: Time=2010000 FAIL
+Time: 2010 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2010 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=4 mem3_data_out=42301
+Error: Time=2014000 FAIL
+Time: 2014 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[36] = 4230, expected = 1521
+Error: Time=2018000 FAIL
+Time: 2018 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2018 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=5 mem3_data_out=44941
+Error: Time=2022000 FAIL
+Time: 2022 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[37] = 4494, expected = 1600
+Error: Time=2026000 FAIL
+Time: 2026 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2026 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=6 mem3_data_out=47661
+Error: Time=2030000 FAIL
+Time: 2030 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[38] = 4766, expected = 1681
+Error: Time=2034000 FAIL
+Time: 2034 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2034 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=7 mem3_data_out=50461
+Error: Time=2038000 FAIL
+Time: 2038 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[39] = 5046, expected = 1764
+Error: Time=2042000 FAIL
+Time: 2042 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2042 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=8 mem3_data_out=53341
+Error: Time=2046000 FAIL
+Time: 2046 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[40] = 5334, expected = 1849
+Error: Time=2050000 FAIL
+Time: 2050 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2050 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=9 mem3_data_out=56301
+Error: Time=2054000 FAIL
+Time: 2054 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[41] = 5630, expected = 1936
+Error: Time=2058000 FAIL
+Time: 2058 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2058 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=10 mem3_data_out=59341
+Error: Time=2062000 FAIL
+Time: 2062 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[42] = 5934, expected = 2025
+Error: Time=2066000 FAIL
+Time: 2066 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2066 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=11 mem3_data_out=62461
+Error: Time=2070000 FAIL
+Time: 2070 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[43] = 6246, expected = 2116
+Error: Time=2074000 FAIL
+Time: 2074 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2074 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=12 mem3_data_out=65661
+Error: Time=2078000 FAIL
+Time: 2078 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[44] = 6566, expected = 2209
+Error: Time=2082000 FAIL
+Time: 2082 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2082 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=13 mem3_data_out=68941
+Error: Time=2086000 FAIL
+Time: 2086 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[45] = 6894, expected = 2304
+Error: Time=2090000 FAIL
+Time: 2090 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2090 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=14 mem3_data_out=72301
+Error: Time=2094000 FAIL
+Time: 2094 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[46] = 7230, expected = 2401
+Error: Time=2098000 FAIL
+Time: 2098 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2098 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=15 mem3_data_out=75741
+Error: Time=2102000 FAIL
+Time: 2102 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[47] = 7574, expected = 2500
+Error: Time=2106000 FAIL
+Time: 2106 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2106 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=16 mem3_data_out=79261
+Error: Time=2110000 FAIL
+Time: 2110 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[48] = 7926, expected = 2601
+Error: Time=2114000 FAIL
+Time: 2114 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2114 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=17 mem3_data_out=82861
+Error: Time=2118000 FAIL
+Time: 2118 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[49] = 8286, expected = 2704
+Error: Time=2122000 FAIL
+Time: 2122 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2122 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=18 mem3_data_out=86541
+Error: Time=2126000 FAIL
+Time: 2126 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[50] = 8654, expected = 2809
+Error: Time=2130000 FAIL
+Time: 2130 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2130 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=19 mem3_data_out=90301
+Error: Time=2134000 FAIL
+Time: 2134 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[51] = 9030, expected = 2916
+Error: Time=2138000 FAIL
+Time: 2138 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2138 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=20 mem3_data_out=94141
+Error: Time=2142000 FAIL
+Time: 2142 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[52] = 9414, expected = 3025
+Error: Time=2146000 FAIL
+Time: 2146 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2146 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=21 mem3_data_out=98061
+Error: Time=2150000 FAIL
+Time: 2150 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[53] = 9806, expected = 3136
+Error: Time=2154000 FAIL
+Time: 2154 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2154 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=22 mem3_data_out=102061
+Error: Time=2158000 FAIL
+Time: 2158 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[54] = 10206, expected = 3249
+Error: Time=2162000 FAIL
+Time: 2162 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2162 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=23 mem3_data_out=106141
+Error: Time=2166000 FAIL
+Time: 2166 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[55] = 10614, expected = 3364
+Error: Time=2170000 FAIL
+Time: 2170 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2170 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=24 mem3_data_out=110301
+Error: Time=2174000 FAIL
+Time: 2174 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[56] = 11030, expected = 3481
+Error: Time=2178000 FAIL
+Time: 2178 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2178 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=25 mem3_data_out=114541
+Error: Time=2182000 FAIL
+Time: 2182 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[57] = 11454, expected = 3600
+Error: Time=2186000 FAIL
+Time: 2186 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2186 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=26 mem3_data_out=118861
+Error: Time=2190000 FAIL
+Time: 2190 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[58] = 11886, expected = 3721
+Error: Time=2194000 FAIL
+Time: 2194 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2194 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=27 mem3_data_out=123261
+Error: Time=2198000 FAIL
+Time: 2198 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[59] = 12326, expected = 3844
+Error: Time=2202000 FAIL
+Time: 2202 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+                2202 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=1 mem3_read_address=28 mem3_data_out=127741
+Error: Time=2206000 FAIL
+Time: 2206 ns  Iteration: 0  Process: /top_level_wrapper_tb/Always97_32  Scope: top_level_wrapper_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v Line: 100
+Read mem3[60] = 12774, expected = 3969
+                2206 rst_n=1 start_processing=0 mem1_write_en=0 mem1_write_address=27 mem1_data_in=1010646591 mem2_write_en=0 mem2_write_address=27 mem2_data_in=1010646591 mem3_read_en=0 mem3_read_address=28 mem3_data_out=127741
+$finish called at time : 4226 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/top_level_wrapper_tb.v" Line 179
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 25 07:35:02 2025...

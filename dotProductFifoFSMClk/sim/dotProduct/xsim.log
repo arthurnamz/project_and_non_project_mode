@@ -1,0 +1,102 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 25 07:33:35 2025
+# Process ID         : 48150
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/dotProduct
+# Command line       : xsim -mode tcl -source {xsim.dir/work.dotProduct_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/dotProduct/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/dotProduct/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1235.602 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 6625 MB
+#-----------------------------------------------------------
+source xsim.dir/work.dotProduct_tb/xsim_script.tcl
+# xsim {work.dotProduct_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Time=0 rst_n=0 start_processing=0 mem1_input=0 mem2_input=0 result=x done=x
+Time=5000 rst_n=0 start_processing=0 mem1_input=0 mem2_input=0 result=0 done=0
+Time=10000 rst_n=1 start_processing=0 mem1_input=16909060 mem2_input=16909060 result=0 done=0
+Time=20000 rst_n=1 start_processing=1 mem1_input=16909060 mem2_input=16909060 result=0 done=0
+Time=25000 rst_n=1 start_processing=1 mem1_input=16909060 mem2_input=16909060 result=0 done=1
+Time=30000 rst_n=1 start_processing=0 mem1_input=16909060 mem2_input=16909060 result=0 done=1
+Error: Time=35000 FAIL: Dot product mismatch. Got 0, Expected 30
+Time: 35 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=35000 rst_n=1 start_processing=0 mem1_input=16909060 mem2_input=16909060 result=0 done=0
+Time=60000 rst_n=1 start_processing=0 mem1_input=33752069 mem2_input=33752069 result=0 done=0
+Time=70000 rst_n=1 start_processing=1 mem1_input=33752069 mem2_input=33752069 result=0 done=0
+Time=75000 rst_n=1 start_processing=1 mem1_input=33752069 mem2_input=33752069 result=30 done=1
+Time=80000 rst_n=1 start_processing=0 mem1_input=33752069 mem2_input=33752069 result=30 done=1
+Error: Time=85000 FAIL: Dot product mismatch. Got 30, Expected 54
+Time: 85 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=85000 rst_n=1 start_processing=0 mem1_input=33752069 mem2_input=33752069 result=30 done=0
+Time=110000 rst_n=1 start_processing=0 mem1_input=50595078 mem2_input=50595078 result=30 done=0
+Time=120000 rst_n=1 start_processing=1 mem1_input=50595078 mem2_input=50595078 result=30 done=0
+Time=125000 rst_n=1 start_processing=1 mem1_input=50595078 mem2_input=50595078 result=54 done=1
+Time=130000 rst_n=1 start_processing=0 mem1_input=50595078 mem2_input=50595078 result=54 done=1
+Error: Time=135000 FAIL: Dot product mismatch. Got 54, Expected 86
+Time: 135 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=135000 rst_n=1 start_processing=0 mem1_input=50595078 mem2_input=50595078 result=54 done=0
+Time=160000 rst_n=1 start_processing=0 mem1_input=67438087 mem2_input=67438087 result=54 done=0
+Time=170000 rst_n=1 start_processing=1 mem1_input=67438087 mem2_input=67438087 result=54 done=0
+Time=175000 rst_n=1 start_processing=1 mem1_input=67438087 mem2_input=67438087 result=86 done=1
+Time=180000 rst_n=1 start_processing=0 mem1_input=67438087 mem2_input=67438087 result=86 done=1
+Error: Time=185000 FAIL: Dot product mismatch. Got 86, Expected 126
+Time: 185 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=185000 rst_n=1 start_processing=0 mem1_input=67438087 mem2_input=67438087 result=86 done=0
+Time=210000 rst_n=1 start_processing=0 mem1_input=84281096 mem2_input=84281096 result=86 done=0
+Time=220000 rst_n=1 start_processing=1 mem1_input=84281096 mem2_input=84281096 result=86 done=0
+Time=225000 rst_n=1 start_processing=1 mem1_input=84281096 mem2_input=84281096 result=126 done=1
+Time=230000 rst_n=1 start_processing=0 mem1_input=84281096 mem2_input=84281096 result=126 done=1
+Error: Time=235000 FAIL: Dot product mismatch. Got 126, Expected 174
+Time: 235 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=235000 rst_n=1 start_processing=0 mem1_input=84281096 mem2_input=84281096 result=126 done=0
+Time=260000 rst_n=1 start_processing=0 mem1_input=101124105 mem2_input=101124105 result=126 done=0
+Time=270000 rst_n=1 start_processing=1 mem1_input=101124105 mem2_input=101124105 result=126 done=0
+Time=275000 rst_n=1 start_processing=1 mem1_input=101124105 mem2_input=101124105 result=174 done=1
+Time=280000 rst_n=1 start_processing=0 mem1_input=101124105 mem2_input=101124105 result=174 done=1
+Error: Time=285000 FAIL: Dot product mismatch. Got 174, Expected 230
+Time: 285 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=285000 rst_n=1 start_processing=0 mem1_input=101124105 mem2_input=101124105 result=174 done=0
+Time=310000 rst_n=1 start_processing=0 mem1_input=117967114 mem2_input=117967114 result=174 done=0
+Time=320000 rst_n=1 start_processing=1 mem1_input=117967114 mem2_input=117967114 result=174 done=0
+Time=325000 rst_n=1 start_processing=1 mem1_input=117967114 mem2_input=117967114 result=230 done=1
+Time=330000 rst_n=1 start_processing=0 mem1_input=117967114 mem2_input=117967114 result=230 done=1
+Error: Time=335000 FAIL: Dot product mismatch. Got 230, Expected 294
+Time: 335 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=335000 rst_n=1 start_processing=0 mem1_input=117967114 mem2_input=117967114 result=230 done=0
+Time=360000 rst_n=1 start_processing=0 mem1_input=134810123 mem2_input=134810123 result=230 done=0
+Time=370000 rst_n=1 start_processing=1 mem1_input=134810123 mem2_input=134810123 result=230 done=0
+Time=375000 rst_n=1 start_processing=1 mem1_input=134810123 mem2_input=134810123 result=294 done=1
+Time=380000 rst_n=1 start_processing=0 mem1_input=134810123 mem2_input=134810123 result=294 done=1
+Error: Time=385000 FAIL: Dot product mismatch. Got 294, Expected 366
+Time: 385 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=385000 rst_n=1 start_processing=0 mem1_input=134810123 mem2_input=134810123 result=294 done=0
+Time=410000 rst_n=1 start_processing=0 mem1_input=151653132 mem2_input=151653132 result=294 done=0
+Time=420000 rst_n=1 start_processing=1 mem1_input=151653132 mem2_input=151653132 result=294 done=0
+Time=425000 rst_n=1 start_processing=1 mem1_input=151653132 mem2_input=151653132 result=366 done=1
+Time=430000 rst_n=1 start_processing=0 mem1_input=151653132 mem2_input=151653132 result=366 done=1
+Error: Time=435000 FAIL: Dot product mismatch. Got 366, Expected 446
+Time: 435 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=435000 rst_n=1 start_processing=0 mem1_input=151653132 mem2_input=151653132 result=366 done=0
+Time=460000 rst_n=1 start_processing=0 mem1_input=168496141 mem2_input=168496141 result=366 done=0
+Time=470000 rst_n=1 start_processing=1 mem1_input=168496141 mem2_input=168496141 result=366 done=0
+Time=475000 rst_n=1 start_processing=1 mem1_input=168496141 mem2_input=168496141 result=446 done=1
+Time=480000 rst_n=1 start_processing=0 mem1_input=168496141 mem2_input=168496141 result=446 done=1
+Error: Time=485000 FAIL: Dot product mismatch. Got 446, Expected 534
+Time: 485 ns  Iteration: 0  Process: /dotProduct_tb/Always73_11  Scope: dotProduct_tb  File: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v Line: 76
+Time=485000 rst_n=1 start_processing=0 mem1_input=168496141 mem2_input=168496141 result=446 done=0
+$finish called at time : 610 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/dotProduct_tb.v" Line 113
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 25 07:33:42 2025...

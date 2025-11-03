@@ -1,0 +1,95 @@
+#-----------------------------------------------------------
+# xsim v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Oct 25 07:33:16 2025
+# Process ID         : 47826
+# Current directory  : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/fifo
+# Command line       : xsim -mode tcl -source {xsim.dir/work.fifo_tb/xsim_script.tcl}
+# Log file           : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/fifo/xsim.log
+# Journal file       : /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/sim/fifo/xsim.jou
+# Running On         : arthur-nathaniel
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i3-1315U
+# CPU Frequency      : 1278.644 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8038 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 12333 MB
+# Available Virtual  : 6559 MB
+#-----------------------------------------------------------
+source xsim.dir/work.fifo_tb/xsim_script.tcl
+# xsim {work.fifo_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[0]   wr_en = 0, rd_en = 0, data_in =   x, data_out =   x, full = x, empty = x
+[5000]   wr_en = 0, rd_en = 0, data_in =   x, data_out =   x, full = 0, empty = 1
+[25000]   wr_en = 1, rd_en = 0, data_in =  22, data_out =   x, full = 0, empty = 0
+[45000]   wr_en = 1, rd_en = 0, data_in =  23, data_out =   x, full = 0, empty = 0
+[65000]   wr_en = 1, rd_en = 0, data_in =  24, data_out =   x, full = 0, empty = 0
+[85000]   wr_en = 1, rd_en = 0, data_in =  25, data_out =   x, full = 0, empty = 0
+[95000]   wr_en = 1, rd_en = 0, data_in =  25, data_out =   x, full = 1, empty = 0
+[105000]   wr_en = 1, rd_en = 0, data_in =  26, data_out =   x, full = 1, empty = 0
+[125000]   wr_en = 1, rd_en = 0, data_in =  27, data_out =   x, full = 1, empty = 0
+[145000]   wr_en = 1, rd_en = 0, data_in =  28, data_out =   x, full = 1, empty = 0
+[165000]   wr_en = 1, rd_en = 0, data_in =  29, data_out =   x, full = 1, empty = 0
+FAIL: Read data x is out of valid range
+[175000]   wr_en = 1, rd_en = 1, data_in =  30, data_out =  22, full = 0, empty = 0
+PASS: Read data 22 is in valid range
+[185000]   wr_en = 1, rd_en = 1, data_in =  31, data_out =  22, full = 0, empty = 0
+PASS: Read data 22 is in valid range
+[195000]   wr_en = 1, rd_en = 1, data_in =  32, data_out =  23, full = 0, empty = 0
+PASS: Read data 23 is in valid range
+[205000]   wr_en = 1, rd_en = 1, data_in =  33, data_out =  23, full = 0, empty = 0
+PASS: Read data 23 is in valid range
+[215000]   wr_en = 1, rd_en = 1, data_in =  34, data_out =  24, full = 0, empty = 0
+PASS: Read data 24 is in valid range
+[225000]   wr_en = 1, rd_en = 1, data_in =  35, data_out =  24, full = 0, empty = 0
+PASS: Read data 24 is in valid range
+[235000]   wr_en = 1, rd_en = 1, data_in =  36, data_out =  25, full = 0, empty = 0
+PASS: Read data 25 is in valid range
+[245000]   wr_en = 1, rd_en = 1, data_in =  37, data_out =  25, full = 0, empty = 0
+PASS: Read data 25 is in valid range
+[255000]   wr_en = 1, rd_en = 1, data_in =  38, data_out =  31, full = 0, empty = 0
+PASS: Read data 31 is in valid range
+[265000]   wr_en = 1, rd_en = 1, data_in =  39, data_out =  32, full = 0, empty = 0
+PASS: Read data 32 is in valid range
+[275000]   wr_en = 1, rd_en = 1, data_in =  40, data_out =  33, full = 0, empty = 0
+PASS: Read data 33 is in valid range
+[285000]   wr_en = 1, rd_en = 1, data_in =  41, data_out =  34, full = 0, empty = 0
+PASS: Read data 34 is in valid range
+[295000]   wr_en = 1, rd_en = 1, data_in =  42, data_out =  35, full = 0, empty = 0
+PASS: Read data 35 is in valid range
+[305000]   wr_en = 1, rd_en = 1, data_in =  43, data_out =  36, full = 0, empty = 0
+PASS: Read data 36 is in valid range
+[315000]   wr_en = 1, rd_en = 1, data_in =  44, data_out =  37, full = 0, empty = 0
+PASS: Read data 37 is in valid range
+[325000]   wr_en = 1, rd_en = 1, data_in =  45, data_out =  38, full = 0, empty = 0
+PASS: Read data 38 is in valid range
+[335000]   wr_en = 1, rd_en = 1, data_in =  46, data_out =  39, full = 0, empty = 0
+PASS: Read data 39 is in valid range
+[345000]   wr_en = 1, rd_en = 1, data_in =  47, data_out =  40, full = 0, empty = 0
+PASS: Read data 40 is in valid range
+[355000]   wr_en = 1, rd_en = 1, data_in =  48, data_out =  41, full = 0, empty = 0
+PASS: Read data 41 is in valid range
+[365000]   wr_en = 1, rd_en = 1, data_in =  49, data_out =  42, full = 0, empty = 0
+PASS: Read data 42 is in valid range
+[375000]   wr_en = 0, rd_en = 1, data_in =  49, data_out =  43, full = 0, empty = 0
+PASS: Read data 43 is in valid range
+[385000]   wr_en = 0, rd_en = 1, data_in =  49, data_out =  44, full = 0, empty = 0
+PASS: Read data 44 is in valid range
+[395000]   wr_en = 0, rd_en = 1, data_in =  49, data_out =  45, full = 0, empty = 0
+PASS: Read data 45 is in valid range
+[405000]   wr_en = 0, rd_en = 1, data_in =  49, data_out =  46, full = 0, empty = 0
+PASS: Read data 46 is in valid range
+[415000]   wr_en = 0, rd_en = 1, data_in =  49, data_out =  47, full = 0, empty = 0
+PASS: Read data 47 is in valid range
+[425000]   wr_en = 0, rd_en = 1, data_in =  49, data_out =  48, full = 0, empty = 0
+PASS: Read data 48 is in valid range
+[435000]   wr_en = 0, rd_en = 1, data_in =  49, data_out =  49, full = 0, empty = 1
+$finish called at time : 755 ns : File "/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/dotProductFifoFSMClk/fifo_tb.v" Line 112
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 25 07:33:22 2025...

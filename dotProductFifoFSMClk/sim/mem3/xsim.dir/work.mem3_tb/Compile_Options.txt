@@ -1,0 +1,1 @@
+"mem3_tb" -debug "all" 

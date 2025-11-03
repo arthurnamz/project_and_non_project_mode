@@ -1,0 +1,226 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date             : Sat Oct 25 07:39:31 2025
+| Host             : arthur-nathaniel running 64-bit Ubuntu 24.04.3 LTS
+| Command          : report_power_opt -file power_opt.rpt
+| Design           : top_level_wrapper
+| Device           : xc7s50csga324-1
+| Design State     : Routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power optimization report
+
+Table of Contents
+-----------------
+1. Summary
+2. Recommendations
+3. Hierarchical Information
+3.1 BRAMs
+3.1.1 User Gated BRAMs
+3.1.2 Tool Gated BRAMs
+3.1.3 BRAM WRITE_MODE Optimizations
+3.2 SRLs
+3.3 Slice Registers
+3.3.1 User Gated Slice Registers
+3.3.2 Tool Gated Slice Registers
+3.4 XPM URAMs
+
+1. Summary
+----------
+
++---------------------------+-------+------------+------------+----------------+
+| Elements                  | TOTAL | USER GATED | TOOL GATED | % GATED(Total) |
++---------------------------+-------+------------+------------+----------------+
+| Number of BRAMs           | 3     | 0          | 3          | 100.000        |
+| Number of SRLs            | 0     | 0          | 0          | 0.000          |
+| Number of Slice Registers | 278   | 118        | 0          | 42.446         |
+| Number of XPM URAMs       | 0     | 0          | 0          | 0.000          |
+| BRAM write mode changes   | 6     | 0          | 0          | 0.000          |
++---------------------------+-------+------------+------------+----------------+
+
+
+2. Recommendations
+------------------
+
+No specific recommendations for this design.
+
+3. Hierarchical Information
+---------------------------
+
+3.1 BRAMs
+---------
+
+3.1.1 User Gated BRAMs
+----------------------
+
+None
+
+3.1.2 Tool Gated BRAMs
+----------------------
+
++----------------+---------+-------------------------+
+| Cell Name      | CE Port | CE Net Name             |
++----------------+---------+-------------------------+
+| u_mem1/mem_reg | ENARDEN | u_mem1/mem_reg_i_1_n_0  |
+| u_mem1/mem_reg | ENBWREN | u_mem1/mem_reg_i_35_n_0 |
+| u_mem2/mem_reg | ENARDEN | u_mem2/mem_reg_i_1_n_0  |
+| u_mem2/mem_reg | ENBWREN | u_mem2/mem_reg_i_35_n_0 |
+| u_mem3/mem_reg | ENARDEN | u_mem3/mem_reg_i_1_n_0  |
+| u_mem3/mem_reg | ENBWREN | u_mem3/mem_reg_i_35_n_0 |
++----------------+---------+-------------------------+
+
+
+3.1.3 BRAM WRITE_MODE Optimizations
+-----------------------------------
+
+None
+
+3.2 SRLs
+--------
+
+None
+
+3.3 Slice Registers
+-------------------
+
+3.3.1 User Gated Slice Registers
+--------------------------------
+
++-----------------------------------------+---------+-------------------------------+
+| Cell Name                               | CE Port | CE Net Name                   |
++-----------------------------------------+---------+-------------------------------+
+| fifo1/data_out_reg[0]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[1]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[2]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[3]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[4]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[5]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[6]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[7]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[8]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[9]                   | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[10]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[11]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[12]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[13]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[14]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[15]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[16]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[17]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[18]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[19]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[20]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[21]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[22]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[23]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[24]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[25]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[26]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[27]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[28]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[29]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[30]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo1/data_out_reg[31]                  | CE      | fifo1/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[0]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[1]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[2]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[3]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[4]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[5]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[6]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[7]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[8]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[9]                   | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[10]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[11]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[12]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[13]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[14]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[15]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[16]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[17]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[18]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[19]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[20]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[21]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[22]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[23]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[24]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[25]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[26]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[27]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[28]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[29]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[30]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo2/data_out_reg[31]                  | CE      | fifo2/data_out[31]_i_1_n_0    |
+| fifo3/data_out_reg[0]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[1]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[2]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[3]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[4]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[5]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[6]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[7]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[8]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[9]                   | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[10]                  | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[11]                  | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[12]                  | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[13]                  | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[14]                  | CE      | fifo3/data_out[15]_i_1_n_0    |
+| fifo3/data_out_reg[15]                  | CE      | fifo3/data_out[15]_i_1_n_0    |
+| mem1_reader/read_address_reg[1]         | CE      | mem1_reader/start_reading     |
+| mem1_reader/read_address_reg[2]         | CE      | mem1_reader/start_reading     |
+| mem1_reader/read_address_reg[3]         | CE      | mem1_reader/start_reading     |
+| mem1_reader/read_address_reg[4]         | CE      | mem1_reader/start_reading     |
+| mem2_reader/read_address_reg[1]         | CE      | mem2_reader/start_reading     |
+| mem2_reader/read_address_reg[2]         | CE      | mem2_reader/start_reading     |
+| mem2_reader/read_address_reg[3]         | CE      | mem2_reader/start_reading     |
+| mem2_reader/read_address_reg[4]         | CE      | mem2_reader/start_reading     |
+| u_dotProduct/dot_product_result_reg[0]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[1]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[2]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[3]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[4]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[5]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[6]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[7]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[8]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[9]  | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[10] | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[11] | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[12] | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[13] | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[14] | CE      | u_dotProduct/start_processing |
+| u_dotProduct/dot_product_result_reg[15] | CE      | u_dotProduct/start_processing |
+| u_fsm1/FSM_onehot_state_reg[0]          | CE      | u_fsm1/__0/i__n_0             |
+| u_fsm1/FSM_onehot_state_reg[1]          | CE      | u_fsm1/__0/i__n_0             |
+| u_fsm1/FSM_onehot_state_reg[2]          | CE      | u_fsm1/__0/i__n_0             |
+| u_fsm1/FSM_onehot_state_reg[3]          | CE      | u_fsm1/__0/i__n_0             |
+| u_fsm1/FSM_onehot_state_reg[4]          | CE      | u_fsm1/__0/i__n_0             |
+| u_fsm2/FSM_onehot_state_reg[0]          | CE      | u_fsm2/__0/i__n_0             |
+| u_fsm2/FSM_onehot_state_reg[1]          | CE      | u_fsm2/__0/i__n_0             |
+| u_fsm2/FSM_onehot_state_reg[2]          | CE      | u_fsm2/__0/i__n_0             |
+| u_fsm2/FSM_onehot_state_reg[3]          | CE      | u_fsm2/__0/i__n_0             |
+| u_fsm2/FSM_onehot_state_reg[4]          | CE      | u_fsm2/__0/i__n_0             |
+| u_mem_writer/write_address_reg[1]       | CE      | u_mem_writer/start_writing    |
+| u_mem_writer/write_address_reg[2]       | CE      | u_mem_writer/start_writing    |
+| u_mem_writer/write_address_reg[3]       | CE      | u_mem_writer/start_writing    |
+| u_mem_writer/write_address_reg[4]       | CE      | u_mem_writer/start_writing    |
++-----------------------------------------+---------+-------------------------------+
+
+
+3.3.2 Tool Gated Slice Registers
+--------------------------------
+
+None
+
+3.4 XPM URAMs
+-------------
+
+None
+

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="work.top_level_wrapper_tb.wdb" id="1">
+         <top_modules>
+            <top_module name="top_level_wrapper_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="202.401 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="204"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem1/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem1/rst_n">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group174">
+      <obj_property name="label">memories</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="group56">
+         <obj_property name="label">mem1</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem1/write_en">
+            <obj_property name="ElementShortName">write_en</obj_property>
+            <obj_property name="ObjectShortName">write_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem1/data_in">
+            <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem1/read_en">
+            <obj_property name="ElementShortName">read_en</obj_property>
+            <obj_property name="ObjectShortName">read_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem1/data_out">
+            <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group61">
+         <obj_property name="label">mem2</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem2/write_en">
+            <obj_property name="ElementShortName">write_en</obj_property>
+            <obj_property name="ObjectShortName">write_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem2/data_in">
+            <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem2/read_en">
+            <obj_property name="ElementShortName">read_en</obj_property>
+            <obj_property name="ObjectShortName">read_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem2/data_out">
+            <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group173">
+      <obj_property name="label">mem_reader</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="group98">
+         <obj_property name="label">mem1_reader</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem1_reader/start_reading">
+            <obj_property name="ElementShortName">start_reading</obj_property>
+            <obj_property name="ObjectShortName">start_reading</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem1_reader/read_en">
+            <obj_property name="ElementShortName">read_en</obj_property>
+            <obj_property name="ObjectShortName">read_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem1_reader/data_in">
+            <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem1_reader/data_out">
+            <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group103">
+         <obj_property name="label">mem2_reader</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem2_reader/start_reading">
+            <obj_property name="ElementShortName">start_reading</obj_property>
+            <obj_property name="ObjectShortName">start_reading</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem2_reader/read_en">
+            <obj_property name="ElementShortName">read_en</obj_property>
+            <obj_property name="ObjectShortName">read_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem2_reader/data_in">
+            <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/mem2_reader/data_out">
+            <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group172">
+      <obj_property name="label">input_fifos</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="group175">
+         <obj_property name="label">fifo1</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo1/wr_en">
+            <obj_property name="ElementShortName">wr_en</obj_property>
+            <obj_property name="ObjectShortName">wr_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo1/data_in">
+            <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo1/full">
+            <obj_property name="ElementShortName">full</obj_property>
+            <obj_property name="ObjectShortName">full</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo1/rd_en">
+            <obj_property name="ElementShortName">rd_en</obj_property>
+            <obj_property name="ObjectShortName">rd_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo1/data_out">
+            <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo1/empty">
+            <obj_property name="ElementShortName">empty</obj_property>
+            <obj_property name="ObjectShortName">empty</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group176">
+         <obj_property name="label">fifo2</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo2/wr_en">
+            <obj_property name="ElementShortName">wr_en</obj_property>
+            <obj_property name="ObjectShortName">wr_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo2/data_in">
+            <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo2/full">
+            <obj_property name="ElementShortName">full</obj_property>
+            <obj_property name="ObjectShortName">full</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo2/rd_en">
+            <obj_property name="ElementShortName">rd_en</obj_property>
+            <obj_property name="ObjectShortName">rd_en</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo2/data_out">
+            <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo2/empty">
+            <obj_property name="ElementShortName">empty</obj_property>
+            <obj_property name="ObjectShortName">empty</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group189">
+      <obj_property name="label">dotProduct</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/start_processing">
+         <obj_property name="ElementShortName">start_processing</obj_property>
+         <obj_property name="ObjectShortName">start_processing</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/mem1_input">
+         <obj_property name="ElementShortName">mem1_input[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem1_input[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/mem2_input">
+         <obj_property name="ElementShortName">mem2_input[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem2_input[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/mem1_vec">
+         <obj_property name="ElementShortName">mem1_vec[0:3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">mem1_vec[0:3][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/mem2_vec">
+         <obj_property name="ElementShortName">mem2_vec[0:3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">mem2_vec[0:3][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/dot_product_result">
+         <obj_property name="ElementShortName">dot_product_result[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dot_product_result[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_dotProduct/processing_done">
+         <obj_property name="ElementShortName">processing_done</obj_property>
+         <obj_property name="ObjectShortName">processing_done</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group269">
+      <obj_property name="label">output_fifo</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo3/wr_en">
+         <obj_property name="ElementShortName">wr_en</obj_property>
+         <obj_property name="ObjectShortName">wr_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo3/data_in">
+         <obj_property name="ElementShortName">data_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo3/full">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo3/rd_en">
+         <obj_property name="ElementShortName">rd_en</obj_property>
+         <obj_property name="ObjectShortName">rd_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo3/data_out">
+         <obj_property name="ElementShortName">data_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/fifo3/empty">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group277">
+      <obj_property name="label">mem_writer</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/start_writing">
+         <obj_property name="ElementShortName">start_writing</obj_property>
+         <obj_property name="ObjectShortName">start_writing</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/write_en">
+         <obj_property name="ElementShortName">write_en</obj_property>
+         <obj_property name="ObjectShortName">write_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/write_address">
+         <obj_property name="ElementShortName">write_address[4:0]</obj_property>
+         <obj_property name="ObjectShortName">write_address[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/data_in">
+         <obj_property name="ElementShortName">data_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/write_address">
+         <obj_property name="ElementShortName">write_address[4:0]</obj_property>
+         <obj_property name="ObjectShortName">write_address[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem_writer/data_out">
+         <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group276">
+      <obj_property name="label">output_memory</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/write_en">
+         <obj_property name="ElementShortName">write_en</obj_property>
+         <obj_property name="ObjectShortName">write_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/write_address">
+         <obj_property name="ElementShortName">write_address[4:0]</obj_property>
+         <obj_property name="ObjectShortName">write_address[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/data_in">
+         <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/read_en">
+         <obj_property name="ElementShortName">read_en</obj_property>
+         <obj_property name="ObjectShortName">read_en</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/read_address">
+         <obj_property name="ElementShortName">read_address[4:0]</obj_property>
+         <obj_property name="ObjectShortName">read_address[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/top_level_wrapper_tb/u_top_level_wrapper/u_mem3/data_out">
+         <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
