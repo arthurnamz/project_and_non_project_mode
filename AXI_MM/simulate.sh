@@ -1,9 +1,9 @@
 #!/bin/bash
-./clean.sh
-xvlog cpu.v
-xvlog top.v
-xvlog top_tb.v
+rm -rf *.log *.pb *.jou *.wdb *.str  xsim.dir
+xvlog -sv cpu.sv
+xvlog cpu_tb.v
 
-xelab top_tb -debug all 
+xelab cpu_tb -debug all 
 
-xsim top_tb -R
+xsim cpu_tb -g
+

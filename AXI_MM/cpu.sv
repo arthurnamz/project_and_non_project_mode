@@ -47,42 +47,30 @@ reg [DATA_WIDTH-1:0] op2;
 reg [DATA_WIDTH-1:0] opcode;
 reg [DATA_WIDTH-1:0] result;
 typedef enum {IDLE, WR_DATA, WR_RESP, RD_ADDR, RD_DATA} state_t;
-state_t state;
+state_t stateWR;
+state_t stateRD;
 
 // control flow
 always @(posedge clk ) begin
   if (~rstn) begin
-    state <= IDLE;
+    stateWR <= IDLE;
   end else begin
-    case (state)
+    case (stateWR)
       IDLE: begin
         if (awvalid) begin
-          state <= WR_DATA;
+          stateWR <= WR_DATA;
         end
       end
     
       WR_DATA: begin
         if (wvalid) begin
-          state <= WR_RESP;
+          stateWR <= WR_RESP;
         end
       end
       WR_RESP: begin
         if (bready) begin
-          state <= IDLE;
+          stateWR <= IDLE;
         end
-      end
-      RD_ADDR: begin
-        if (rready) begin
-          state <= RD_DATA;
-        end
-      end
-      RD_DATA: begin
-        if (rvalid) begin
-          state <= RD_RESP;
-        end
-      end
-      default: begin
-        state <= IDLE;
       end
     endcase
 
@@ -91,7 +79,7 @@ end
 
 // data flow
 always @(*) begin
-  case (state)
+  case (stateWR)
     IDLE: begin
       wready = 1'b0;
       awready = 1'b1;
@@ -126,6 +114,63 @@ always @(*) begin
           bresp = 2'b01;
         end
   end
+  endcase
+end
+
+// compute results
+always @(*) begin
+  case (opcode)
+    0: result = op1 + op2;
+    1: result = op1 - op2;
+    2: result = ~op1;
+    3: result = op1 << op2;  
+  endcase
+end
+
+// read data FSM
+always @(posedge clk) begin
+  if (~rstn) begin
+    stateRD <= IDLE;
+  end else begin
+    case (stateRD)
+      IDLE: begin
+        if (arvalid ) begin
+          stateRD <= RD_DATA;
+        end
+      end
+      RD_DATA: begin
+        if (rready) begin
+          stateRD <= IDLE;
+        end
+      end
+    endcase
+  end
+end
+
+always @(*) begin
+  case (stateRD)
+    IDLE: begin
+      raddr = araddr;
+      arready = 1'b1;
+      rvalid = 1'b0;
+      rresp = 2'b00;
+    end
+    RD_DATA: begin
+      arready = 1'b0;
+      rvalid = 1'b1;
+         if (raddr == 0) begin
+          rdata = op1;
+         end else if (raddr == 1) begin
+            rdata = op2;  
+         end else if (raddr == 2) begin
+          rdata = opcode;
+         end else if (raddr == 3) begin
+            rdata = result;
+         end else begin
+          rdata = 'bx;
+            rresp = 2'b01;
+         end
+    end
   endcase
 end
 endmodule
