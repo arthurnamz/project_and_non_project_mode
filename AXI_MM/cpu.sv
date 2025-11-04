@@ -73,6 +73,7 @@ always @(posedge clk ) begin
         end
       end
     endcase
+    
 
   end 
 end 
