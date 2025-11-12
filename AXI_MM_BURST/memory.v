@@ -1,21 +1,21 @@
 
 `timescale 1ns/1ps
-(* dont_touch="true" *)
-module mem1 #(
-    parameter DATA_WIDTH = 32,
-    parameter ADDR_WIDTH = 5,
-    parameter MEM_SIZE = 32
+
+module memory #(
+    parameter DATA_WIDTH = 8,      
+    parameter ADDR_WIDTH = 10,    
+    parameter MEM_SIZE = 1024     
 )
 (
  input clk,
  input rst_n,
 
  input write_en,
- input [ADDR_WIDTH-1:0]write_address,
- input [DATA_WIDTH-1:0]data_in,
+ input [ADDR_WIDTH-1:0] write_address,
+ input [DATA_WIDTH-1:0] data_in,
  
  input read_en,
- input [ADDR_WIDTH-1:0]read_address,
+ input [ADDR_WIDTH-1:0] read_address,
  output reg [DATA_WIDTH-1:0] data_out
 );
 

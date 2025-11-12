@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
 
-module mem1_tb;
+module memory_tb;
 
   parameter PERIOD       = 4;
-  parameter DATA_WIDTH   = 8;
-  parameter MEM_SIZE     = 64;
-  parameter ADDR_WIDTH   = 4;
+  parameter DATA_WIDTH   = 8;    // 8-bit words (byte-addressable)
+  parameter MEM_SIZE     = 1024;
+  parameter ADDR_WIDTH   = 10;
 
   reg                     clk = 0;
   reg                     rst_n;
@@ -17,11 +17,11 @@ module mem1_tb;
   wire [DATA_WIDTH-1:0]   data_out;
 
   // DUT
-  mem1 #(
+  memory #(
     .DATA_WIDTH  (DATA_WIDTH),
     .MEM_SIZE    (MEM_SIZE),
     .ADDR_WIDTH  (ADDR_WIDTH)
-  ) u_mem1 (
+  ) u_memory (
     .clk      (clk),
     .rst_n    (rst_n),
     .write_en    (write_en),
@@ -55,37 +55,78 @@ module mem1_tb;
   always @(posedge clk) begin
     if (rst_n && read_en) begin
       if (!same(data_out, model_out)) begin
-        $error("[%0t] mem1 failed ra=%0d dut=0x%0h exp=0x%0h",
+        $error("[%0t] memory failed ra=%0d dut=0x%0h exp=0x%0h",
                $time, read_address, data_out, model_out);
       end else begin
-        $display("[%0t] mem1 passed ra=%0d dut=0x%0h exp=0x%0h",
+        $display("[%0t] memory passed ra=%0d dut=0x%0h exp=0x%0h",
                  $time, read_address, data_out, model_out);
       end
     end
   end
 
   initial begin
-    rst_n = 0; write_en = 0; read_en = 0; write_address = 4'b0; read_address = 4'b0; data_in = 8'b0;
+    rst_n = 0; write_en = 0; read_en = 0; write_address = 10'b0; read_address = 10'b0; data_in = 8'b0;
 
     #10 rst_n = 1;
-
-    #10 write_en=1; write_address=4'b0; data_in=8'h11;
+    
+    $display("\n=== Test: Writing 32-bit data (0xDEADBEEF) as 4 bytes ===");
+    // Write 32-bit value 0xDEADBEEF starting at address 0
+    // Byte 0: 0xEF (LSB)
+    #10 write_en=1; write_address=10'd0; data_in=8'hEF;
+    #10 write_en=0;
+    
+    // Byte 1: 0xBE
+    #10 write_en=1; write_address=10'd1; data_in=8'hBE;
+    #10 write_en=0;
+    
+    // Byte 2: 0xAD
+    #10 write_en=1; write_address=10'd2; data_in=8'hAD;
+    #10 write_en=0;
+    
+    // Byte 3: 0xDE (MSB)
+    #10 write_en=1; write_address=10'd3; data_in=8'hDE;
     #10 write_en=0;
 
-    #10 write_en=1; write_address=4'b1; data_in=8'h22;
-    #10 write_en=0;
-
-    #10 read_en=1; read_address=4'b0;
+    $display("\n=== Test: Reading back the 4 bytes ===");
+    // Read back the 4 bytes
+    #10 read_en=1; read_address=10'd0;
+    #10 read_en=0;
+    
+    #10 read_en=1; read_address=10'd1;
+    #10 read_en=0;
+    
+    #10 read_en=1; read_address=10'd2;
+    #10 read_en=0;
+    
+    #10 read_en=1; read_address=10'd3;
     #10 read_en=0;
 
-    #10 read_en=1; read_address=4'b1;
-    #10 read_en=0;
-
-    #10 write_en=1; write_address=4'b1; data_in=8'hA5;
+    $display("\n=== Test: Writing another 32-bit value (0x12345678) at address 4 ===");
+    // Write 32-bit value 0x12345678 starting at address 4
+    #10 write_en=1; write_address=10'd4; data_in=8'h78;
+    #10 write_en=0;
+    
+    #10 write_en=1; write_address=10'd5; data_in=8'h56;
+    #10 write_en=0;
+    
+    #10 write_en=1; write_address=10'd6; data_in=8'h34;
+    #10 write_en=0;
+    
+    #10 write_en=1; write_address=10'd7; data_in=8'h12;
     #10 write_en=0;
 
-    #10 read_en=1; read_address=4'b1;
-    #10 read_en=0;    
+    $display("\n=== Test: Reading back from address 4-7 ===");
+    #10 read_en=1; read_address=10'd4;
+    #10 read_en=0;
+    
+    #10 read_en=1; read_address=10'd5;
+    #10 read_en=0;
+    
+    #10 read_en=1; read_address=10'd6;
+    #10 read_en=0;
+    
+    #10 read_en=1; read_address=10'd7;
+    #10 read_en=0;
 
     #100 $finish;
   end

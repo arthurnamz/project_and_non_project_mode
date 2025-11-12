@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
-      <ZoomEndTime time="837.500000001 ms"></ZoomEndTime>
-      <Cursor1Time time="0.000004093 ms"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="55.501 ns"></ZoomEndTime>
+      <Cursor1Time time="100,234.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="110"></NameColumnWidth>
+      <NameColumnWidth column_width="106"></NameColumnWidth>
       <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="28" />
    <wvobject type="logic" fp_name="/cpu_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -39,6 +39,18 @@
       <obj_property name="ElementShortName">awready</obj_property>
       <obj_property name="ObjectShortName">awready</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/cpu_tb/awlen">
+      <obj_property name="ElementShortName">awlen[3:0]</obj_property>
+      <obj_property name="ObjectShortName">awlen[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cpu_tb/awsize">
+      <obj_property name="ElementShortName">awsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">awsize[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cpu_tb/awburst">
+      <obj_property name="ElementShortName">awburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">awburst[1:0]</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/cpu_tb/wdata">
       <obj_property name="ElementShortName">wdata[7:0]</obj_property>
       <obj_property name="ObjectShortName">wdata[7:0]</obj_property>
@@ -51,6 +63,10 @@
    <wvobject type="logic" fp_name="/cpu_tb/wready">
       <obj_property name="ElementShortName">wready</obj_property>
       <obj_property name="ObjectShortName">wready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/cpu_tb/wlast">
+      <obj_property name="ElementShortName">wlast</obj_property>
+      <obj_property name="ObjectShortName">wlast</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/cpu_tb/bresp">
       <obj_property name="ElementShortName">bresp[1:0]</obj_property>
@@ -77,6 +93,18 @@
       <obj_property name="ElementShortName">arready</obj_property>
       <obj_property name="ObjectShortName">arready</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/cpu_tb/arsize">
+      <obj_property name="ElementShortName">arsize[2:0]</obj_property>
+      <obj_property name="ObjectShortName">arsize[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cpu_tb/arlen">
+      <obj_property name="ElementShortName">arlen[3:0]</obj_property>
+      <obj_property name="ObjectShortName">arlen[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/cpu_tb/arburst">
+      <obj_property name="ElementShortName">arburst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">arburst[1:0]</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/cpu_tb/rdata">
       <obj_property name="ElementShortName">rdata[7:0]</obj_property>
       <obj_property name="ObjectShortName">rdata[7:0]</obj_property>
@@ -94,12 +122,16 @@
       <obj_property name="ElementShortName">rready</obj_property>
       <obj_property name="ObjectShortName">rready</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/cpu_tb/rlast">
+      <obj_property name="ElementShortName">rlast</obj_property>
+      <obj_property name="ObjectShortName">rlast</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/cpu_tb/DUT/stateWR">
-      <obj_property name="ElementShortName">stateWR[31:0]</obj_property>
-      <obj_property name="ObjectShortName">stateWR[31:0]</obj_property>
+      <obj_property name="ElementShortName">stateWR[2:0]</obj_property>
+      <obj_property name="ObjectShortName">stateWR[2:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/cpu_tb/DUT/stateRD">
-      <obj_property name="ElementShortName">stateRD[31:0]</obj_property>
-      <obj_property name="ObjectShortName">stateRD[31:0]</obj_property>
+      <obj_property name="ElementShortName">stateRD[2:0]</obj_property>
+      <obj_property name="ObjectShortName">stateRD[2:0]</obj_property>
    </wvobject>
 </wave_config>
