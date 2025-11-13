@@ -4,43 +4,37 @@ module cpu_tb;
  parameter PERIOD = 4;
  parameter DATA_WIDTH = 8;
  parameter ADDR_WIDTH = 32;
- 
- // Test configuration parameters - CHANGE THESE TO SCALE TESTS!
- parameter NUM_BURST_TESTS = 5;      // Number of burst write tests (try 5, 10, 100!)
- parameter BYTES_PER_BURST = 4;      // Number of bytes per burst (4=32-bit, 8=64-bit)
- parameter MAX_BURST_LEN = 16;       // Maximum burst length supported
+ parameter NUM_BURST_TESTS = 5;
+ parameter BYTES_PER_BURST = 4;
+ parameter MAX_BURST_LEN = 16;
 
  reg clk = 0;
  reg rstn;
-
-// write address channel
+ 
+ // AXI Signals
  reg [ADDR_WIDTH-1:0] awaddr;
  reg awvalid;
  wire awready;
- reg [3:0] awlen;     // Burst length
- reg [2:0] awsize;    // Burst size
- reg [1:0] awburst;   // Burst type
-
-// write data channel
+ reg [3:0] awlen;
+ reg [2:0] awsize;
+ reg [1:0] awburst;
+ 
  reg [DATA_WIDTH-1:0] wdata;
  reg wvalid;
  wire wready;
- reg wlast;           // Last transfer in burst
-
-// write response channel
+ reg wlast;
+ 
  wire [1:0] bresp;
  wire bvalid;
  reg bready;
-
-// read address channel
+ 
  reg [ADDR_WIDTH-1:0] araddr;
  reg arvalid;
  wire arready;
  reg [3:0] arlen;
  reg [2:0] arsize;
  reg [1:0] arburst;
-
-// read data channel
+ 
  wire [DATA_WIDTH-1:0] rdata;
  wire rvalid;
  wire rresp;
@@ -48,42 +42,14 @@ module cpu_tb;
  wire rlast;
 
  cpu #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH)) DUT(
-    .clk(clk),
-    .rstn(rstn),
-
-    // write address channel
-    .awaddr(awaddr),
-    .awvalid(awvalid),
-    .awready(awready),
-    .awlen(awlen),
-    .awsize(awsize),
-    .awburst(awburst),
-
-    // write data channel
-    .wdata(wdata),
-    .wvalid(wvalid),
-    .wready(wready),
-    .wlast(wlast),
-
-    // write response channel
-    .bresp(bresp),
-    .bvalid(bvalid),
-    .bready(bready),
-
-    // read address channel
-    .araddr(araddr),
-    .arvalid(arvalid),
-    .arready(arready),
-    .arlen(arlen),
-    .arsize(arsize),
-    .arburst(arburst),
-
-    // read data channel
-    .rdata(rdata),
-    .rvalid(rvalid),
-    .rresp(rresp),
-    .rready(rready),
-    .rlast(rlast)
+    .clk(clk), .rstn(rstn),
+    .awaddr(awaddr), .awvalid(awvalid), .awready(awready),
+    .awlen(awlen), .awsize(awsize), .awburst(awburst),
+    .wdata(wdata), .wvalid(wvalid), .wready(wready), .wlast(wlast),
+    .bresp(bresp), .bvalid(bvalid), .bready(bready),
+    .araddr(araddr), .arvalid(arvalid), .arready(arready),
+    .arlen(arlen), .arsize(arsize), .arburst(arburst),
+    .rdata(rdata), .rvalid(rvalid), .rresp(rresp), .rready(rready), .rlast(rlast)
   );
 
   always #(PERIOD/2) clk = ~clk;
@@ -169,25 +135,21 @@ module cpu_tb;
       @(posedge clk);
       arvalid = 1'b0;
       
-      // Data phase - loop through all beats
+      
       for (i = 0; i <= burst_len; i = i + 1) begin
-        // Wait for rvalid to go high (new data available)
         wait(rvalid == 1'b1);
-        // Sample data on clock edge when rvalid is high
         @(posedge clk);
         data_array[i*DATA_WIDTH +: DATA_WIDTH] = rdata;
         
-        // If not the last beat, wait for rvalid to go low before next beat
         if (i < burst_len) begin
           wait(rvalid == 1'b0);
         end
       end
       
-      // Wait for last signal and complete
       wait(rlast == 1'b1);
       @(posedge clk);
       rready = 1'b0;
-      repeat(3) @(posedge clk);  // Delay between transactions
+      repeat(3) @(posedge clk);  
     end
   endtask
 
@@ -200,24 +162,27 @@ module cpu_tb;
   // Test data arrays
   reg [31:0] test_data [0:NUM_BURST_TESTS-1];
   reg [ADDR_WIDTH-1:0] test_addr [0:NUM_BURST_TESTS-1];
+  reg [7:0] expected_results [0:NUM_BURST_TESTS-1];
   
   initial begin
-    // Initialize test data - easily add more by incrementing NUM_BURST_TESTS!
-    test_data[0] = 32'hDEADBEEF;
-    test_data[1] = 32'h12345678;
-    // Uncomment below and set NUM_BURST_TESTS=5 for more tests:
-    test_data[2] = 32'hCAFEBABE;
-    test_data[3] = 32'hABCD1234;
-    test_data[4] = 32'h55AA55AA;
+    test_data[0] = {8'h00, 8'd0, 8'd3, 8'd5};    
+    test_data[1] = {8'h00, 8'd1, 8'd4, 8'd10};   
+    test_data[2] = {8'h00, 8'd2, 8'd0, 8'd15};   
+    test_data[3] = {8'h00, 8'd3, 8'd3, 8'd2};    
+    test_data[4] = {8'h00, 8'd0, 8'd7, 8'd20};   
+    
+    expected_results[0] = 8'd8;
+    expected_results[1] = 8'd6;
+    expected_results[2] = 8'd240;
+    expected_results[3] = 8'd16;
+    expected_results[4] = 8'd27;
     
     test_addr[0] = 32'h00000000;
     test_addr[1] = 32'h00000010;
-    // Uncomment below and set NUM_BURST_TESTS=5 for more tests:
     test_addr[2] = 32'h00000020;
     test_addr[3] = 32'h00000030;
     test_addr[4] = 32'h00000040;
     
-    // Initialize signals
     rstn = 0;
     awaddr = 0; awvalid = 0; awlen = 0; awsize = 0; awburst = 0;
     wdata = 0; wvalid = 0; wlast = 0;
@@ -228,88 +193,79 @@ module cpu_tb;
     #10 rstn = 1;
     #10;
 
-    $display("\n========================================");
-    $display("=== AXI Burst Transfer Tests ===");
-    $display("========================================");
-    $display("Configuration:");
-    $display("  - Number of burst tests: %0d", NUM_BURST_TESTS);
-    $display("  - Bytes per burst: %0d", BYTES_PER_BURST);
-    $display("========================================\n");
-    
-    // ==========================================
-    // Test Loop: Burst Writes
-    // ==========================================
+    $display("\n AXI Burst Write Tests \n");
+    $display("Testing: %0d burst write transactions\n", NUM_BURST_TESTS);
     for (test_num = 0; test_num < NUM_BURST_TESTS; test_num = test_num + 1) begin
-      $display("[%0t] TEST %0d: Burst Write 0x%08h to address 0x%08h", 
-               $time, test_num + 1, test_data[test_num], test_addr[test_num]);
+      $display("[%0t] TEST %0d: Burst Write to 0x%08h (data: op1=%0d, op2=%0d, opcode=%0d)", 
+               $time, test_num + 1, 
+               test_addr[test_num],
+               test_data[test_num][7:0],
+               test_data[test_num][15:8],
+               test_data[test_num][23:16]);
       
       axi_burst_write(test_addr[test_num], BYTES_PER_BURST - 1, test_data[test_num]);
       
       if (bresp == 2'b00) begin
-        $display("[%0t] SUCCESS: Burst write completed (BRESP=OKAY)\n", $time);
+        $display("[%0t] Write completed successfully (BRESP=OKAY)\n", $time);
       end else begin
-        $display("[%0t] ERROR: Burst write failed (BRESP=0x%01h)\n", $time, bresp);
+        $display("[%0t] Write failed (BRESP=0x%01h)\n", $time, bresp);
       end
       
       #20;
     end
     
-    $display("========================================");
-    $display("=== Reading Back Data ===");
-    $display("========================================\n");
+    $display("\n  Single Read Verification \n");
     
-    // ==========================================
-    // Test Loop: Read back each burst's data
-    // ==========================================
     for (test_num = 0; test_num < NUM_BURST_TESTS; test_num = test_num + 1) begin
-      $display("[%0t] Reading back burst %0d from address 0x%08h:", 
-               $time, test_num + 1, test_addr[test_num]);
-      
-      // Read each byte of the burst
+      $display("[%0t] Reading from address 0x%08h:", $time, test_addr[test_num]);
       for (byte_num = 0; byte_num < BYTES_PER_BURST; byte_num = byte_num + 1) begin
         axi_single_read(test_addr[test_num] + byte_num, read_data);
-        
-        // Extract expected byte from test_data
-        expected = test_data[test_num][byte_num*8 +: 8];
-        
-        if (read_data == expected) begin
-          $display("  [%0t] Byte %0d: 0x%02h (expected 0x%02h) ✓ PASS", 
-                   $time, byte_num, read_data, expected);
+        if (byte_num == 3) begin
+          expected = expected_results[test_num];
+          if (read_data == expected) begin
+            $display("  [%0t] Byte %0d: %0d  PASS", $time, byte_num, read_data);
+          end else begin
+            $display("  [%0t] Byte %0d: %0d (expected %0d) FAIL", $time, byte_num, read_data, expected);
+          end
         end else begin
-          $display("  [%0t] Byte %0d: 0x%02h (expected 0x%02h) ✗ FAIL", 
-                   $time, byte_num, read_data, expected);
+          expected = test_data[test_num][byte_num*8 +: 8];
+          if (read_data == expected) begin
+            $display("  [%0t] Byte %0d: %0d  PASS", 
+                     $time, byte_num, read_data);
+          end else begin
+            $display("  [%0t] Byte %0d: %0d (expected %0d) FAIL", $time, byte_num, read_data, expected);
+          end
         end
       end
       $display("");
     end
     
-    $display("========================================");
-    $display("=== Bonus: Burst Read Test ===");
-    $display("========================================\n");
+    $display("\n  Burst Read Verification \n");
     
-    // ==========================================
-    // Burst Read: Read all 4 bytes in one burst
-    // ==========================================
-    $display("[%0t] Burst Read 4 bytes from address 0x00000000", $time);
-    axi_burst_read(32'h00000000, BYTES_PER_BURST - 1, burst_read_data);
-    
-    $display("Burst read data:");
-    for (byte_num = 0; byte_num < BYTES_PER_BURST; byte_num = byte_num + 1) begin
-      read_byte = burst_read_data[byte_num*8 +: 8];
-      expected_byte = test_data[0][byte_num*8 +: 8];
+    for (test_num = 0; test_num < NUM_BURST_TESTS; test_num = test_num + 1) begin
+      $display("[%0t] Burst Read from 0x%08h (%0d bytes)", $time, test_addr[test_num], BYTES_PER_BURST);
+      axi_burst_read(test_addr[test_num], BYTES_PER_BURST - 1, burst_read_data);
       
-      if (read_byte == expected_byte) begin
-        $display("  Byte %0d: 0x%02h ✓", byte_num, read_byte);
-      end else begin
-        $display("  Byte %0d: 0x%02h (expected 0x%02h) ✗", byte_num, read_byte, expected_byte);
+      for (byte_num = 0; byte_num < BYTES_PER_BURST; byte_num = byte_num + 1) begin
+        read_byte = burst_read_data[byte_num*8 +: 8];
+        
+        if (byte_num == 3) begin
+          expected_byte = expected_results[test_num];
+        end else begin
+          expected_byte = test_data[test_num][byte_num*8 +: 8];
+        end
+        
+        if (read_byte == expected_byte) begin
+          $display("  Byte %0d: %0d ", byte_num, read_byte);
+        end else begin
+          $display("  Byte %0d: %0d (expected %0d)", byte_num, read_byte, expected_byte);
+        end
       end
+      $display("");
     end
     
     #100;
-    
-    $display("\n========================================");
-    $display("=== All Tests Completed ===");
-    $display("========================================\n");
+    $display("\n  Simulation Complete \n");
     $finish;
   end
 

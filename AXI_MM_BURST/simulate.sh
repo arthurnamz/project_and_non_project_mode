@@ -1,8 +1,14 @@
 #!/bin/bash
-rm -rf *.log *.pb *.jou *.wdb *.str  xsim.dir
+if [ -f clean.sh ]; then
+    ./clean.sh
+else
+    echo "clean.sh not found, using default cleanup"
+    rm -rf *.log *.pb *.jou *.wdb *.str  xsim.dir
+fi
 
 echo "Compiling design..."
 xvlog memory.v
+xvlog alu.v
 xvlog -sv cpu.sv
 xvlog cpu_tb.v
 
