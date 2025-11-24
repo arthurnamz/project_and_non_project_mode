@@ -1,0 +1,14 @@
+# Xilinx / Vivado simulation outputs
+*.log
+*.jou
+*.wdb
+*.pb
+xsim.dir/
+xelab.*
+xvlog.*
+
+# (optional) other common sim/build dirs
+*.tmp
+*.cache
+*.runs
+*.sim
