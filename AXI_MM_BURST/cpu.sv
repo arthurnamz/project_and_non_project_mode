@@ -1,16 +1,5 @@
 `timescale 1ns/1ps
 
-//==============================================================================
-// AXI4 Slave with Integrated ALU
-//==============================================================================
-// Features:
-//   - Byte-addressable memory (8-bit words)
-//   - Burst read/write support (1-16 beats)
-//   - FIXED and INCR burst types
-//   - Integrated ALU computes during write (op1, op2, opcode → result)
-//   - Data format: Byte0=op1, Byte1=op2, Byte2=opcode, Byte3=result
-//==============================================================================
-
 module cpu
 #( 
   parameter integer ADDR_WIDTH  = 32,
@@ -155,7 +144,7 @@ always @(posedge clk) begin
     case (stateWR)
       WR_IDLE: begin
         mem_write_en <= 1'b0;
-        if (awvalid && awready) begin
+        if (awvalid) begin
           stateWR <= WR_DATA;
           waddr <= awaddr;
           burst_len <= awlen;
@@ -175,7 +164,7 @@ always @(posedge clk) begin
       end
       
       WR_DATA: begin
-        if (wvalid && wready) begin
+        if (wvalid) begin
           mem_write_en <= 1'b1;
           
           // Capture operands and compute result
@@ -224,7 +213,7 @@ always @(posedge clk) begin
       
       WR_RESP: begin
         mem_write_en <= 1'b0;
-        if (bready && bvalid) begin
+        if (bready) begin
           stateWR <= WR_IDLE;
         end
       end
@@ -233,7 +222,7 @@ always @(posedge clk) begin
 end 
 
 // Write FSM - Outputs
-always @(stateWR or awvalid or wvalid or bready) begin
+always @(stateWR ) begin
   awready = 1'b0;
   wready = 1'b0;
   bvalid = 1'b0;
@@ -286,7 +275,7 @@ always @(posedge clk) begin
         rlast <= 1'b0;
         mem_read_en <= 1'b0;
         
-        if (arvalid && arready) begin
+        if (arvalid) begin
           stateRD <= RD_WAIT;  // Go to wait state for memory latency
           raddr <= araddr;
           read_burst_len <= arlen;
@@ -321,7 +310,7 @@ always @(posedge clk) begin
         rdata <= mem_data_out;
         rlast <= (read_burst_count == read_burst_len);
         
-        if (rready && rvalid) begin
+        if (rready) begin
           if (rlast) begin
             stateRD <= RD_IDLE;
             rvalid <= 1'b0;
@@ -357,7 +346,7 @@ always @(posedge clk) begin
 end
 
 // Read FSM - Outputs
-always @(stateRD or arvalid or rready) begin
+always @(stateRD or rready) begin
   arready = 1'b0;
   rresp = 2'b00;
   
