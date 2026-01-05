@@ -1,0 +1,605 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 134555
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Dec 16 06:04:38 CET 2025
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: Ubuntu
+OS Version: 6.14.0-36-generic
+OS Architecture: amd64
+Available processors (cores): 8
+LSB Release Description: Ubuntu 24.04.3 LTS
+
+Display: 0
+Screen size: 1920x1080
+Local screen bounds: x = 3440, y = 0, width = 1920, height = 1080
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/tools/Xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	arthur
+User home directory: /home/arthur
+User working directory: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_DATADIR: /tools/Xilinx/SharedData/2024.2/data:/tools/Xilinx/Vivado/2024.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /home/arthur/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /home/arthur/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /home/arthur/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/vivado.log
+Vivado journal file: 	/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-134555-arthur-nathaniel
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GNOME_SHELL_SESSION_MODE: ubuntu
+RDI_APPROOT: /tools/Xilinx/Vivado/2024.2
+RDI_BASEROOT: /tools/Xilinx/Vivado
+RDI_BINROOT: /tools/Xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/SharedData/2024.2/data:/tools/Xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu/24:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o/Ubuntu:/tools/Xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/Vitis/2024.2/bin:/tools/Xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab:arthur-nathaniel_1765861433_134487
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /tools/Xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /usr/bin/zsh
+XILINX: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2024.2
+XILINX_SDK: /tools/Xilinx/Vitis/2024.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2024.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,450 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 124 MB (+127628kb) [00:00:33]
+// [Engine Memory]: 1,379 MB (+1294977kb) [00:00:33]
+// Opening Vivado Project: sim_lab.xpr. Version: Vivado v2024.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project sim_lab.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,483 MB. GUI used memory: 66 MB. Current time: 12/16/25, 6:04:39 AM CET
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,697 MB (+260606kb) [00:00:48]
+// [GUI Memory]: 143 MB (+13687kb) [00:00:50]
+// [Engine Memory]: 2,001 MB (+229688kb) [00:00:50]
+// WARNING: HEventQueue.dispatchEvent() is taking  5518 ms.
+// Tcl Message: open_project sim_lab.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.2/data/ip'. 
+// Tcl Message: INFO: [Project 1-5579] Found utility IPs instantiated in one or more block designs which have equivalent inline hdl with improved performance and reduced diskspace. It is recommended to migrate these utility IPs to inline hdl using the command upgrade_project -migrate_to_inline_hdl. The utility IPs may be deprecated in future releases. More information on inline hdl is available in UG994. 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,085 MB. GUI used memory: 75 MB. Current time: 12/16/25, 6:04:56 AM CET
+// Tcl Message: open_project: Time (s): cpu = 00:00:41 ; elapsed = 00:00:19 . Memory (MB): peak = 8178.094 ; gain = 665.461 ; free physical = 637 ; free virtual = 8227 
+// Project name: sim_lab; location: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab; part: xc7a200tfbg676-2
+dismissDialog("Open Project"); // bh (Open Project Progress)
+// [GUI Memory]: 152 MB (+1625kb) [00:00:57]
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // h (PAResourceQtoS.SyntheticaStateMonitor_CANCEL, Cancel)
+selectButton("OptionPane.button", "Cancel Process", "Cancel Out-of-Context"); // JButton (OptionPane.button)
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 2,129 MB (+29393kb) [00:01:05]
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_microblaze_0_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_ilmb_v10_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_lmb_bram_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run design_1_mdm_1_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_rst_clk_wiz_1_100M_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_util_vector_logic_0_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_dlmb_v10_0_synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_dlmb_bram_if_cntlr_0_synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_ilmb_bram_if_cntlr_0_synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_clk_wiz_1_0_synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_axi_uartlite_0_0_synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run design_1_axi_smc_0_synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Elapsed time: 16 seconds
+dismissDialog("Resetting Runs"); // bh (Resetting Runs Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 32s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 19 seconds
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1 ;  ; Submodule Runs Not Started ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 3); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// PAPropertyPanels.initPanels (design_1.bd) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // an (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // an (PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // an (PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // an (PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // an (PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // an (PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // an (PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update)
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // aq (PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, generate_composite_file_menu)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+selectComboBox(PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS, "2", 1); // d (PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate", "Generate Output Products"); // a (PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY)
+// Tcl Message: generate_target all [get_files  /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/sim_lab.srcs/sources_1/bd/design_1/design_1.bd] 
+// Tcl Message: INFO: [BD 41-1637] Generated targets are already up-to-date for block design 'design_1' - hence not re-generating. 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_microblaze_0_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_microblaze_0_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_dlmb_v10_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_dlmb_v10_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_ilmb_v10_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_ilmb_v10_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_dlmb_bram_if_cntlr_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_dlmb_bram_if_cntlr_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_ilmb_bram_if_cntlr_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_ilmb_bram_if_cntlr_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_lmb_bram_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_lmb_bram_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_mdm_1_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_mdm_1_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_clk_wiz_1_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_clk_wiz_1_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_rst_clk_wiz_1_100M_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_rst_clk_wiz_1_100M_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_util_vector_logic_0_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_util_vector_logic_0_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_axi_uartlite_0_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_uartlite_0_0 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_axi_smc_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_smc_0 
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/sim_lab.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet 
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/sim_lab.srcs/sources_1/bd/design_1/design_1.bd] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs design_1_axi_smc_0_synth_1 design_1_axi_uartlite_0_0_synth_1 design_1_clk_wiz_1_0_synth_1 design_1_dlmb_bram_if_cntlr_0_synth_1 design_1_dlmb_v10_0_synth_1 design_1_ilmb_bram_if_cntlr_0_synth_1 design_1_ilmb_v10_0_synth_1 design_1_lmb_bram_0_synth_1 design_1_mdm_1_0_synth_1 design_1_microblaze_0_0_synth_1 design_1_rst_clk_wiz_1_100M_0_synth_1 design_1_util_vector_logic_0_0_synth_1 -jobs 2 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1072 ms.
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1007 ms. Increasing delay to 3000 ms.
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:21 ; elapsed = 00:00:09 . Memory (MB): peak = 8493.359 ; gain = 0.000 ; free physical = 584 ; free virtual = 8192 
+// TclEventType: PROJECT_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,178 MB. GUI used memory: 81 MB. Current time: 12/16/25, 6:06:29 AM CET
+// TclEventType: PROJECT_CHANGE
+// [Engine Memory]: 2,353 MB (+123119kb) [00:02:27]
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/W.b': 22s
+// 'bD' command handler elapsed time: 34 seconds
+// Elapsed time: 27 seconds
+selectButton("OptionPane.button", "OK", "Generate Output Products"); // JButton (OptionPane.button)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01m:52s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 1068ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1071 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  4838 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,216 MB. GUI used memory: 83 MB. Current time: 12/16/25, 6:08:27 AM CET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  2374 ms.
+// Elapsed time: 128 seconds
+collapseTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1_axi_smc_0 ;  ; Submodule Runs Complete ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Tue Dec 16 06:06:25 CET 2025 ; 00:02:15 ;  ;  ;  ;  ; ", 15); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// [GUI Memory]: 160 MB (+584kb) [00:04:57]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  4041 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  4799 ms.
+// [GUI Memory]: 170 MB (+1560kb) [00:06:30]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  6563 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2621 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  5191 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  3234 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1909 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2849 ms.
+// Elapsed time: 424 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // an (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // an (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // an (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_IMPORT, "Import"); // an (PAResourceItoN.MainMenuMgr_IMPORT, Import)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenu(PAResourceItoN.MainMenuMgr_IMPORT, "Import"); // an (PAResourceItoN.MainMenuMgr_IMPORT, Import)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,240 MB. GUI used memory: 87 MB. Current time: 12/16/25, 6:15:59 AM CET
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  4568 ms.
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HEventQueue.dispatchEvent() is taking  3319 ms.
+// Elapsed time: 85 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // an (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // an (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // an (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_IMPORT, "Import"); // an (PAResourceItoN.MainMenuMgr_IMPORT, Import)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // an (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // an (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // an (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_IMPORT, "Import"); // an (PAResourceItoN.MainMenuMgr_IMPORT, Import)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1_rst_clk_wiz_1_100M_0_synth_1 ; design_1_rst_clk_wiz_1_100M_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 19 ; 40 ; 0.0 ; 0 ; 0 ; Tue Dec 16 06:13:50 CET 2025 ; 00:01:40 ; Vivado Synthesis Defaults (Vivado Synthesis 2024) ; Vivado Synthesis Default Reports (Vivado Synthesis 2024) ; xc7a200tfbg676-2 ; arthur-nathaniel ; Vivado Synthesis Defaults", 12, (String) null, 9, false); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// PAPropertyPanels.initPanels (design_1_rst_clk_wiz_1_100M_0_synth_1) elapsed time: 0.7s
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // an (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: open_bd_design {/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/sim_lab.srcs/sources_1/bd/design_1/design_1.bd} 
+// Tcl Message: Reading block design file </home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/sim_lab.srcs/sources_1/bd/design_1/design_1.bd>... 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_OPEN_DIAGRAM
+// WARNING: HEventQueue.dispatchEvent() is taking  2884 ms.
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // x (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// WARNING: HTimer (Open addressing views timer) is taking 965ms to process. Increasing delay to 1300 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,282 MB. GUI used memory: 95 MB. Current time: 12/16/25, 6:18:10 AM CET
+dismissDialog("Open Block Design"); // bh (Open Block Design Progress)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // an (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // an (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // an (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_IMPORT, "Import"); // an (PAResourceItoN.MainMenuMgr_IMPORT, Import)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BD_TCL, "Export Block Design..."); // aq (PAResourceCommand.PACommandNames_EXPORT_BD_TCL, export_rsb_tcl_script_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BD_TCL
+// Elapsed time: 16 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Export Block Design"); // a (RDIResource.BaseDialog_OK)
+// 'aE' command handler elapsed time: 16 seconds
+// Tcl Command: 'write_bd_tcl -force /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/design_1.tcl'
+dismissDialog("Export Block Design"); // bC (dialog1)
+// Tcl Message: write_bd_tcl -force /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/design_1.tcl 
+// Tcl Message: INFO: [BD 5-148] Tcl file written out </home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/design_1.tcl>.  
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // an (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // an (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // an (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_IMPORT, "Import"); // an (PAResourceItoN.MainMenuMgr_IMPORT, Import)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // an (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // aq (PAResourceCommand.PACommandNames_EXPORT_HARDWARE, export_hardware_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/sim_lab.srcs/sources_1/bd/design_1/design_1.bd}]'
+selectButton("NEXT", "Next", "Export Hardware Platform"); // JButton (NEXT)
+selectButton("NEXT", "Next", "Export Hardware Platform"); // JButton (NEXT)
+selectButton("NEXT", "Next", "Export Hardware Platform"); // JButton (NEXT)
+// Elapsed time: 15 seconds
+selectButton("FINISH", "Finish", "Export Hardware Platform"); // JButton (FINISH)
+// 'n' command handler elapsed time: 24 seconds
+dismissDialog("Export Hardware Platform"); // d (dialog2)
+// Tcl Message: write_hw_platform -fixed -force -file /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/design_1_wrapper.xsa 
+// Tcl Message: INFO: [Project 1-1918] Creating Hardware Platform: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/design_1_wrapper.xsa ... 
+// Tcl Message: INFO: [Project 1-1943] The Hardware Platform can be used for Hardware INFO: [Project 1-1941] Successfully created Hardware Platform: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_102/sim_lab/design_1_wrapper.xsa INFO: [Hsi 55-2053] elapsed time for repository (/tools/Xilinx/Vivado/2024.2/data/embeddedsw) loading 0 seconds 
+dismissDialog("Export Hardware Platform"); // bh (Export Hardware Platform Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 95 MB. Current time: 12/16/25, 6:19:04 AM CET
+// [Engine Memory]: 2,845 MB (+392386kb) [00:15:19]
+// Elapsed time: 1460 seconds
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_nets /mdm_1_Debug_SYS_Rst]"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,845 MB. GUI used memory: 97 MB. Current time: 12/16/25, 6:49:04 AM CET
+// [GUI Memory]: 188 MB (+10273kb) [00:45:32]
+// [GUI Memory]: 206 MB (+8726kb) [00:46:10]
+// [GUI Memory]: 221 MB (+4924kb) [00:46:51]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 84 MB. Current time: 12/16/25, 7:19:04 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 76 MB. Current time: 12/16/25, 7:49:04 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 75 MB. Current time: 12/16/25, 8:19:04 AM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  235878551 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 67 MB. Current time: 12/19/25, 2:15:11 AM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  3396 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2951 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3097 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3039 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3104 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3309 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3405 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2952 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3097 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3423 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3311 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3047 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3063 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3552 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2926 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3063 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3399 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2984 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3155 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3306 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2924 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3477 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2980 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2996 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3540 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3242 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2978 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3226 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3405 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3472 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3314 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 67 MB. Current time: 12/19/25, 8:05:29 AM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  4237 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3402 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3314 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3542 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3008 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2905 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3478 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3316 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3060 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3079 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3311 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3070 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3064 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3476 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 2541ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2541 ms.
+                                                            

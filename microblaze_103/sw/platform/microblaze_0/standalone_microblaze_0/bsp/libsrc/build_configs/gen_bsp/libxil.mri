@@ -1,0 +1,7 @@
+create libxil.a
+addlib /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_103/sw/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/uartlite/src/libuartlite.a
+addlib /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_103/sw/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/tmrctr/src/libtmrctr.a
+addlib /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_103/sw/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/intc/src/libintc.a
+addlib /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microblaze_103/sw/platform/microblaze_0/standalone_microblaze_0/bsp/libsrc/build_configs/gen_bsp/libsrc/gpio/src/libgpio.a
+save
+end

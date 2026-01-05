@@ -1,0 +1,4 @@
+domain_path: /home/arthur/Documents/FPGA_master_class/project_and_non_project_mode/microbraze_101/software/platform/export/platform/sw/standalone_microblaze_0
+app_src_dir: /tools/Xilinx/Vitis/2024.2/data/embeddedsw/lib/sw_apps/hello_world
+template: hello_world
+lang: c
