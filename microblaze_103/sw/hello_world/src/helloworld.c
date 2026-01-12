@@ -146,7 +146,7 @@ int main()
     matMul(A,B,C);
     EndTime = XTmrCtr_GetValue(&InstancePtr, TIMER_COUNTER_0);
     u32 Duration = EndTime - StartTime - Calibration;
-    xil_printf("Dur1 = %d ns \n", (Duration*10));
+    xil_printf(" %d \n", (Duration*10));
 
     StartTime = 0;
     EndTime = 0;
@@ -156,7 +156,7 @@ int main()
     matMul_simpleCpu(A,B, D);
     EndTime = XTmrCtr_GetValue(&InstancePtr, TIMER_COUNTER_0);
     Duration = EndTime - StartTime - Calibration;
-    xil_printf("Dur2 = %d ns \n", (Duration*10));
+    xil_printf(" %d \n", (Duration*10));
     //xil_printf("RES=%d\n", compareMatrices(C,D) );
 
     cleanup_platform();

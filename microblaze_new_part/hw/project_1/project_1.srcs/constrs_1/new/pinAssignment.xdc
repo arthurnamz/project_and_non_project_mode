@@ -1,0 +1,13 @@
+set_property PACKAGE_PIN N15 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property PACKAGE_PIN G1 [get_ports reset]
+set_property IOSTANDARD LVCMOS33 [get_ports reset]
+set_property PACKAGE_PIN B16 [get_ports uart_txd]
+set_property PACKAGE_PIN A16 [get_ports uart_rxd]
+set_property IOSTANDARD LVCMOS33 [get_ports uart_rxd]
+set_property IOSTANDARD LVCMOS33 [get_ports uart_txd]
+
+set_property PACKAGE_PIN C13 [get_ports {gpio_tri_o[1]}]
+set_property PACKAGE_PIN C14 [get_ports {gpio_tri_o[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {gpio_tri_o[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {gpio_tri_o[0]}]
